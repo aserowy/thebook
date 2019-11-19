@@ -5,6 +5,7 @@ Programming insights and indoctrination. The Book is a compilation of the basics
 <ul>
   <li>SOLID principles
     <ul>
+      <li>Benefits beeing SOLID</li>
       <li>Single Responsibility principle</li>
       <li>...</li>
     </ul>
