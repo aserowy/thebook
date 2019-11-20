@@ -2,6 +2,9 @@
   - Guidelines for coding in object oriented and functional programming
   - Five principles to tackle different problems
   - Acronym was published by Robert C. Martin
+  - Mostly subjective
+  - Some people ride the cult train (like me)
+  - Even if it is cult, it is DAMN simple to programm SOLID!
 - Why should we use it?
   - Better readability
   - Enhanced fulfilment of expectations 
@@ -10,3 +13,4 @@
   - More specific designations
   - Increased maintainability
   - Enhanced flexibility
+  - Unit-testability
