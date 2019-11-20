@@ -1,2 +1,12 @@
 - What is solid?
+  - Guidelines for coding in object oriented and functional programming
+  - Five principles to tackle different problems
+  - Acronym was published by Robert C. Martin
 - Why should we use it?
+  - Better readability
+  - Enhanced fulfilment of expectations 
+  - Less merge conflicts in bigger teams
+  - Increased ability to reuse code
+  - More specific designations
+  - Increased maintainability
+  - Enhanced flexibility
