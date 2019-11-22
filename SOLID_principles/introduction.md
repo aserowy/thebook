@@ -4,11 +4,11 @@ Some programmers like me are riding the cult train because of many upsides. But 
 
 # Why should we use it?
 SOLID leads to smaller pieces of code and enhances expectations regarding inheritance and api design. These enhancements lead to the following advantages:
-  - Better readability
-  - Enhanced fulfilment of expectations 
-  - Less merge conflicts in bigger teams
-  - Increased ability to reuse code
-  - More specific designations
-  - Increased maintainability
-  - Enhanced flexibility
-  - Unit-testability
+- Better readability
+- Enhanced fulfilment of expectations 
+- Less merge conflicts in bigger teams
+- Increased ability to reuse code
+- More specific designations
+- Increased maintainability
+- Enhanced flexibility
+- Unit-testability

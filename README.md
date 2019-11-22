@@ -6,3 +6,5 @@ Programming insights and indoctrination. The Book is a compilation of the basics
 - SOLID principles
   - [Introduction to SOLID](./SOLID_principles/introduction.md)
   - [Single Responsibility principle](./SOLID_principles/single_responsibility_principle.md)
+- Architectural pattern
+  - [Sagas](./architectural_pattern/sagas_pattern.md)
