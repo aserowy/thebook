@@ -4,11 +4,14 @@ Programming insights and indoctrination. The Book is a compilation of the basics
 ## Table of contents
 - Introduction
 - SOLID principles
-  - [Introduction to SOLID](./SOLID_principles/introduction.md)
-  - [Single responsibility principle](./SOLID_principles/single_responsibility_principle.md)
-  - [Open-closed principle](./SOLID_principles/open_closed_principle.md)
-  - [Liskov substitution principle](./SOLID_principles/liskov_substitution_principle.md)
-  - [Interface segregation principle](./SOLID_principles/interface_segregation_principle.md)
-  - [Dependency inversion principle](./SOLID_principles/dependency_inversion_principle.md)
+  - [Introduction to SOLID](./solid_principles/introduction.md)
+  - [Single responsibility principle](./solid_principles/single_responsibility_principle.md)
+  - [Open-closed principle](./solid_principles/open_closed_principle.md)
+  - [Liskov substitution principle](./solid_principles/liskov_substitution_principle.md)
+  - [Interface segregation principle](./solid_principles/interface_segregation_principle.md)
+  - [Dependency inversion principle](./solid_principles/dependency_inversion_principle.md)
+- Design pattern
+  - Behavioral
+    - [Strategy](./design_pattern/strategy_pattern.md)
 - Architectural pattern
   - [Sagas](./architectural_pattern/sagas_pattern.md)
