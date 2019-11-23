@@ -11,4 +11,5 @@ Programming insights and indoctrination. The Book is a compilation of the basics
   - [Interface segregation principle](./SOLID_principles/interface_segregation_principle.md)
   - [Dependency inversion principle](./SOLID_principles/dependency_inversion_principle.md)
 - Architectural pattern
+  - [Microservices](./architectural_pattern/microservices.md)
   - [Sagas](./architectural_pattern/sagas_pattern.md)
