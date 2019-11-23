@@ -14,4 +14,5 @@ Programming insights and indoctrination. The Book is a compilation of the basics
   - Behavioral
     - [Strategy](./design_pattern/strategy_pattern.md)
 - Architectural pattern
+  - [Microservices](./architectural_pattern/microservices.md)
   - [Sagas](./architectural_pattern/sagas_pattern.md)
