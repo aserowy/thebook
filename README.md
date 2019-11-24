@@ -12,6 +12,7 @@ Programming insights and indoctrination. The Book is a compilation of the basics
   - [Dependency inversion principle](./solid_principles/dependency_inversion_principle.md)
 - Design pattern
   - Behavioral
+    - [Abstract strategy](./design_pattern/abtract_strategy_pattern.md)
     - [Strategy](./design_pattern/strategy_pattern.md)
 - Architectural pattern
   - [Microservices](./architectural_pattern/microservices.md)
