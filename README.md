@@ -14,6 +14,8 @@ Programming insights and indoctrination. The Book is a compilation of the basics
   - Behavioral
     - [Abstract strategy](./design_pattern/abtract_strategy_pattern.md)
     - [Strategy](./design_pattern/strategy_pattern.md)
+  - Structural
+    - [Type safe enums](./design_pattern/type_safe_enum_patter.md)
 - Architectural pattern
   - [Microservices](./architectural_pattern/microservices.md)
   - [Sagas](./architectural_pattern/sagas_pattern.md)
