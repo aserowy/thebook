@@ -1,11 +1,12 @@
 # Builder pattern
 ## Sample implementation
+The given implementation abuses the builder pattern for validation. Thus, you can easily chain validation steps and reuse the configured validator object.
 ```csharp
 public class Validator<TClass>
 {
     private List<Predicate<TClass>> _rules;        
   
-    public ValidatorEngine AddRule(Predicate<TClass> rule)
+    public Validator<TClass> AddRule(Predicate<TClass> rule)
     {
         _rules.Add(rule);
   
