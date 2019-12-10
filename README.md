@@ -13,6 +13,8 @@ Programming insights and indoctrination. The Book is a compilation of the basics
 - Design pattern
   - Behavioral
     - [Strategy](./design_pattern/behavioral/strategy_pattern.md)
+  - Creational
+    - [Builder](./design_pattern/creational/builder_pattern.md)
   - Structural
     - [Type safe enums](./design_pattern/structural/type_safe_enum_pattern.md)
   - Functional
