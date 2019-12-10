@@ -1,6 +1,6 @@
 # Composition pattern
 ## Reference implementation
-Because of a narrow support for fp in c#, we need helper to build a proper composition of functions.
+Because of a narrow support for fp in c#, we need a helper to build a proper composition of functions.
 ```csharp
 public static Func<T, TNextOut> Compose<T, TInitOut, TNextOut>(this Func<T, TInitOut> initial, Func<TInitOut, TNextOut> next)
 {
@@ -22,6 +22,6 @@ private static readonly Func<IDictionary<IVersion, IList<IStepConfiguration>>, I
 private static readonly Func<IList<IStepConfiguration>, IStepConfiguration> GetStepFunc =
     steps => steps?.FirstOrDefault();
 ```
-For functions with multiple inputs you can use [Currying](./design_pattern/functional/currying_pattern.md) to reduce the count of inputs to one.
+For functions with multiple inputs you can use [Currying](currying_pattern.md) to reduce the count of inputs to one.
 ## Further reads
 - http://hamidmosalla.com/2019/04/25/functional-programming-in-c-sharp-a-brief-guide/

@@ -17,6 +17,7 @@ Programming insights and indoctrination. The Book is a compilation of the basics
     - [Type safe enums](./design_pattern/structural/type_safe_enum_pattern.md)
   - Functional
     - [Composition](./design_pattern/functional/composition_pattern.md)
+    - [Currying](./design_pattern/functional/currying_pattern.md)
 - Architectural pattern
   - [Microservices](./architectural_pattern/microservices.md)
   - [Sagas](./architectural_pattern/sagas_pattern.md)
