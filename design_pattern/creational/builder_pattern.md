@@ -25,6 +25,7 @@ public class Validator<TClass>
 
         return true;
     }
+}
 ```
 ## Further reads
 - https://www.pmichaels.net/2018/01/27/using-builder-pattern-validation/
