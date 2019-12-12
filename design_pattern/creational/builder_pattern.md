@@ -4,7 +4,7 @@ The given implementation abuses the builder pattern for validation. Thus, you ca
 ```csharp
 public class Validator<TClass>
 {
-    private List<Predicate<TClass>> _rules;        
+    private IList<Predicate<TClass>> _rules = new List<Predicate<TClass>>();        
   
     public Validator<TClass> AddRule(Predicate<TClass> rule)
     {
