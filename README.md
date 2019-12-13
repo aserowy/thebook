@@ -2,7 +2,8 @@
 Programming insights and indoctrination. The Book is a compilation of the basics of software development, from design patterns to architectural solutions.
 
 ## Table of contents
-- Introduction
+- Languages
+  - [C#](./languages/csharp.md)
 - SOLID principles
   - [Introduction to SOLID](./principles/introduction.md)
   - [Single responsibility principle](./principles/single_responsibility_principle.md)
