@@ -39,7 +39,7 @@ internal class DistanceQuery : IDistanceQuery
             strategyToUse = strategy;
         }
 
-        return _strategies[strategy].GetDistanceInSecondsAsync(origin, waypoints);
+        return _strategies[strategyToUse].GetDistanceInSecondsAsync(origin, waypoints);
     }
 }
 ```
