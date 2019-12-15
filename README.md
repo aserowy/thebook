@@ -2,7 +2,8 @@
 Programming insights and indoctrination. The Book is a compilation of the basics of software development, from design patterns to architectural solutions.
 
 ## Table of contents
-- Languages
+- Languages/DevOps
+  - [Azure DevOps](./devops/azure.md)
   - [C#](./languages/csharp.md)
 - SOLID principles
   - [Introduction to SOLID](./principles/introduction.md)
