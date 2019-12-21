@@ -25,5 +25,6 @@ Programming insights and indoctrination. The Book is a compilation of the basics
     - [Currying](./design_pattern/functional/currying_pattern.md)
 - Architectural pattern
   - [Event sourcing](./architectural_pattern/event_sourcing.md)
+  - [Feature flags](./architectural_pattern/feature_flags.md)
   - [Microservices](./architectural_pattern/microservices.md)
   - [Sagas](./architectural_pattern/sagas_pattern.md)
