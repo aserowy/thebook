@@ -5,6 +5,7 @@ Programming insights and indoctrination. The Book is a compilation of the basics
 - Languages/DevOps
   - [Azure DevOps](./devops/azure.md)
   - [C#](./languages/csharp.md)
+  - [Git](./devops/git.md)
 - SOLID principles
   - [Introduction to SOLID](./principles/introduction.md)
   - [Single responsibility principle](./principles/single_responsibility_principle.md)
