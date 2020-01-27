@@ -2,6 +2,8 @@
 Programming insights and indoctrination. The Book is a compilation of the basics of software development, from design patterns to architectural solutions.
 
 ## Table of contents
+- IDE
+  - [Visual Studio](./ide/visual_studio.md)
 - Languages/DevOps
   - [Azure DevOps](./devops/azure.md)
   - [C#](./languages/csharp.md)
