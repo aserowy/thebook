@@ -1,4 +1,9 @@
 # Visual Studio
+## Code cleanup
+With the introduction of .editorconfig you can introduce style profiles on a solution basis. Thus, every developer uses the same formatting. .editorconfig is inheritable. You can specify a root config on solution level and add specific customizations on project level.
+- https://docs.microsoft.com/en-us/visualstudio/ide/code-styles-and-code-cleanup
+- https://marketplace.visualstudio.com/items?itemName=MadsKristensen.CodeCleanupOnSave
+
 ## Commands
 | Command | Scheme | Binding |
 |---|---|---|
