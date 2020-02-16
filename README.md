@@ -7,6 +7,7 @@ Hints, reads and tips for me.
 - Languages/DevOps
   - [Azure DevOps](./devops/azure.md)
   - [C#](./languages/csharp.md)
+    - [Testing rules](./languages/csharp/testing_rules.md)
   - [Git](./devops/git.md)
 - SOLID principles
   - [Introduction to SOLID](./principles/introduction.md)
