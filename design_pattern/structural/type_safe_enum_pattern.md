@@ -1,6 +1,9 @@
 # Type safe enum pattern
 ## Reference implementation
 ```csharp
+[System.Diagnostics.CodeAnalysis.SuppressMessage(
+    "Design", "CA1036:Override methods on comparable types",
+    Justification = "Since Enumeration is abstract, different concrete implementations must not be compareable.")]
 public abstract class Enumeration : IComparable
 {
     public string Name { get; private set; }
@@ -66,41 +69,6 @@ public abstract class Enumeration : IComparable
     public override int GetHashCode()
     {
         return Id;
-    }
-
-    public static bool operator ==(Enumeration left, Enumeration right)
-    {
-        if (left is null)
-        {
-            return right is null;
-        }
-
-        return left.Equals(right);
-    }
-
-    public static bool operator !=(Enumeration left, Enumeration right)
-    {
-        return !(left == right);
-    }
-
-    public static bool operator <(Enumeration left, Enumeration right)
-    {
-        return left is null ? right is object : left.CompareTo(right) < 0;
-    }
-
-    public static bool operator <=(Enumeration left, Enumeration right)
-    {
-        return left is null || left.CompareTo(right) <= 0;
-    }
-
-    public static bool operator >(Enumeration left, Enumeration right)
-    {
-        return left is object && left.CompareTo(right) > 0;
-    }
-
-    public static bool operator >=(Enumeration left, Enumeration right)
-    {
-        return left is null ? right is null : left.CompareTo(right) >= 0;
     }
 }
 ```
