@@ -23,6 +23,16 @@ public abstract class Enumeration : IComparable
 
         return fields.Select(f => f.GetValue(null)).Cast<T>();
     }
+    
+    public static T FromString<T>(string name) where T : Enumeration
+    {
+        return GetAll<T>().Single(r => string.Equals(r.Name, name, StringComparison.OrdinalIgnoreCase));
+    }
+
+    public static T FromValue<T>(int value) where T : Enumeration
+    {
+        return GetAll<T>().Single(r => r.Value.Equals(value));
+    }
 
     public override bool Equals(object obj)
     {
@@ -38,10 +48,10 @@ public abstract class Enumeration : IComparable
     }
 
     public int CompareTo(object other) => Id.CompareTo(((Enumeration)other).Id);
-
-    // Other utility methods ...
 }
 ```
+## Usage
+
 
 ## Further reads
 - https://docs.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/enumeration-classes-over-enum-types
