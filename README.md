@@ -7,6 +7,7 @@ Hints, reads and tips for me.
 - Languages/DevOps
   - [Azure DevOps](./devops/azure.md)
   - [C#](./languages/csharp.md)
+    - [Dispose-Pattern](./languages/csharp/dispose_pattern.md)
     - [Testing rules](./languages/csharp/testing_rules.md)
   - [Git](./devops/git.md)
 - SOLID principles
