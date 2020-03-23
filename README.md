@@ -7,7 +7,7 @@ Hints, reads and tips for me.
 - Languages/DevOps
   - [Azure DevOps](./devops/azure.md)
   - [C#](./languages/csharp.md)
-    - [Dispose-Pattern](./languages/csharp/dispose_pattern.md)
+    - [Dispose pattern](./languages/csharp/dispose_pattern.md)
     - [Testing rules](./languages/csharp/testing_rules.md)
   - [Git](./devops/git.md)
 - SOLID principles
@@ -32,3 +32,5 @@ Hints, reads and tips for me.
   - [Feature flags](./architectural_pattern/feature_flags.md)
   - [Microservices](./architectural_pattern/microservices.md)
   - [Sagas](./architectural_pattern/sagas_pattern.md)
+- Miscellaneous
+  - [Emailing in dev with smtp4dev](https://github.com/rnwood/smtp4dev)
