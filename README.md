@@ -10,6 +10,9 @@ Hints, reads and tips for me.
     - [Dispose pattern](./languages/csharp/dispose_pattern.md)
     - [Testing rules](./languages/csharp/testing_rules.md)
   - [Git](./devops/git.md)
+  - Go
+    - [Array operations](./languages/go/array_operations.md)
+    - [Array tricks](./languages/go/array_tricks.md)
 - SOLID principles
   - [Introduction to SOLID](./principles/introduction.md)
   - [Single responsibility principle](./principles/single_responsibility_principle.md)
