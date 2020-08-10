@@ -1,5 +1,5 @@
 # Dispose pattern
-Handling dispose of handles and managed objects. The pattern uses [IDisposable](https://docs.microsoft.com/en-us/dotnet/api/system.idisposable) and ensures a clean way to handle dispositions and deconstructions.
+Handling dispose of _handles and managed objects. The pattern uses [IDisposable](https://docs.microsoft.com/en-us/dotnet/api/system.idisposable) and ensures a clean way to _handle dispositions and deconstructions.
 ```csharp
 using System;
 using System.ComponentModel;
@@ -16,16 +16,16 @@ public class DisposeExample
     public class MyResource: IDisposable
     {
         // Pointer to an external unmanaged resource.
-        private IntPtr handle;
+        private IntPtr _handle;
         // Other managed resource this class uses.
-        private Component component = new Component();
+        private Component _component = new Component();
         // Track whether Dispose has been called.
-        private bool disposed = false;
+        private bool _disposed = false;
 
         // The class constructor.
         public MyResource(IntPtr handle)
         {
-            this.handle = handle;
+            _handle = handle;
         }
 
         // Implement IDisposable.
@@ -52,25 +52,25 @@ public class DisposeExample
         protected virtual void Dispose(bool disposing)
         {
             // Check to see if Dispose has already been called.
-            if(!this.disposed)
+            if(!_disposed)
             {
                 // If disposing equals true, dispose all managed
                 // and unmanaged resources.
                 if(disposing)
                 {
                     // Dispose managed resources.
-                    component.Dispose();
+                    _component.Dispose();
                 }
 
                 // Call the appropriate methods to clean up
                 // unmanaged resources here.
                 // If disposing is false,
                 // only the following code is executed.
-                CloseHandle(handle);
-                handle = IntPtr.Zero;
+                CloseHandle(_handle);
+                _handle = IntPtr.Zero;
 
                 // Note disposing has been done.
-                disposed = true;
+                _disposed = true;
             }
         }
 
@@ -91,11 +91,6 @@ public class DisposeExample
             // readability and maintainability.
             Dispose(false);
         }
-    }
-    public static void Main()
-    {
-        // Insert code here to create
-        // and use the MyResource object.
     }
 }
 ```
