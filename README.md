@@ -10,7 +10,7 @@ Hints, reads and tips for me.
     - [Dispose pattern](./languages/csharp/dispose_pattern.md)
     - [Testing rules](./languages/csharp/testing_rules.md)
   - [Git](./devops/git.md)
-  - Go
+  - [Go](./languages/go.md)
     - [Array operations](./languages/go/array_operations.md)
     - [Array tricks](./languages/go/array_tricks.md)
 - SOLID principles
