@@ -1,5 +1,7 @@
 # Type safe enum pattern
+
 ## Reference implementation
+
 ```csharp
 [System.Diagnostics.CodeAnalysis.SuppressMessage(
     "Design", "CA1036:Override methods on comparable types",
@@ -72,10 +74,11 @@ public abstract class Enumeration : IComparable
     }
 }
 ```
+
 ## Usage
 
-
 ## Further reads
-- https://docs.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/enumeration-classes-over-enum-types
-- https://lostechies.com/jimmybogard/2008/08/12/enumeration-classes/
-- https://ardalis.com/enum-alternatives-in-c
+
+- <https://docs.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/enumeration-classes-over-enum-types>
+- <https://lostechies.com/jimmybogard/2008/08/12/enumeration-classes/>
+- <https://ardalis.com/enum-alternatives-in-c>

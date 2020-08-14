@@ -1,7 +1,9 @@
 # The Book
+
 Hints, reads and tips for me.
 
 ## Table of contents
+
 - IDE
   - [Visual Studio](./ide/visual_studio.md)
 - Languages/DevOps
@@ -37,3 +39,4 @@ Hints, reads and tips for me.
   - [Sagas](./architectural_pattern/sagas_pattern.md)
 - Miscellaneous
   - [Emailing in dev with smtp4dev](https://github.com/rnwood/smtp4dev)
+  

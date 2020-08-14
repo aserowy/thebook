@@ -1,9 +1,13 @@
 # Testing rules
+
 ## What to achive
+
 To test rules, it is useful to make test data of specific rules available to all other rules. This way not only positive but also negative tests can be performed for all rules. In order to ensure that for individual rules the results for the test date and the respective rule are also run through when the test data is extended, the generation of test data and test results must be separated.
 
 ## Sample implementation for Xunit
+
 On the one hand, we generate test unspecific test data.
+
 ```csharp
 internal sealed class AnalyzerMockTestDataResolver
 {
@@ -36,10 +40,12 @@ internal sealed class AnalyzerMockTestDataResolver
             .AddStep<SagaEvent02, SagaStep02Mock>();
 ...
 ```
+
 In order to ensure that all test data is passed through, we provide an abstract provider. This is used to deliver test data and test specific results.
+
 ```csharp
 [SuppressMessage(
-    "Naming", 
+    "Naming",
     "CA1710:Identifiers should have correct suffix",
     Justification = "abstract class name should end with base")]
 public abstract class AnalyzerMockTestDataCollectionBase : IEnumerable<object[]>
@@ -72,7 +78,9 @@ public abstract class AnalyzerMockTestDataCollectionBase : IEnumerable<object[]>
     }
 }
 ```
+
 Now we can use the base class and include it in our tests.
+
 ```csharp
 public class MultipleVersionsWithEqualIdentifierRuleTests
 {
