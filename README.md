@@ -6,12 +6,10 @@ Hints, reads and tips for me.
 
 - IDE
   - [Visual Studio](./ide/visual_studio.md)
-- Languages/DevOps
-  - [Azure DevOps](./devops/azure.md)
+- Languages
   - [C#](./languages/csharp.md)
     - [Dispose pattern](./languages/csharp/dispose_pattern.md)
     - [Testing rules](./languages/csharp/testing_rules.md)
-  - [Git](./devops/git.md)
   - [Go](./languages/go.md)
     - [Array operations](./languages/go/array_operations.md)
     - [Array tricks](./languages/go/array_tricks.md)
@@ -37,6 +35,14 @@ Hints, reads and tips for me.
   - [Feature flags](./architectural_pattern/feature_flags.md)
   - [Microservices](./architectural_pattern/microservices.md)
   - [Sagas](./architectural_pattern/sagas_pattern.md)
+- DevOps
+  - Virtualization
+    - Vagrant
+      - [Limitations Hyper-v](https://www.vagrantup.com/docs/providers/hyperv/limitations)
+    - Hyperv
+      - [VM no internet access in Hyper-V](https://www.isunshare.com/blog/fix-vm-no-internet-access-hyper-v-windows-10-2018/)
+  - [Azure DevOps](./devops/azure.md)
+  - [Git](./devops/git.md)
 - Miscellaneous
   - [Emailing in dev with smtp4dev](https://github.com/rnwood/smtp4dev)
   
