@@ -9,6 +9,7 @@ Hints, reads and tips for me.
 - Languages
   - [C#](./languages/csharp.md)
     - [Dispose pattern](./languages/csharp/dispose_pattern.md)
+    - [Testing azure functions in CI/CD](https://www.davideguida.com/testing-azure-functions-on-azure-devops-part-1-setup/)
     - [Testing rules](./languages/csharp/testing_rules.md)
   - [Go](./languages/go.md)
     - [Array operations](./languages/go/array_operations.md)
