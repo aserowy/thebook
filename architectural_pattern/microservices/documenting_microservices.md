@@ -2,11 +2,11 @@
 
 ## Overview
 
-![Overview of documentation elements](.\images\documenting_microservices_overview.png)
+![Overview of documentation elements](./images/documenting_microservices_overview.png)
 
 ## Minimal architectural overview
 
-![Content of minimal architectural overview](.\images\documenting_microservices_minimal_overview.png)
+![Content of minimal architectural overview](./images/documenting_microservices_minimal_overview.png)
 
 ## Profile per service
 
@@ -23,8 +23,8 @@
 
 ## Concepts
 
-- [How to write concepts](.\how-to-write-concepts.md)
+- [How to write concepts](./how-to-write-concepts.md)
 
 ## Decisions
 
-![Mandatory questions to document decisions](.\images\documenting_microservices_decision_template.png)
+![Mandatory questions to document decisions](./images/documenting_microservices_decision_template.png)
