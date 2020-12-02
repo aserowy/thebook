@@ -8,7 +8,7 @@ This concept describes how concepts should be structured in order to homogenise 
 
 ## Context
 
-For the structural design of concepts, we use the four quadrant model. As the name suggests, the model divides content into four questions to be answered:
+For the structural design of concepts, we use the [four quadrant model][1]. As the name suggests, the model divides content into four questions to be answered:
 
 - Why?
 - What?
@@ -43,6 +43,8 @@ At the end of the document, a section for meta-information is defined, in which 
 | editor  | Alexander Serowy |
 | version | 0.1 |
 ```
+
+[1]: <https://www.amazon.de/-/en/Uwe-Vigenschow/dp/3864906970> "Soft Skills für Softwareentwickler"
 
 ## Step by step
 
