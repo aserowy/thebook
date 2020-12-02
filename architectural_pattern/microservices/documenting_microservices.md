@@ -23,14 +23,7 @@
 
 ## Concepts
 
-Using the four quatrant model.
-
-|Quadrant|Headings|
-|-|-|
-|Why|motivation, task|
-|What|context, influencing factors, alternatives, solution, background|
-|How to|examples, application, step by step|
-|What else|next steps, extensions, feedback, outlook|
+- [How to write concepts](.\how-to-write-concepts.md)
 
 ## Decisions
 
