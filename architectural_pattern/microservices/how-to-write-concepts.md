@@ -38,7 +38,7 @@ At the end of the document, a section for meta-information is defined, in which 
 ```markdown
 ## Meta
 
-|         |     |
+| Meta    |     |
 | ---     | --- |
 | editor  | Alexander Serowy |
 | version | 0.1 |
@@ -64,7 +64,7 @@ Using this template we can achieve a high degree of reusability for concepts. If
 
 ## Meta
 
-|         |     |
+| Meta    |     |
 | ---     | --- |
 | editor  | Alexander Serowy |
 | version | 0.1 |
