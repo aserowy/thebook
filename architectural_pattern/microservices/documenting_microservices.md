@@ -23,7 +23,14 @@
 
 ## Concepts
 
-![Structure of concepts](.\images\documenting_microservices_concept_structure.png)
+Using the four quatrant model.
+
+|Quadrant|Headings|
+|-|-|
+|Why|motivation, task|
+|What|context, influencing factors, alternatives, solution, background|
+|How to|examples, application, step by step|
+|What else|next steps, extensions, feedback, outlook|
 
 ## Decisions
 
