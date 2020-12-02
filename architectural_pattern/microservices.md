@@ -1,5 +1,7 @@
 # Microservices
 
+- [Documenting microservices](./microservices/documenting_microservices.md)
+
 ## Further reads
 
 - vs. Monoliths <https://martinfowler.com/bliki/MicroservicePremium.html>
