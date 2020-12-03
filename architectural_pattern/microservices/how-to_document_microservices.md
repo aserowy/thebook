@@ -1,16 +1,20 @@
 # Documenting microservices
 
-## Overview
+## Motivation
+
+## Context
+
+### Overview
 
 ![Overview of documentation elements](./images/documenting_microservices_overview.png)
 
-## Minimal architectural overview
+### Minimal architectural overview
 
 ![Content of minimal architectural overview](./images/documenting_microservices_minimal_overview.png)
 
-## Profile per service
+### Profile per service
 
-### Typical contents for a service profile
+#### Typical contents for a service profile
 
 - Responsibility i.e. what does the service do
 - Special requirements
@@ -21,10 +25,14 @@
 - Plans for the future
 - Technical debts
 
-## Concepts
+### Concepts
 
-- [How to write concepts](./how-to-write-concepts.md)
+- [How to write concepts](./how-to_write_concepts.md)
 
-## Decisions
+### Decisions
 
 ![Mandatory questions to document decisions](./images/documenting_microservices_decision_template.png)
+
+## Example
+
+## Next steps

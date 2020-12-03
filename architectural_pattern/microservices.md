@@ -1,6 +1,6 @@
 # Microservices
 
-- [Documenting microservices](./microservices/documenting_microservices.md)
+- [Documenting microservices](./microservices/how-to_document_microservices.md)
 
 ## Further reads
 

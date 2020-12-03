@@ -30,7 +30,7 @@ To meet expectations, first-level headings should be similar in all concepts. Of
 | ---       | --- |
 | Why       | motivation, task |
 | What      | context, influencing factors, alternatives, solution, background |
-| How to    | examples, application, step by step |
+| How to    | example, application, step by step |
 | What else | next steps, extensions, feedback, outlook |
 
 At the end of the document, a section for meta-information is defined, in which the version and the author are specified.
