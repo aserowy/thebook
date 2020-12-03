@@ -1,10 +1,14 @@
-# Documenting microservices
+# How to document microservices
 
 ## Motivation
 
+Documentation is usually a burden for developers and is often neglected. Especially in microservices, documentation is essential to understand how the service landscape is structured and where which capabilities lie. In addition, it should be possible to answer core questions, such as overarching concepts, architecture decisions and also goals, simply and sustainably.
+
+It is important to use a documentation template that requires minimal maintenance to ensure a high degree of up-to-dateness and to reduce inhibitions of developers to maintain documentation.
+
 ## Context
 
-### Overview
+### A minimalistic approach
 
 ![Overview of documentation elements](./images/documenting_microservices_overview.png)
 

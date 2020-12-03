@@ -4,7 +4,7 @@
 
 Concepts are an important step in distributing work flows in our LOB and in simplifying documentation of cross-cutting concerns.
 
-This concept describes how concepts should be structured in order to homogenise the work with them and to meet the expectations of the readers. This increases the degree of reusability and allows you to use concepts from this repository in your project. Furthermore, concepts from projects can be distributed in this repository.
+This concept describes how concepts should be structured in order to homogenise the work with them and to meet the expectations of the readers. This increases the degree of reusability and allows you to use concepts from this repository in your project as guidance and documentation. Furthermore, concepts from projects can be distributed in this repository.
 
 ## Context
 
