@@ -31,6 +31,8 @@ Hints, reads and tips for me.
   - Functional
     - [Composition](./design_pattern/functional/composition_pattern.md)
     - [Currying](./design_pattern/functional/currying_pattern.md)
+- Architectures
+  - [Domain driven design](./architectures/domain_driven_design.md)
 - Architectural pattern
   - [Event sourcing](./architectural_pattern/event_sourcing.md)
   - [Feature flags](./architectural_pattern/feature_flags.md)
