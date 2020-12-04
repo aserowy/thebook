@@ -1,54 +1,31 @@
-# IDE
+# Table of content
 
-- [Visual Studio](./ide/visual_studio.md)
-
-# Languages
-
-- [C#](./languages/csharp.md)
-  - [Dispose pattern](./languages/csharp/dispose_pattern.md)
-  - [Testing azure functions in CI/CD](https://www.davideguida.com/testing-azure-functions-on-azure-devops-part-1-setup/)
-  - [Testing rules](./languages/csharp/testing_rules.md)
-- [Go](./languages/go.md)
-  - [Array operations](./languages/go/array_operations.md)
-  - [Array tricks](./languages/go/array_tricks.md)
-
-# [SOLID principles](./principles/introduction.md)
-
-# Design pattern
-
-- Behavioral
-  - [Strategy](./design_pattern/behavioral/strategy_pattern.md)
-- Creational
-  - [Builder](./design_pattern/creational/builder_pattern.md)
-- Structural
-  - [Type safe enums](./design_pattern/structural/type_safe_enum_pattern.md)
-- Functional
-  - [Composition](./design_pattern/functional/composition_pattern.md)
-  - [Currying](./design_pattern/functional/currying_pattern.md)
-
-# Architectures
-
-- [Domain driven design](./architectures/domain_driven_design.md)
-
-# Architectural pattern
-
-- [Event sourcing](./architectural_pattern/event_sourcing.md)
-- [Feature flags](./architectural_pattern/feature_flags.md)
-- [Microservices](./architectural_pattern/microservices.md)
-- [Sagas](./architectural_pattern/sagas_pattern.md)
-
-# DevOps
-
-- Virtualization
-  - Vagrant
-    - [Cheat sheet](https://gist.github.com/wpscholar/a49594e2e2b918f4d0c4#file-vagrant-cheat-sheet-md)
-    - [Limitations Hyper-v](https://www.vagrantup.com/docs/providers/hyperv/limitations)
-  - Hyperv
-    - [VM no internet access in Hyper-V](https://www.isunshare.com/blog/fix-vm-no-internet-access-hyper-v-windows-10-2018/)
-- [Azure DevOps](./devops/azure.md)
-- [Git](./devops/git.md)
-
-# Miscellaneous
-
+- [Requirements](requirements/README.md)
+  - [Domain driven design](requirements/domain_driven_design.md)
+- [SOLID principles](solid_principles/README.md)
+- [Design pattern](design_pattern/README.md)
+  - [Strategy](design_pattern/behavioral/strategy_pattern.md)
+  - [Builder](design_pattern/creational/builder_pattern.md)
+  - [Type safe enums](design_pattern/structural/type_safe_enum_pattern.md)
+  - [Composition](design_pattern/functional/composition_pattern.md)
+  - [Currying](design_pattern/functional/currying_pattern.md)
+- [Architectural pattern](architectural_pattern/README.md)
+  - [Event sourcing](architectural_pattern/event_sourcing.md)
+  - [Feature flags](architectural_pattern/feature_flags.md)
+  - [Microservices](architectural_pattern/microservices.md)
+  - [Sagas](architectural_pattern/sagas_pattern.md)
 - [Emailing in dev with smtp4dev](https://github.com/rnwood/smtp4dev)
-  
+
+-----------
+
+- [C#](languages/csharp.md)
+  - [Dispose pattern](languages/csharp/dispose_pattern.md)
+  - [Testing azure functions in CI/CD](https://www.davideguida.com/testing-azure-functions-on-azure-devops-part-1-setup/)
+  - [Testing rules](languages/csharp/testing_rules.md)
+- [Go](languages/go.md)
+  - [Array operations](languages/go/array_operations.md)
+  - [Array tricks](languages/go/array_tricks.md)
+- [Virtualization](virtualization/README.md)
+- [Azure DevOps](devops/azure.md)
+- [Git](devops/git.md)
+- [Visual Studio](ide/visual_studio.md)

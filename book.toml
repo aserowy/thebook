@@ -1,5 +1,6 @@
 [book]
-authors = []
+title = "thebook"
+authors = ["Alexander Serowy"]
 language = "en"
 multilingual = false
 src = "src"
