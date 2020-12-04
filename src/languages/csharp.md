@@ -58,6 +58,7 @@ It should get added that these numbers can barely reached in test projects. A se
 
 ## Testing
 
+- [Emailing in dev with smtp4dev](https://github.com/rnwood/smtp4dev)
 - [Mocking ILogger<>](https://chrissainty.com/unit-testing-ilogger-in-aspnet-core/)
   - Using custom LoggerAdapter as abstraction
   - Adapter calls extension methods of ILogger

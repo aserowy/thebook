@@ -14,13 +14,11 @@
   - [Feature flags](architectural_pattern/feature_flags.md)
   - [Microservices](architectural_pattern/microservices.md)
   - [Sagas](architectural_pattern/sagas_pattern.md)
-- [Emailing in dev with smtp4dev](https://github.com/rnwood/smtp4dev)
 
 -----------
 
 - [C#](languages/csharp.md)
   - [Dispose pattern](languages/csharp/dispose_pattern.md)
-  - [Testing azure functions in CI/CD](https://www.davideguida.com/testing-azure-functions-on-azure-devops-part-1-setup/)
   - [Testing rules](languages/csharp/testing_rules.md)
 - [Go](languages/go.md)
   - [Array operations](languages/go/array_operations.md)

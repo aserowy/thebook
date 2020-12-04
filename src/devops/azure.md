@@ -24,6 +24,10 @@ variables:
   patchVersion: $[counter(variables['majorMinorVersion'], 10)]
 ```
 
+## Testing
+
+- [Testing azure functions in CI/CD](https://www.davideguida.com/testing-azure-functions-on-azure-devops-part-1-setup/)
+
 ## Nuget
 
 - <https://docs.microsoft.com/en-us/azure/devops/pipelines/artifacts/nuget?view=azure-devops&tabs=yaml>
