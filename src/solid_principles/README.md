@@ -21,7 +21,7 @@ SOLID leads to smaller pieces of code and enhances expectations regarding inheri
 ## Principles
 
 - [Single responsibility principle](single_responsibility_principle.md)
-- [Open##closed principle](open_closed_principle.md)
+- [Open closed principle](open_closed_principle.md)
 - [Liskov substitution principle](liskov_substitution_principle.md)
 - [Interface segregation principle](interface_segregation_principle.md)
 - [Dependency inversion principle](dependency_inversion_principle.md)

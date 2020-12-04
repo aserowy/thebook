@@ -31,7 +31,7 @@ It is important to use a documentation template that requires minimal maintenanc
 
 ### Concepts
 
-- [How to write concepts](how_to_write_concepts.md)
+- [How to write concepts](write_concepts.md)
 
 ### Decisions
 
