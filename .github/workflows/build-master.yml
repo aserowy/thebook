@@ -20,7 +20,7 @@ jobs:
       - name: push
         uses: github-actions-x/commit@v2.7
         with:
+          commit-message: 'publish from master'
           github-token: ${{ secrets.GITHUB_TOKEN }}
           push-branch: 'gh-pages'
-          commit-message: 'publish from master'
-          force-add: 'true'
+          rebase: 'true'
