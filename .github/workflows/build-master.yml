@@ -23,4 +23,4 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           push-branch: 'gh-pages'
           commit-message: 'publish from master'
-
+        force-add: 'true'
