@@ -21,6 +21,8 @@ jobs:
         uses: github-actions-x/commit@v2.7
         with:
           commit-message: 'publish from master'
+          email: serowy@hotmail.com 
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          name: aserowy
           push-branch: 'gh-pages'
           rebase: 'true'
