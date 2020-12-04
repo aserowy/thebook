@@ -12,6 +12,6 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
       - name: deploy
-        uses: mhausenblas/mkdocs-deploy-gh-pages@nomaterial
+        uses: actions/mkdocs-ghpages-docker-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
