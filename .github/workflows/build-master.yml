@@ -1,4 +1,4 @@
-name: deploy master
+name: build master
 on:
   push:
     branches:
@@ -12,7 +12,6 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
       - name: deploy
-        uses: mhausenblas/mkdocs-deploy-gh-pages@1.16
+        uses: vinomaster/mkdocs-ghpages-docker-action@v1
         env:
-          GITHUB_ACTOR: aserowy
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
