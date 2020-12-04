@@ -1,4 +1,4 @@
-name: CI
+name: build master
 on:
   push:
     branches:
@@ -17,12 +17,8 @@ jobs:
           mdbook-version: 'latest'
       - name: build
         run: mdbook build
-      - name: push
-        uses: github-actions-x/commit@v2.7
+      - name: deploy
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          commit-message: 'publish from master'
-          email: serowy@hotmail.com 
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          name: aserowy
-          push-branch: 'gh-pages'
-          rebase: 'true'
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./book
