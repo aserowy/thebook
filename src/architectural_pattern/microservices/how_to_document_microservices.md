@@ -10,11 +10,11 @@ It is important to use a documentation template that requires minimal maintenanc
 
 ### A minimalistic approach
 
-![Overview of documentation elements](./images/documenting_microservices_overview.png)
+![Overview of documentation elements](images/documenting_microservices_overview.png)
 
 ### Minimal architectural overview
 
-![Content of minimal architectural overview](./images/documenting_microservices_minimal_overview.png)
+![Content of minimal architectural overview](images/documenting_microservices_minimal_overview.png)
 
 ### Profile per service
 
@@ -31,11 +31,11 @@ It is important to use a documentation template that requires minimal maintenanc
 
 ### Concepts
 
-- [How to write concepts](./how-to_write_concepts.md)
+- [How to write concepts](how_to_write_concepts.md)
 
 ### Decisions
 
-![Mandatory questions to document decisions](./images/documenting_microservices_decision_template.png)
+![Mandatory questions to document decisions](images/documenting_microservices_decision_template.png)
 
 ## Example
 
