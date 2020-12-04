@@ -17,3 +17,11 @@ SOLID leads to smaller pieces of code and enhances expectations regarding inheri
 - Increased maintainability
 - Enhanced flexibility
 - Unit-testability
+
+## Principles
+
+- [Single responsibility principle](./principles/single_responsibility_principle.md)
+- [Open##closed principle](./principles/open_closed_principle.md)
+- [Liskov substitution principle](./principles/liskov_substitution_principle.md)
+- [Interface segregation principle](./principles/interface_segregation_principle.md)
+- [Dependency inversion principle](./principles/dependency_inversion_principle.md)
