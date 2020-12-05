@@ -6,7 +6,6 @@ nav:
 plugins:
   - awesome-pages:
   - search:
-  - tags:
 repo_url: https://github.com/aserowy/thebook/
 site_author: Alexander Serowy
 site_name: thebook
