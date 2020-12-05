@@ -1,5 +1,5 @@
 ---
-title: Testing rules
+title: How to test rules in C#
 authors:
     - Alexander Serowy
 ---

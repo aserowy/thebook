@@ -1,0 +1,8 @@
+arrange:
+  - README.md
+  - requirements
+  - architectural_pattern
+  - principles
+  - design_pattern
+  - concepts
+  - ...

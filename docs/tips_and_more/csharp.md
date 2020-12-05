@@ -1,5 +1,5 @@
 ---
-title: Csharp
+title: C#
 authors:
     - Alexander Serowy
 ---
@@ -67,4 +67,3 @@ It should get added that these numbers can barely reached in test projects. A se
   - Using custom LoggerAdapter as abstraction
   - Adapter calls extension methods of ILogger
   - Concrete implementation which can be mocked by e.g. moq
-- [Testing rules](./csharp/testing_rules.md)

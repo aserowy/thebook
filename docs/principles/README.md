@@ -1,5 +1,5 @@
 ---
-title: SOLID
+title: Introduction
 authors:
     - Alexander Serowy
 ---

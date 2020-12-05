@@ -1,5 +1,5 @@
 ---
-title: Dispose pattern
+title: How to dispose unsafe in C#
 authors:
     - Alexander Serowy
 ---
