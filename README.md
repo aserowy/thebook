@@ -1,3 +1,3 @@
-# The Book
+# thebook
 
 Hints, reads and tips for me.

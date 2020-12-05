@@ -1,2 +1,28 @@
+edit_uri: blob/master/docs/
+nav:
+  - Requirements:
+    - Domain driven design: requirements/domain_driven_design.md
+  - Architectural pattern:
+    - Event sourcing: architectural_pattern/event_sourcing.md
+    - Feature flags: architectural_pattern/feature_flags.md
+    - Microservices: architectural_pattern/microservices.md
+    - Sagas: architectural_pattern/sagas_pattern.md
+  - SOLID: principles/README.md
+  - Design pattern: design_pattern/README.md
+  - Unrelated:
+    - C#:
+      - Overview: languages/csharp.md
+      - Dispose pattern: languages/csharp/dispose_pattern.md
+      - Testing rules: languages/csharp/testing_rules.md
+    - Go:
+      - Overview: languages/go.md
+      - Array operations: languages/go/array_operations.md
+      - Array tricks: languages/go/array_tricks.md
+    - Virtualization: virtualization/README.md
+    - Azure DevOps: devops/azure.md
+    - Git: devops/git.md
+    - Visual Studio: ide/visual_studio.md
+repo_url: https://github.com/aserowy/thebook/
+site_author: Alexander Serowy
 site_name: thebook
 theme: readthedocs
