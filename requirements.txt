@@ -1,1 +1,2 @@
 mkdocs-awesome-pages-plugin >= 2.4.0
+git+https://github.com/jldiaz/mkdocs-plugin-tags.git
