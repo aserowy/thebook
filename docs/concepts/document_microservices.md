@@ -3,6 +3,8 @@ title: How to document microservices
 summary: A concept to document microservices a in lean and precise way.
 authors:
     - Alexander Serowy
+tags:
+    - concept
 ---
 
 ## Motivation

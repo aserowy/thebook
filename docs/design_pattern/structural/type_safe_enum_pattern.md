@@ -1,4 +1,8 @@
-# Type safe enum pattern
+---
+title: Type safe enum pattern
+authors:
+    - Alexander Serowy
+---
 
 ## Reference implementation
 

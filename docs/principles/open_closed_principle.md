@@ -1,4 +1,8 @@
-# Open-closed principle
+---
+title: Open-closed principle
+authors:
+    - Alexander Serowy
+---
 
 ## Definition
 

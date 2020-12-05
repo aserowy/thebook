@@ -1,4 +1,8 @@
-# SOLID
+---
+title: SOLID
+authors:
+    - Alexander Serowy
+---
 
 ## What is solid
 

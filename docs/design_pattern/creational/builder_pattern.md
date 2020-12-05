@@ -1,4 +1,8 @@
-# Builder pattern
+---
+title: Builder pattern
+authors:
+    - Alexander Serowy
+---
 
 ## Sample implementation
 

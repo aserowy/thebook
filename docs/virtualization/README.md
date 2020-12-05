@@ -1,4 +1,8 @@
-# Virtualization
+---
+title: Virtualization
+authors:
+    - Alexander Serowy
+---
 
 ## Vagrant
 

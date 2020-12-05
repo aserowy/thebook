@@ -1,4 +1,8 @@
-# Git
+---
+title: Git
+authors:
+    - Alexander Serowy
+---
 
 ## .gitignore
 

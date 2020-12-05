@@ -1,4 +1,8 @@
-# Dispose pattern
+---
+title: Dispose pattern
+authors:
+    - Alexander Serowy
+---
 
 Handling dispose of handles and managed objects. The pattern uses [IDisposable](https://docs.microsoft.com/en-us/dotnet/api/system.idisposable) and ensures a clean way to handle dispositions and deconstructions.
 

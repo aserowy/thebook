@@ -1,4 +1,8 @@
-# Array Operations
+---
+title: Array Operations
+authors:
+    - Alexander Serowy
+---
 
 ## AppendVector
 

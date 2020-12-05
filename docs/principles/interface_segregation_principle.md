@@ -1,4 +1,8 @@
-# Interface segregation principle
+---
+title: Interface segregation principle
+authors:
+    - Alexander Serowy
+---
 
 ## Definition
 

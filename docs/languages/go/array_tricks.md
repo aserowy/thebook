@@ -1,4 +1,8 @@
-# Array tricks
+---
+title: Array tricks
+authors:
+    - Alexander Serowy
+---
 
 ## Filtering without allocating
 

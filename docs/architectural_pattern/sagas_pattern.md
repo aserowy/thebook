@@ -1,4 +1,8 @@
-# Sagas pattern
+---
+title: Sagas pattern
+authors:
+    - Alexander Serowy
+---
 
 ## Reference implementation
 

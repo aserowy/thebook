@@ -1,4 +1,8 @@
-# Design pattern
+---
+title: Design pattern
+authors:
+    - Alexander Serowy
+---
 
 ## Behavioral
 

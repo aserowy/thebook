@@ -1,4 +1,8 @@
-# Azure DevOps
+---
+title: Azure DevOps
+authors:
+    - Alexander Serowy
+---
 
 ## Common mistakes
 

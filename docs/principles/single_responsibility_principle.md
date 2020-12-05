@@ -1,4 +1,8 @@
-# Single Responsibility principle
+---
+title: Single Responsibility principle
+authors:
+    - Alexander Serowy
+---
 
 ## Definition
 

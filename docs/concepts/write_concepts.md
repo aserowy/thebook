@@ -3,6 +3,8 @@ title: How to write concepts
 summary: A concept to write homogenised and reuseable concepts.
 authors:
     - Alexander Serowy
+tags:
+    - concept
 ---
 
 ## Motivation
@@ -47,6 +49,8 @@ summary: A brief description of my document.
 authors:
     - Alexander Serowy
     - Tom Tucker
+tags:
+    - concept
 ---
 ```
 

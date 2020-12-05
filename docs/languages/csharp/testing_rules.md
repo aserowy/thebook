@@ -1,4 +1,8 @@
-# Testing rules
+---
+title: Testing rules
+authors:
+    - Alexander Serowy
+---
 
 ## What to achive
 

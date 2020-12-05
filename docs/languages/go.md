@@ -1,4 +1,8 @@
-# Go
+---
+title: Go
+authors:
+    - Alexander Serowy
+---
 
 ## Inlining static files
 

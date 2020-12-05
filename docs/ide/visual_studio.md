@@ -1,4 +1,8 @@
-# Visual Studio
+---
+title: Visual Studio
+authors:
+    - Alexander Serowy
+---
 
 ## Code cleanup
 

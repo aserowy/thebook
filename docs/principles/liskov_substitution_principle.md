@@ -1,4 +1,8 @@
-# Liskov substitution principle
+---
+title: Liskov substitution principle
+authors:
+    - Alexander Serowy
+---
 
 ## Definition
 

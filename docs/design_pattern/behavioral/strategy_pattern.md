@@ -1,4 +1,8 @@
-# Strategy pattern
+---
+title: Strategy pattern
+authors:
+    - Alexander Serowy
+---
 
 ## Sample implementations
 

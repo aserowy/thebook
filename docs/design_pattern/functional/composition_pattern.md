@@ -1,4 +1,8 @@
-# Composition pattern
+---
+title: Composition pattern
+authors:
+    - Alexander Serowy
+---
 
 ## Reference implementation
 

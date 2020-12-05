@@ -1,4 +1,8 @@
-# Dependency inversion principle
+---
+title: Dependency inversion principle
+authors:
+    - Alexander Serowy
+---
 
 ## Definition
 

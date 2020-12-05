@@ -1,4 +1,8 @@
-# Event sourcing
+---
+title: Event sourcing
+authors:
+    - Alexander Serowy
+---
 
 ## Further reads
 

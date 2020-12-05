@@ -1,4 +1,8 @@
-# Domain driven design
+---
+title: Domain driven design
+authors:
+    - Alexander Serowy
+---
 
 ## Refactoring methods
 
