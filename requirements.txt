@@ -1,1 +1,1 @@
-mkdocs-awesome-pages-plugin
+mkdocs-awesome-pages-plugin >= 2.4.0
