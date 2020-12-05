@@ -41,6 +41,11 @@ authors:
 
 - [VM no internet access in Hyper-V](https://www.isunshare.com/blog/fix-vm-no-internet-access-hyper-v-windows-10-2018/)
 
+## Performance
+
+- <https://benchmarksgame-team.pages.debian.net/benchmarksgame/>
+- <https://www.techempower.com/benchmarks/>
+
 ## Vagrant
 
 - [Cheat sheet](https://gist.github.com/wpscholar/a49594e2e2b918f4d0c4#file-vagrant-cheat-sheet-md)
