@@ -1,4 +1,9 @@
-# How to write concepts
+---
+title: How to write concepts
+summary: A concept to write homogenised and reuseable concepts.
+authors:
+    - Alexander Serowy
+---
 
 ## Motivation
 
@@ -33,15 +38,16 @@ To meet expectations, first-level headings should be similar in all concepts. Of
 | How to    | example, application, step by step |
 | What else | next steps, extensions, feedback, outlook |
 
-At the end of the document, a section for meta-information is defined, in which the version and the author are specified.
+At the start of the document, a section for meta-information is defined, in which the version and the author are specified.
 
-```markdown
-## Meta
-
-| Meta    |     |
-| ---     | --- |
-| editor  | Alexander Serowy |
-| version | 0.1 |
+```yaml
+---
+title: My Document
+summary: A brief description of my document.
+authors:
+    - Alexander Serowy
+    - Tom Tucker
+---
 ```
 
 [1]: <https://www.amazon.de/-/en/Uwe-Vigenschow/dp/3864906970> "Soft Skills für Softwareentwickler"
@@ -61,10 +67,3 @@ In the last step, we then write about related topics and alternative solutions, 
 ## Next steps
 
 Using this template we can achieve a high degree of reusability for concepts. If you use concepts as documentation in projects, you are welcome to make them available to everyone in this repository!
-
-## Meta
-
-| Meta    |     |
-| ---     | --- |
-| editor  | Alexander Serowy |
-| version | 0.1 |
