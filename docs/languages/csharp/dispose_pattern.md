@@ -1,6 +1,6 @@
 # Dispose pattern
 
-Handling dispose of \_handles and managed objects. The pattern uses [IDisposable](https://docs.microsoft.com/en-us/dotnet/api/system.idisposable) and ensures a clean way to \_handle dispositions and deconstructions.
+Handling dispose of handles and managed objects. The pattern uses [IDisposable](https://docs.microsoft.com/en-us/dotnet/api/system.idisposable) and ensures a clean way to handle dispositions and deconstructions.
 
 ```csharp
 using System;
