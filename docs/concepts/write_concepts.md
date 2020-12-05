@@ -56,7 +56,7 @@ authors:
 
 In our example we write a concept to document microservices. In the first step we write the motivation why the concept was created in the first place.
 
-> Documentation is often an uninvited guest to developers. In order to increase the acceptance of up-to-date documentation, we provide a slightly weighty way to capture these systems...".
+> "Documentation is often an uninvited guest to developers. In order to increase the acceptance of up-to-date documentation, we provide a slightly weighty way to capture these systems..."
 
 After the motivation, we present in our concept how exactly the documentation is structured and which content elements we should describe. In addition, background and terminology are described and specified here as well.
 
