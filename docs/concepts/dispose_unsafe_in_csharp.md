@@ -1,5 +1,5 @@
 ---
-title: How to dispose unsafe in C#
+title: How to dispose 'unsafe' in C#
 authors:
     - Alexander Serowy
 ---

@@ -4,13 +4,23 @@ authors:
     - Alexander Serowy
 ---
 
-## What to achive
+## Motivation
 
-To test rules, it is useful to make test data of specific rules available to all other rules. This way not only positive but also negative tests can be performed for all rules. In order to ensure that for individual rules the results for the test date and the respective rule are also run through when the test data is extended, the generation of test data and test results must be separated.
+To test rules, it is useful to make test data of specific rules available to all other rules. This way not only positive but also negative tests can be performed for all rules.
 
-## Sample implementation for Xunit
+## Context
 
-On the one hand, we generate test unspecific test data.
+In order to ensure that for individual rules the results for the test date and the respective rule are also run through when the test data is extended, the generation of test data and test results must be separated. Thus, leading to a resolver for test data only. The resolver returns a dictionary of test data type and data, to examine which test data resulted in e.g. failed tests.
+
+To ensure reusability for tests the enumeration is implemented as an abstract class, which yields each key value pair and checks if the pair is specified in our test or fails otherwise.
+
+In the test class a test data collection gets implemented and inherets from the given abstract class. It holds the relationship between test data type and expected result as an array of objects.
+
+With ``Theory`` and ``ClassData(typeof())`` each yield can now be tested against the given test case.
+
+## Step by step
+
+At first we create the data resolver to generate test data with a test data type.
 
 ```csharp
 internal sealed class AnalyzerMockTestDataResolver
@@ -125,3 +135,7 @@ public class MultipleVersionsWithEqualIdentifierRuleTests
     }
 }
 ```
+
+## Next steps
+
+For a resuable structure you should use dependency injection to decouple test data generation and ``GetEnumerator()``.
