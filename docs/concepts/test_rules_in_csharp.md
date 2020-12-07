@@ -2,6 +2,8 @@
 title: How to test rules in C#
 authors:
     - Alexander Serowy
+tags:
+    - concept
 ---
 
 ## Motivation
