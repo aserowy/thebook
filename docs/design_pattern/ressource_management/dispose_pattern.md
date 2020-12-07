@@ -1,8 +1,10 @@
 ---
-title: How to dispose 'unsafe' in C#
+title: Dispose pattern
 authors:
     - Alexander Serowy
 ---
+
+## How to dispose 'unmanaged' in C\#
 
 Handling dispose of handles and managed objects. The pattern uses [IDisposable](https://docs.microsoft.com/en-us/dotnet/api/system.idisposable) and ensures a clean way to handle dispositions and deconstructions.
 
