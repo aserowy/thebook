@@ -12,7 +12,7 @@ A class is closed, since it may be compiled, stored in a library, baselined, and
 
 ## Guidelines
 
-- Switch cases and „if else if“ chains should be kept at a bare minimum
-- Use pattern, e.g. strategy, to avoid inheritance
-- Try to anticipate future extensions, but keep KISS and YAGNI in mind
-- Don't overestimate your ability to anticipate
+- Keep switch cases and „if else if“ chains at a bare minimum​
+- Use pattern, e.g. Strategy, to avoid inheritance ​
+- Try to anticipate future extensions, but keep KISS and YAGNI in mind​
+- Don't overestimate your ability to anticipate ​

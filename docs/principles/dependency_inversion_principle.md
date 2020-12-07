@@ -13,6 +13,6 @@ Dependency Inversion is the strategy of depending upon interfaces or abstract fu
 ## Guidelines
 
 - Use dependency injection (IoC) with interfaces
-- Use only construcor injection
+- Use only construcor injection (where applicable)
 - Only use "new" in your methods for logic containing classes if control over the object life cycle is needed
 - Avoid the service locator anti pattern

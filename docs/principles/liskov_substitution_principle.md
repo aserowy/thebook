@@ -17,7 +17,7 @@ It is a semantic rather than merely syntactic relation, because it intends to gu
 
 ## Guidelines
 
-Implementing an interface/base class should lead to two questions:
+Ask yourself the following questions when implementing interfaces/base classes:​
 
-- Is every member/method suitable for each concrete implementation?
+- Is every member/method suitable for each concrete implementation?​
 - Is the naming of the interface/base class open enough for later implementations?
