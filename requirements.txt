@@ -1,1 +1,2 @@
 mkdocs-awesome-pages-plugin >= 2.4.0
+mkdocs-section-index >= 0.2.1
