@@ -17,7 +17,13 @@ It is important to use a documentation template that requires minimal maintenanc
 
 ### A minimalistic approach
 
+This approach is structured into four documentation types to describe the macro and micro architectures of a project.
+
+At first the minimal architecture overview provides insights about the mission and context of the architecture. Furthermore, specifications and objectives of the architecture are also defined. Non-functional requirements form an important component in order to be able to make concrete decisions for the architecture.
+
 ![Overview of documentation elements](images/documenting_microservices_overview.png)
+
+
 
 ### Minimal architecture overview
 
