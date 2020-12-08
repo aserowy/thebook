@@ -33,9 +33,17 @@ In order to also document the microarchitecture of the microservices, a profile 
 
 ![Content of minimal architectural overview](images/documenting_microservices_minimal_overview.png)
 
-### Profile per service
+### Decisions
 
-#### Typical contents for a service profile
+![Mandatory questions to document decisions](images/documenting_microservices_decision_template.png)
+
+### Concepts
+
+- [How to write concepts](write_concepts.md)
+
+### Profiles
+
+Typical contents for a service profile:
 
 - Responsibility i.e. what does the service do
 - Special requirements
@@ -45,14 +53,6 @@ In order to also document the microarchitecture of the microservices, a profile 
 - contact person
 - Plans for the future
 - Technical debts
-
-### Concepts
-
-- [How to write concepts](write_concepts.md)
-
-### Decisions
-
-![Mandatory questions to document decisions](images/documenting_microservices_decision_template.png)
 
 ## Example
 

@@ -1,4 +1,7 @@
 edit_uri: blob/master/docs/
+markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.superfences
 nav:
   - Introduction: README.md
   - ...
