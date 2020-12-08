@@ -14,3 +14,5 @@ repo_url: https://github.com/aserowy/thebook/
 site_author: Alexander Serowy
 site_name: thebook
 theme: material
+  features:
+    - navigation.instant
