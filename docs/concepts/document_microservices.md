@@ -19,7 +19,7 @@ It is important to use a documentation template that requires minimal maintenanc
 
 ![Overview of documentation elements](images/documenting_microservices_overview.png)
 
-### Minimal architectural overview
+### Minimal architecture overview
 
 ![Content of minimal architectural overview](images/documenting_microservices_minimal_overview.png)
 
