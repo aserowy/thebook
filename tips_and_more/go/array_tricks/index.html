@@ -897,25 +897,13 @@
           
           
 
-
-  <li class="md-nav__item">
-    <a href="../../visual_studio/" class="md-nav__link">
-      Visual Studio
-    </a>
-  </li>
-
-        
-          
-          
-          
-
   
 
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8-3" type="checkbox" id="nav-8-3" checked>
-    <label class="md-nav__link" for="nav-8-3">
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8-2" type="checkbox" id="nav-8-2" checked>
+    <label class="md-nav__link" for="nav-8-2">
       <span class="md-nav__icon md-icon"></span>
       
         <a href="../" style="display: block">
@@ -924,7 +912,7 @@
       </a>
     </label>
     <nav class="md-nav" aria-label="Go" data-md-level="2">
-      <label class="md-nav__title" for="nav-8-3">
+      <label class="md-nav__title" for="nav-8-2">
         <span class="md-nav__icon md-icon"></span>
         
           <a href="../" style="display: block">
@@ -1016,6 +1004,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../visual_studio/" class="md-nav__link">
+      Visual Studio
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1096,33 +1096,32 @@
                 
                 <h2 id="filtering-without-allocating">Filtering without allocating</h2>
 <p>This trick uses the fact that a slice shares the same backing array and capacity as the original, so the storage is reused for the filtered slice. Of course, the original contents are modified.</p>
-<pre><code class="language-go">b := a[:0]
-for _, x := range a {
-    if f(x) {
-        b = append(b, x)
-    }
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">b</span> <span class="o">:=</span> <span class="nx">a</span><span class="p">[:</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">x</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">a</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="nx">f</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">b</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">b</span><span class="p">,</span> <span class="nx">x</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="reversing">Reversing</h2>
 <p>To replace the contents of a slice with the same elements but in reverse order:</p>
-<pre><code class="language-go">
-for i := len(a)/2-1; i &gt;= 0; i-- {
-    opp := len(a)-1-i
-    a[i], a[opp] = a[opp], a[i]
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="nb">len</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">--</span> <span class="p">{</span>
+    <span class="nx">opp</span> <span class="o">:=</span> <span class="nb">len</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="nx">i</span>
+    <span class="nx">a</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="nx">a</span><span class="p">[</span><span class="nx">opp</span><span class="p">]</span> <span class="p">=</span> <span class="nx">a</span><span class="p">[</span><span class="nx">opp</span><span class="p">],</span> <span class="nx">a</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>The same thing, except with two indices:</p>
-<pre><code class="language-go">for left, right := 0, len(a)-1; left &lt; right; left, right = left+1, right-1 {
-    a[left], a[right] = a[right], a[left]
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="nx">left</span><span class="p">,</span> <span class="nx">right</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="nx">left</span> <span class="p">&lt;</span> <span class="nx">right</span><span class="p">;</span> <span class="nx">left</span><span class="p">,</span> <span class="nx">right</span> <span class="p">=</span> <span class="nx">left</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nx">right</span><span class="o">-</span><span class="mi">1</span> <span class="p">{</span>
+    <span class="nx">a</span><span class="p">[</span><span class="nx">left</span><span class="p">],</span> <span class="nx">a</span><span class="p">[</span><span class="nx">right</span><span class="p">]</span> <span class="p">=</span> <span class="nx">a</span><span class="p">[</span><span class="nx">right</span><span class="p">],</span> <span class="nx">a</span><span class="p">[</span><span class="nx">left</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="shuffling">Shuffling</h2>
 <p>Implementation of Fisher–Yates algorithm:</p>
-<pre><code class="language-go">for i := len(a) - 1; i &gt; 0; i-- {
-    j := rand.Intn(i + 1)
-    a[i], a[j] = a[j], a[i]
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="nb">len</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&gt;</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">--</span> <span class="p">{</span>
+    <span class="nx">j</span> <span class="o">:=</span> <span class="nx">rand</span><span class="p">.</span><span class="nx">Intn</span><span class="p">(</span><span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="nx">a</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="nx">a</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="p">=</span> <span class="nx">a</span><span class="p">[</span><span class="nx">j</span><span class="p">],</span> <span class="nx">a</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
                 
                   
                 
@@ -1158,13 +1157,13 @@ for i := len(a)/2-1; i &gt;= 0; i-- {
           </a>
         
         
-          <a href="../../../links/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../visual_studio/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Links
+                Visual Studio
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

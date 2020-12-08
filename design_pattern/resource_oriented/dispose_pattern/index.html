@@ -938,22 +938,10 @@
           
 
 
-  <li class="md-nav__item">
-    <a href="../../../tips_and_more/visual_studio/" class="md-nav__link">
-      Visual Studio
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
   <li class="md-nav__item md-nav__item--nested">
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8-3" type="checkbox" id="nav-8-3" >
-    <label class="md-nav__link" for="nav-8-3">
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8-2" type="checkbox" id="nav-8-2" >
+    <label class="md-nav__link" for="nav-8-2">
       <span class="md-nav__icon md-icon"></span>
       
         <a href="../../../tips_and_more/go/" style="display: block">
@@ -962,7 +950,7 @@
       </a>
     </label>
     <nav class="md-nav" aria-label="Go" data-md-level="2">
-      <label class="md-nav__title" for="nav-8-3">
+      <label class="md-nav__title" for="nav-8-2">
         <span class="md-nav__icon md-icon"></span>
         
           <a href="../../../tips_and_more/go/" style="display: block">
@@ -999,6 +987,18 @@
         
       </ul>
     </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tips_and_more/visual_studio/" class="md-nav__link">
+      Visual Studio
+    </a>
   </li>
 
         
@@ -1068,99 +1068,99 @@
                 
                 <h2 id="how-to-dispose-unmanaged-in-c">How to dispose 'unmanaged' in C#</h2>
 <p>Handling dispose of handles and managed objects. The pattern uses <a href="https://docs.microsoft.com/en-us/dotnet/api/system.idisposable">IDisposable</a> and ensures a clean way to handle dispositions and deconstructions.</p>
-<pre><code class="language-csharp">using System;
-using System.ComponentModel;
+<div class="highlight"><pre><span></span><code><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.ComponentModel</span><span class="p">;</span>
 
-// The following example demonstrates how to create
-// a resource class that implements the IDisposable interface
-// and the IDisposable.Dispose method.
+<span class="c1">// The following example demonstrates how to create</span>
+<span class="c1">// a resource class that implements the IDisposable interface</span>
+<span class="c1">// and the IDisposable.Dispose method.</span>
 
-public class DisposeExample
-{
-    // A base class that implements IDisposable.
-    // By implementing IDisposable, you are announcing that
-    // instances of this type allocate scarce resources.
-    public class MyResource: IDisposable
-    {
-        // Pointer to an external unmanaged resource.
-        private IntPtr _handle;
-        // Other managed resource this class uses.
-        private Component _component = new Component();
-        // Track whether Dispose has been called.
-        private bool _disposed = false;
+<span class="k">public</span> <span class="k">class</span> <span class="nc">DisposeExample</span>
+<span class="p">{</span>
+    <span class="c1">// A base class that implements IDisposable.</span>
+    <span class="c1">// By implementing IDisposable, you are announcing that</span>
+    <span class="c1">// instances of this type allocate scarce resources.</span>
+    <span class="k">public</span> <span class="k">class</span> <span class="nc">MyResource</span><span class="p">:</span> <span class="n">IDisposable</span>
+    <span class="p">{</span>
+        <span class="c1">// Pointer to an external unmanaged resource.</span>
+        <span class="k">private</span> <span class="n">IntPtr</span> <span class="n">_handle</span><span class="p">;</span>
+        <span class="c1">// Other managed resource this class uses.</span>
+        <span class="k">private</span> <span class="n">Component</span> <span class="n">_component</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Component</span><span class="p">();</span>
+        <span class="c1">// Track whether Dispose has been called.</span>
+        <span class="k">private</span> <span class="kt">bool</span> <span class="n">_disposed</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
 
-        // The class constructor.
-        public MyResource(IntPtr handle)
-        {
-            _handle = handle;
-        }
+        <span class="c1">// The class constructor.</span>
+        <span class="k">public</span> <span class="nf">MyResource</span><span class="p">(</span><span class="n">IntPtr</span> <span class="n">handle</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">_handle</span> <span class="p">=</span> <span class="n">handle</span><span class="p">;</span>
+        <span class="p">}</span>
 
-        // Implement IDisposable.
-        // Do not make this method virtual.
-        // A derived class should not be able to override this method.
-        public void Dispose()
-        {
-            Dispose(true);
-            // This object will be cleaned up by the Dispose method.
-            // Therefore, you should call GC.SupressFinalize to
-            // take this object off the finalization queue
-            // and prevent finalization code for this object
-            // from executing a second time.
-            GC.SuppressFinalize(this);
-        }
+        <span class="c1">// Implement IDisposable.</span>
+        <span class="c1">// Do not make this method virtual.</span>
+        <span class="c1">// A derived class should not be able to override this method.</span>
+        <span class="k">public</span> <span class="k">void</span> <span class="nf">Dispose</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="n">Dispose</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
+            <span class="c1">// This object will be cleaned up by the Dispose method.</span>
+            <span class="c1">// Therefore, you should call GC.SupressFinalize to</span>
+            <span class="c1">// take this object off the finalization queue</span>
+            <span class="c1">// and prevent finalization code for this object</span>
+            <span class="c1">// from executing a second time.</span>
+            <span class="n">GC</span><span class="p">.</span><span class="n">SuppressFinalize</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+        <span class="p">}</span>
 
-        // Dispose(bool disposing) executes in two distinct scenarios.
-        // If disposing equals true, the method has been called directly
-        // or indirectly by a user's code. Managed and unmanaged resources
-        // can be disposed.
-        // If disposing equals false, the method has been called by the
-        // runtime from inside the finalizer and you should not reference
-        // other objects. Only unmanaged resources can be disposed.
-        protected virtual void Dispose(bool disposing)
-        {
-            // Check to see if Dispose has already been called.
-            if(!_disposed)
-            {
-                // If disposing equals true, dispose all managed
-                // and unmanaged resources.
-                if(disposing)
-                {
-                    // Dispose managed resources.
-                    _component.Dispose();
-                }
+        <span class="c1">// Dispose(bool disposing) executes in two distinct scenarios.</span>
+        <span class="c1">// If disposing equals true, the method has been called directly</span>
+        <span class="c1">// or indirectly by a user&#39;s code. Managed and unmanaged resources</span>
+        <span class="c1">// can be disposed.</span>
+        <span class="c1">// If disposing equals false, the method has been called by the</span>
+        <span class="c1">// runtime from inside the finalizer and you should not reference</span>
+        <span class="c1">// other objects. Only unmanaged resources can be disposed.</span>
+        <span class="k">protected</span> <span class="k">virtual</span> <span class="k">void</span> <span class="nf">Dispose</span><span class="p">(</span><span class="kt">bool</span> <span class="n">disposing</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="c1">// Check to see if Dispose has already been called.</span>
+            <span class="k">if</span><span class="p">(!</span><span class="n">_disposed</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="c1">// If disposing equals true, dispose all managed</span>
+                <span class="c1">// and unmanaged resources.</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">disposing</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="c1">// Dispose managed resources.</span>
+                    <span class="n">_component</span><span class="p">.</span><span class="n">Dispose</span><span class="p">();</span>
+                <span class="p">}</span>
 
-                // Call the appropriate methods to clean up
-                // unmanaged resources here.
-                // If disposing is false,
-                // only the following code is executed.
-                CloseHandle(_handle);
-                _handle = IntPtr.Zero;
+                <span class="c1">// Call the appropriate methods to clean up</span>
+                <span class="c1">// unmanaged resources here.</span>
+                <span class="c1">// If disposing is false,</span>
+                <span class="c1">// only the following code is executed.</span>
+                <span class="n">CloseHandle</span><span class="p">(</span><span class="n">_handle</span><span class="p">);</span>
+                <span class="n">_handle</span> <span class="p">=</span> <span class="n">IntPtr</span><span class="p">.</span><span class="n">Zero</span><span class="p">;</span>
 
-                // Note disposing has been done.
-                _disposed = true;
-            }
-        }
+                <span class="c1">// Note disposing has been done.</span>
+                <span class="n">_disposed</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
 
-        // Use interop to call the method necessary
-        // to clean up the unmanaged resource.
-        [System.Runtime.InteropServices.DllImport(&quot;Kernel32&quot;)]
-        private extern static Boolean CloseHandle(IntPtr handle);
+        <span class="c1">// Use interop to call the method necessary</span>
+        <span class="c1">// to clean up the unmanaged resource.</span>
+<span class="na">        [System.Runtime.InteropServices.DllImport(&quot;Kernel32&quot;)]</span>
+        <span class="k">private</span> <span class="k">extern</span> <span class="k">static</span> <span class="n">Boolean</span> <span class="nf">CloseHandle</span><span class="p">(</span><span class="n">IntPtr</span> <span class="n">handle</span><span class="p">);</span>
 
-        // Use C# destructor syntax for finalization code.
-        // This destructor will run only if the Dispose method
-        // does not get called.
-        // It gives your base class the opportunity to finalize.
-        // Do not provide destructors in types derived from this class.
-        ~MyResource()
-        {
-            // Do not re-create Dispose clean-up code here.
-            // Calling Dispose(false) is optimal in terms of
-            // readability and maintainability.
-            Dispose(false);
-        }
-    }
-}
-</code></pre>
+        <span class="c1">// Use C# destructor syntax for finalization code.</span>
+        <span class="c1">// This destructor will run only if the Dispose method</span>
+        <span class="c1">// does not get called.</span>
+        <span class="c1">// It gives your base class the opportunity to finalize.</span>
+        <span class="c1">// Do not provide destructors in types derived from this class.</span>
+        <span class="p">~</span><span class="n">MyResource</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="c1">// Do not re-create Dispose clean-up code here.</span>
+            <span class="c1">// Calling Dispose(false) is optimal in terms of</span>
+            <span class="c1">// readability and maintainability.</span>
+            <span class="n">Dispose</span><span class="p">(</span><span class="k">false</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
                 
                   
                 

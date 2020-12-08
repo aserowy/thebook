@@ -952,22 +952,10 @@
           
 
 
-  <li class="md-nav__item">
-    <a href="../../../tips_and_more/visual_studio/" class="md-nav__link">
-      Visual Studio
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
   <li class="md-nav__item md-nav__item--nested">
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8-3" type="checkbox" id="nav-8-3" >
-    <label class="md-nav__link" for="nav-8-3">
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8-2" type="checkbox" id="nav-8-2" >
+    <label class="md-nav__link" for="nav-8-2">
       <span class="md-nav__icon md-icon"></span>
       
         <a href="../../../tips_and_more/go/" style="display: block">
@@ -976,7 +964,7 @@
       </a>
     </label>
     <nav class="md-nav" aria-label="Go" data-md-level="2">
-      <label class="md-nav__title" for="nav-8-3">
+      <label class="md-nav__title" for="nav-8-2">
         <span class="md-nav__icon md-icon"></span>
         
           <a href="../../../tips_and_more/go/" style="display: block">
@@ -1013,6 +1001,18 @@
         
       </ul>
     </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tips_and_more/visual_studio/" class="md-nav__link">
+      Visual Studio
+    </a>
   </li>
 
         
@@ -1095,77 +1095,77 @@
                   <h1>Type safe enum pattern</h1>
                 
                 <h2 id="reference-implementation">Reference implementation</h2>
-<pre><code class="language-csharp">[System.Diagnostics.CodeAnalysis.SuppressMessage(
-    &quot;Design&quot;, &quot;CA1036:Override methods on comparable types&quot;,
-    Justification = &quot;Since Enumeration is abstract, different concrete implementations must not be compareable.&quot;)]
-public abstract class Enumeration : IComparable
-{
-    public string Name { get; private set; }
+<div class="highlight"><pre><span></span><code><span class="na">[System.Diagnostics.CodeAnalysis.SuppressMessage(</span>
+<span class="na">    &quot;Design&quot;, &quot;CA1036:Override methods on comparable types&quot;,</span>
+<span class="na">    Justification = &quot;Since Enumeration is abstract, different concrete implementations must not be compareable.&quot;)]</span>
+<span class="k">public</span> <span class="k">abstract</span> <span class="k">class</span> <span class="nc">Enumeration</span> <span class="p">:</span> <span class="n">IComparable</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Name</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">private</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
 
-    public int Id { get; private set; }
+    <span class="k">public</span> <span class="kt">int</span> <span class="n">Id</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">private</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
 
-    protected Enumeration(int id, string name)
-    {
-        Id = id;
-        Name = name;
-    }
+    <span class="k">protected</span> <span class="nf">Enumeration</span><span class="p">(</span><span class="kt">int</span> <span class="n">id</span><span class="p">,</span> <span class="kt">string</span> <span class="n">name</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Id</span> <span class="p">=</span> <span class="n">id</span><span class="p">;</span>
+        <span class="n">Name</span> <span class="p">=</span> <span class="n">name</span><span class="p">;</span>
+    <span class="p">}</span>
 
-    public override string ToString()
-    {
-        return Name;
-    }
+    <span class="k">public</span> <span class="k">override</span> <span class="kt">string</span> <span class="nf">ToString</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">Name</span><span class="p">;</span>
+    <span class="p">}</span>
 
-    public static IEnumerable&lt;T&gt; GetAll&lt;T&gt;() where T : Enumeration
-    {
-        var fields = typeof(T).GetFields(BindingFlags.Public | BindingFlags.Static | BindingFlags.DeclaredOnly);
+    <span class="k">public</span> <span class="k">static</span> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">GetAll</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;()</span> <span class="k">where</span> <span class="n">T</span> <span class="p">:</span> <span class="n">Enumeration</span>
+    <span class="p">{</span>
+        <span class="kt">var</span> <span class="n">fields</span> <span class="p">=</span> <span class="k">typeof</span><span class="p">(</span><span class="n">T</span><span class="p">).</span><span class="n">GetFields</span><span class="p">(</span><span class="n">BindingFlags</span><span class="p">.</span><span class="n">Public</span> <span class="p">|</span> <span class="n">BindingFlags</span><span class="p">.</span><span class="n">Static</span> <span class="p">|</span> <span class="n">BindingFlags</span><span class="p">.</span><span class="n">DeclaredOnly</span><span class="p">);</span>
 
-        return fields.Select(fld =&gt; fld.GetValue(null)).Cast&lt;T&gt;();
-    }
+        <span class="k">return</span> <span class="n">fields</span><span class="p">.</span><span class="n">Select</span><span class="p">(</span><span class="n">fld</span> <span class="p">=&gt;</span> <span class="n">fld</span><span class="p">.</span><span class="n">GetValue</span><span class="p">(</span><span class="k">null</span><span class="p">)).</span><span class="n">Cast</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;();</span>
+    <span class="p">}</span>
 
-    public static T FromString&lt;T&gt;(string name) where T : Enumeration
-    {
-        return GetAll&lt;T&gt;().Single(enmrtn =&gt; string.Equals(enmrtn.Name, name, StringComparison.OrdinalIgnoreCase));
-    }
+    <span class="k">public</span> <span class="k">static</span> <span class="n">T</span> <span class="n">FromString</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="kt">string</span> <span class="n">name</span><span class="p">)</span> <span class="k">where</span> <span class="n">T</span> <span class="p">:</span> <span class="n">Enumeration</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">GetAll</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;().</span><span class="n">Single</span><span class="p">(</span><span class="n">enmrtn</span> <span class="p">=&gt;</span> <span class="kt">string</span><span class="p">.</span><span class="n">Equals</span><span class="p">(</span><span class="n">enmrtn</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">StringComparison</span><span class="p">.</span><span class="n">OrdinalIgnoreCase</span><span class="p">));</span>
+    <span class="p">}</span>
 
-    public static T FromValue&lt;T&gt;(int value) where T : Enumeration
-    {
-        return GetAll&lt;T&gt;().Single(enmrtn =&gt; enmrtn.Name.Equals(value));
-    }
+    <span class="k">public</span> <span class="k">static</span> <span class="n">T</span> <span class="n">FromValue</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="kt">int</span> <span class="k">value</span><span class="p">)</span> <span class="k">where</span> <span class="n">T</span> <span class="p">:</span> <span class="n">Enumeration</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">GetAll</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;().</span><span class="n">Single</span><span class="p">(</span><span class="n">enmrtn</span> <span class="p">=&gt;</span> <span class="n">enmrtn</span><span class="p">.</span><span class="n">Name</span><span class="p">.</span><span class="n">Equals</span><span class="p">(</span><span class="k">value</span><span class="p">));</span>
+    <span class="p">}</span>
 
-    public int CompareTo(object other)
-    {
-        if (!(other is Enumeration otherValue))
-        {
-            throw new InvalidCastException($&quot;{nameof(other)} is not of type {nameof(Enumeration)}.&quot;);
-        }
+    <span class="k">public</span> <span class="kt">int</span> <span class="nf">CompareTo</span><span class="p">(</span><span class="kt">object</span> <span class="n">other</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(!(</span><span class="n">other</span> <span class="k">is</span> <span class="n">Enumeration</span> <span class="n">otherValue</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nf">InvalidCastException</span><span class="p">(</span><span class="err">$</span><span class="s">&quot;{nameof(other)} is not of type {nameof(Enumeration)}.&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
 
-        if (GetType().Equals(otherValue.GetType()))
-        {
-            throw new InvalidCastException($&quot;{nameof(otherValue)} is not of type {GetType().Name}.&quot;);
-        }
+        <span class="k">if</span> <span class="p">(</span><span class="n">GetType</span><span class="p">().</span><span class="n">Equals</span><span class="p">(</span><span class="n">otherValue</span><span class="p">.</span><span class="n">GetType</span><span class="p">()))</span>
+        <span class="p">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nf">InvalidCastException</span><span class="p">(</span><span class="err">$</span><span class="s">&quot;{nameof(otherValue)} is not of type {GetType().Name}.&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
 
-        return Id.CompareTo(otherValue.Id);
-    }
+        <span class="k">return</span> <span class="n">Id</span><span class="p">.</span><span class="n">CompareTo</span><span class="p">(</span><span class="n">otherValue</span><span class="p">.</span><span class="n">Id</span><span class="p">);</span>
+    <span class="p">}</span>
 
-    public override bool Equals(object obj)
-    {
-        if (!(obj is Enumeration otherValue))
-        {
-            return false;
-        }
+    <span class="k">public</span> <span class="k">override</span> <span class="kt">bool</span> <span class="nf">Equals</span><span class="p">(</span><span class="kt">object</span> <span class="n">obj</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(!(</span><span class="n">obj</span> <span class="k">is</span> <span class="n">Enumeration</span> <span class="n">otherValue</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+        <span class="p">}</span>
 
-        var typeMatches = GetType().Equals(otherValue.GetType());
-        var valueMatches = Id.Equals(otherValue.Id);
+        <span class="kt">var</span> <span class="n">typeMatches</span> <span class="p">=</span> <span class="n">GetType</span><span class="p">().</span><span class="n">Equals</span><span class="p">(</span><span class="n">otherValue</span><span class="p">.</span><span class="n">GetType</span><span class="p">());</span>
+        <span class="kt">var</span> <span class="n">valueMatches</span> <span class="p">=</span> <span class="n">Id</span><span class="p">.</span><span class="n">Equals</span><span class="p">(</span><span class="n">otherValue</span><span class="p">.</span><span class="n">Id</span><span class="p">);</span>
 
-        return typeMatches &amp;&amp; valueMatches;
-    }
+        <span class="k">return</span> <span class="n">typeMatches</span> <span class="p">&amp;&amp;</span> <span class="n">valueMatches</span><span class="p">;</span>
+    <span class="p">}</span>
 
-    public override int GetHashCode()
-    {
-        return Id;
-    }
-}
-</code></pre>
+    <span class="k">public</span> <span class="k">override</span> <span class="kt">int</span> <span class="nf">GetHashCode</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">Id</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="usage">Usage</h2>
 <h2 id="further-reads">Further reads</h2>
 <ul>

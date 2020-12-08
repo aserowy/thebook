@@ -957,22 +957,10 @@
           
 
 
-  <li class="md-nav__item">
-    <a href="../../tips_and_more/visual_studio/" class="md-nav__link">
-      Visual Studio
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
   <li class="md-nav__item md-nav__item--nested">
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8-3" type="checkbox" id="nav-8-3" >
-    <label class="md-nav__link" for="nav-8-3">
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8-2" type="checkbox" id="nav-8-2" >
+    <label class="md-nav__link" for="nav-8-2">
       <span class="md-nav__icon md-icon"></span>
       
         <a href="../../tips_and_more/go/" style="display: block">
@@ -981,7 +969,7 @@
       </a>
     </label>
     <nav class="md-nav" aria-label="Go" data-md-level="2">
-      <label class="md-nav__title" for="nav-8-3">
+      <label class="md-nav__title" for="nav-8-2">
         <span class="md-nav__icon md-icon"></span>
         
           <a href="../../tips_and_more/go/" style="display: block">
@@ -1018,6 +1006,18 @@
         
       </ul>
     </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tips_and_more/visual_studio/" class="md-nav__link">
+      Visual Studio
+    </a>
   </li>
 
         
@@ -1115,112 +1115,112 @@
 <p>With <code>Theory</code> and <code>ClassData(typeof())</code> each yield can now be tested against the given test case.</p>
 <h2 id="step-by-step">Step by step</h2>
 <p>At first we create the data resolver to generate test data with a test data type.</p>
-<pre><code class="language-csharp">internal sealed class AnalyzerMockTestDataResolver
-{
-    public IDictionary&lt;AnalyzerMockTestDataType, IList&lt;ISagaProfileAnalyzer&gt;&gt; Get()
-    {
-        return new Dictionary&lt;AnalyzerMockTestDataType, IList&lt;ISagaProfileAnalyzer&gt;&gt;
-        {
-            {AnalyzerMockTestDataType.NoSagasRegistered,  GetNoSagasRegistered()},
-            {AnalyzerMockTestDataType.ValidAnalyzers,  GetValidAnalyzers()},
-            {AnalyzerMockTestDataType.EqualAnalyzerIdentifier,  GetEqualAnalyzerIdentifier()},
-            {AnalyzerMockTestDataType.EqualVersionIdentifier,  GetEqualVersionIdentifier()},
-            {AnalyzerMockTestDataType.VersionWithoutSteps,  GetVersionWithoutSteps()}
-        };
-    }
-    private static IList&lt;ISagaProfileAnalyzer&gt; GetNoSagasRegistered()
-    {
-        return new List&lt;ISagaProfileAnalyzer&gt;();
-    }
+<div class="highlight"><pre><span></span><code><span class="k">internal</span> <span class="k">sealed</span> <span class="k">class</span> <span class="nc">AnalyzerMockTestDataResolver</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="n">IDictionary</span><span class="p">&lt;</span><span class="n">AnalyzerMockTestDataType</span><span class="p">,</span> <span class="n">IList</span><span class="p">&lt;</span><span class="n">ISagaProfileAnalyzer</span><span class="p">&gt;&gt;</span> <span class="n">Get</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">Dictionary</span><span class="p">&lt;</span><span class="n">AnalyzerMockTestDataType</span><span class="p">,</span> <span class="n">IList</span><span class="p">&lt;</span><span class="n">ISagaProfileAnalyzer</span><span class="p">&gt;&gt;</span>
+        <span class="p">{</span>
+            <span class="p">{</span><span class="n">AnalyzerMockTestDataType</span><span class="p">.</span><span class="n">NoSagasRegistered</span><span class="p">,</span>  <span class="n">GetNoSagasRegistered</span><span class="p">()},</span>
+            <span class="p">{</span><span class="n">AnalyzerMockTestDataType</span><span class="p">.</span><span class="n">ValidAnalyzers</span><span class="p">,</span>  <span class="n">GetValidAnalyzers</span><span class="p">()},</span>
+            <span class="p">{</span><span class="n">AnalyzerMockTestDataType</span><span class="p">.</span><span class="n">EqualAnalyzerIdentifier</span><span class="p">,</span>  <span class="n">GetEqualAnalyzerIdentifier</span><span class="p">()},</span>
+            <span class="p">{</span><span class="n">AnalyzerMockTestDataType</span><span class="p">.</span><span class="n">EqualVersionIdentifier</span><span class="p">,</span>  <span class="n">GetEqualVersionIdentifier</span><span class="p">()},</span>
+            <span class="p">{</span><span class="n">AnalyzerMockTestDataType</span><span class="p">.</span><span class="n">VersionWithoutSteps</span><span class="p">,</span>  <span class="n">GetVersionWithoutSteps</span><span class="p">()}</span>
+        <span class="p">};</span>
+    <span class="p">}</span>
+    <span class="k">private</span> <span class="k">static</span> <span class="n">IList</span><span class="p">&lt;</span><span class="n">ISagaProfileAnalyzer</span><span class="p">&gt;</span> <span class="n">GetNoSagasRegistered</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">ISagaProfileAnalyzer</span><span class="p">&gt;();</span>
+    <span class="p">}</span>
 
-    private static IList&lt;ISagaProfileAnalyzer&gt; GetValidAnalyzers()
-    {
-        var result = new List&lt;ISagaProfileAnalyzer&gt;();
+    <span class="k">private</span> <span class="k">static</span> <span class="n">IList</span><span class="p">&lt;</span><span class="n">ISagaProfileAnalyzer</span><span class="p">&gt;</span> <span class="n">GetValidAnalyzers</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">ISagaProfileAnalyzer</span><span class="p">&gt;();</span>
 
-        var analyzer01 = new SagaProfileAnalyzerMock(&quot;1&quot;);
-        result.Add(analyzer01);
+        <span class="kt">var</span> <span class="n">analyzer01</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SagaProfileAnalyzerMock</span><span class="p">(</span><span class="s">&quot;1&quot;</span><span class="p">);</span>
+        <span class="n">result</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">analyzer01</span><span class="p">);</span>
 
-        analyzer01
-            .AddVersion(&quot;1.1.0&quot;)
-            .AddStep&lt;SagaEvent01, SagaStep01Mock&gt;()
-            .AddStep&lt;SagaEvent02, SagaStep02Mock&gt;();
-...
-</code></pre>
+        <span class="n">analyzer01</span>
+            <span class="p">.</span><span class="n">AddVersion</span><span class="p">(</span><span class="s">&quot;1.1.0&quot;</span><span class="p">)</span>
+            <span class="p">.</span><span class="n">AddStep</span><span class="p">&lt;</span><span class="n">SagaEvent01</span><span class="p">,</span> <span class="n">SagaStep01Mock</span><span class="p">&gt;()</span>
+            <span class="p">.</span><span class="n">AddStep</span><span class="p">&lt;</span><span class="n">SagaEvent02</span><span class="p">,</span> <span class="n">SagaStep02Mock</span><span class="p">&gt;();</span>
+<span class="p">...</span>
+</code></pre></div>
 <p>In order to ensure that all test data is passed through, we provide an abstract provider. This is used to deliver test data and test specific results.</p>
-<pre><code class="language-csharp">[SuppressMessage(
-    &quot;Naming&quot;,
-    &quot;CA1710:Identifiers should have correct suffix&quot;,
-    Justification = &quot;abstract class name should end with base&quot;)]
-public abstract class AnalyzerMockTestDataCollectionBase : IEnumerable&lt;object[]&gt;
-{
-    internal abstract object[]? GetReturnValuesByDataType(AnalyzerMockTestDataType type);
+<div class="highlight"><pre><span></span><code><span class="na">[SuppressMessage(</span>
+<span class="na">    &quot;Naming&quot;,</span>
+<span class="na">    &quot;CA1710:Identifiers should have correct suffix&quot;,</span>
+<span class="na">    Justification = &quot;abstract class name should end with base&quot;)]</span>
+<span class="k">public</span> <span class="k">abstract</span> <span class="k">class</span> <span class="nc">AnalyzerMockTestDataCollectionBase</span> <span class="p">:</span> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="kt">object</span><span class="p">[]&gt;</span>
+<span class="p">{</span>
+    <span class="k">internal</span> <span class="k">abstract</span> <span class="kt">object</span><span class="p">[]?</span> <span class="n">GetReturnValuesByDataType</span><span class="p">(</span><span class="n">AnalyzerMockTestDataType</span> <span class="n">type</span><span class="p">);</span>
 
-    public IEnumerator&lt;object[]&gt; GetEnumerator()
-    {
-        var resolver = new AnalyzerMockTestDataResolver();
-        foreach (var kvp in resolver.Get())
-        {
-            var values = GetReturnValuesByDataType(kvp.Key);
-            if (values is null)
-            {
-                throw new KeyNotFoundException($&quot;{GetType().Name} does not contain &quot; +
-                    $&quot;return values for test data of type &quot; +
-                    $&quot;{Enum.GetName(typeof(AnalyzerMockTestDataType), kvp.Key)}.&quot;);
-            }
+    <span class="k">public</span> <span class="n">IEnumerator</span><span class="p">&lt;</span><span class="kt">object</span><span class="p">[]&gt;</span> <span class="n">GetEnumerator</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="kt">var</span> <span class="n">resolver</span> <span class="p">=</span> <span class="k">new</span> <span class="n">AnalyzerMockTestDataResolver</span><span class="p">();</span>
+        <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">kvp</span> <span class="k">in</span> <span class="n">resolver</span><span class="p">.</span><span class="n">Get</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="kt">var</span> <span class="n">values</span> <span class="p">=</span> <span class="n">GetReturnValuesByDataType</span><span class="p">(</span><span class="n">kvp</span><span class="p">.</span><span class="n">Key</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">values</span> <span class="k">is</span> <span class="k">null</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="k">throw</span> <span class="k">new</span> <span class="nf">KeyNotFoundException</span><span class="p">(</span><span class="err">$</span><span class="s">&quot;{GetType().Name} does not contain &quot;</span> <span class="p">+</span>
+                    <span class="err">$</span><span class="s">&quot;return values for test data of type &quot;</span> <span class="p">+</span>
+                    <span class="err">$</span><span class="s">&quot;{Enum.GetName(typeof(AnalyzerMockTestDataType), kvp.Key)}.&quot;</span><span class="p">);</span>
+            <span class="p">}</span>
 
-            var result = new List&lt;object&gt; { kvp.Value };
-            result.AddRange(values);
+            <span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">object</span><span class="p">&gt;</span> <span class="p">{</span> <span class="n">kvp</span><span class="p">.</span><span class="n">Value</span> <span class="p">};</span>
+            <span class="n">result</span><span class="p">.</span><span class="n">AddRange</span><span class="p">(</span><span class="n">values</span><span class="p">);</span>
 
-            yield return result.ToArray();
-        }
-    }
+            <span class="k">yield</span> <span class="k">return</span> <span class="n">result</span><span class="p">.</span><span class="n">ToArray</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
 
-    IEnumerator IEnumerable.GetEnumerator()
-    {
-        return GetEnumerator();
-    }
-}
-</code></pre>
+    <span class="n">IEnumerator</span> <span class="n">IEnumerable</span><span class="p">.</span><span class="n">GetEnumerator</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nf">GetEnumerator</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Now we can use the base class and include it in our tests.</p>
-<pre><code class="language-csharp">public class MultipleVersionsWithEqualIdentifierRuleTests
-{
-    private MultipleVersionsWithEqualIdentifierRule CreateMultipleVersionsWithEqualIdentifierRule()
-    {
-        return new MultipleVersionsWithEqualIdentifierRule();
-    }
+<div class="highlight"><pre><span></span><code><span class="k">public</span> <span class="k">class</span> <span class="nc">MultipleVersionsWithEqualIdentifierRuleTests</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="n">MultipleVersionsWithEqualIdentifierRule</span> <span class="nf">CreateMultipleVersionsWithEqualIdentifierRule</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">MultipleVersionsWithEqualIdentifierRule</span><span class="p">();</span>
+    <span class="p">}</span>
 
-    private class AnalyzerMockTestDataCollection : AnalyzerMockTestDataCollectionBase
-    {
-        internal override object[]? GetReturnValuesByDataType(AnalyzerMockTestDataType type)
-        {
-            return type switch
-            {
-                AnalyzerMockTestDataType.NoSagasRegistered =&gt; new object[] { 0, 0 },
-                AnalyzerMockTestDataType.ValidAnalyzers =&gt; new object[] { 0, 0 },
-                AnalyzerMockTestDataType.EqualAnalyzerIdentifier =&gt; new object[] { 0, 0 },
-                AnalyzerMockTestDataType.EqualVersionIdentifier =&gt; new object[] { 0, 2 },
-                AnalyzerMockTestDataType.VersionWithoutSteps =&gt; new object[] { 0, 0 },
-                _ =&gt; null
-            };
-        }
-    }
+    <span class="k">private</span> <span class="k">class</span> <span class="nc">AnalyzerMockTestDataCollection</span> <span class="p">:</span> <span class="n">AnalyzerMockTestDataCollectionBase</span>
+    <span class="p">{</span>
+        <span class="k">internal</span> <span class="k">override</span> <span class="kt">object</span><span class="p">[]?</span> <span class="n">GetReturnValuesByDataType</span><span class="p">(</span><span class="n">AnalyzerMockTestDataType</span> <span class="n">type</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="n">type</span> <span class="k">switch</span>
+            <span class="p">{</span>
+                <span class="n">AnalyzerMockTestDataType</span><span class="p">.</span><span class="n">NoSagasRegistered</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="kt">object</span><span class="p">[]</span> <span class="p">{</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span> <span class="p">},</span>
+                <span class="n">AnalyzerMockTestDataType</span><span class="p">.</span><span class="n">ValidAnalyzers</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="kt">object</span><span class="p">[]</span> <span class="p">{</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span> <span class="p">},</span>
+                <span class="n">AnalyzerMockTestDataType</span><span class="p">.</span><span class="n">EqualAnalyzerIdentifier</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="kt">object</span><span class="p">[]</span> <span class="p">{</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span> <span class="p">},</span>
+                <span class="n">AnalyzerMockTestDataType</span><span class="p">.</span><span class="n">EqualVersionIdentifier</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="kt">object</span><span class="p">[]</span> <span class="p">{</span> <span class="m">0</span><span class="p">,</span> <span class="m">2</span> <span class="p">},</span>
+                <span class="n">AnalyzerMockTestDataType</span><span class="p">.</span><span class="n">VersionWithoutSteps</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="kt">object</span><span class="p">[]</span> <span class="p">{</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span> <span class="p">},</span>
+                <span class="n">_</span> <span class="p">=&gt;</span> <span class="k">null</span>
+            <span class="p">};</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
 
-    [Theory]
-    [ClassData(typeof(AnalyzerMockTestDataCollection))]
-    internal void Validate(IList&lt;ISagaProfileAnalyzer&gt; analyzers, int countWarnings, int countExceptions)
-    {
-        // Arrange
-        var multipleVersionsWithEqualIdentifierRule = CreateMultipleVersionsWithEqualIdentifierRule();
+<span class="na">    [Theory]</span>
+<span class="na">    [ClassData(typeof(AnalyzerMockTestDataCollection))]</span>
+    <span class="k">internal</span> <span class="k">void</span> <span class="nf">Validate</span><span class="p">(</span><span class="n">IList</span><span class="p">&lt;</span><span class="n">ISagaProfileAnalyzer</span><span class="p">&gt;</span> <span class="n">analyzers</span><span class="p">,</span> <span class="kt">int</span> <span class="n">countWarnings</span><span class="p">,</span> <span class="kt">int</span> <span class="n">countExceptions</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Arrange</span>
+        <span class="kt">var</span> <span class="n">multipleVersionsWithEqualIdentifierRule</span> <span class="p">=</span> <span class="n">CreateMultipleVersionsWithEqualIdentifierRule</span><span class="p">();</span>
 
-        // Act
-        var (warnings, exceptions) = multipleVersionsWithEqualIdentifierRule.Validate(analyzers);
+        <span class="c1">// Act</span>
+        <span class="kt">var</span> <span class="p">(</span><span class="n">warnings</span><span class="p">,</span> <span class="n">exceptions</span><span class="p">)</span> <span class="p">=</span> <span class="n">multipleVersionsWithEqualIdentifierRule</span><span class="p">.</span><span class="n">Validate</span><span class="p">(</span><span class="n">analyzers</span><span class="p">);</span>
 
-        // Assert
-        Assert.Equal(countWarnings, warnings?.Count() ?? 0);
-        Assert.Equal(countExceptions, exceptions?.Count() ?? 0);
-    }
-}
-</code></pre>
+        <span class="c1">// Assert</span>
+        <span class="n">Assert</span><span class="p">.</span><span class="n">Equal</span><span class="p">(</span><span class="n">countWarnings</span><span class="p">,</span> <span class="n">warnings</span><span class="p">?.</span><span class="n">Count</span><span class="p">()</span> <span class="p">??</span> <span class="m">0</span><span class="p">);</span>
+        <span class="n">Assert</span><span class="p">.</span><span class="n">Equal</span><span class="p">(</span><span class="n">countExceptions</span><span class="p">,</span> <span class="n">exceptions</span><span class="p">?.</span><span class="n">Count</span><span class="p">()</span> <span class="p">??</span> <span class="m">0</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="next-steps">Next steps</h2>
 <p>For a resuable structure you should use dependency injection to decouple test data generation and <code>GetEnumerator()</code>.</p>
                 

@@ -897,25 +897,13 @@
           
           
 
-
-  <li class="md-nav__item">
-    <a href="../../visual_studio/" class="md-nav__link">
-      Visual Studio
-    </a>
-  </li>
-
-        
-          
-          
-          
-
   
 
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8-3" type="checkbox" id="nav-8-3" checked>
-    <label class="md-nav__link" for="nav-8-3">
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8-2" type="checkbox" id="nav-8-2" checked>
+    <label class="md-nav__link" for="nav-8-2">
       <span class="md-nav__icon md-icon"></span>
       
         <a href="../" style="display: block">
@@ -924,7 +912,7 @@
       </a>
     </label>
     <nav class="md-nav" aria-label="Go" data-md-level="2">
-      <label class="md-nav__title" for="nav-8-3">
+      <label class="md-nav__title" for="nav-8-2">
         <span class="md-nav__icon md-icon"></span>
         
           <a href="../" style="display: block">
@@ -1100,6 +1088,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../visual_studio/" class="md-nav__link">
+      Visual Studio
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1263,86 +1263,86 @@
                   <h1>Array Operations</h1>
                 
                 <h2 id="appendvector">AppendVector</h2>
-<pre><code class="language-go">a = append(a, b...)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">a</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="o">...</span><span class="p">)</span>
+</code></pre></div>
 <h2 id="copy">Copy</h2>
-<pre><code class="language-go">b = make([]T, len(a))
-copy(b, a)
-// or
-b = append([]T(nil), a...)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">b</span> <span class="p">=</span> <span class="nb">make</span><span class="p">([]</span><span class="nx">T</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nx">a</span><span class="p">))</span>
+<span class="nb">copy</span><span class="p">(</span><span class="nx">b</span><span class="p">,</span> <span class="nx">a</span><span class="p">)</span>
+<span class="c1">// or</span>
+<span class="nx">b</span> <span class="p">=</span> <span class="nb">append</span><span class="p">([]</span><span class="nx">T</span><span class="p">(</span><span class="kc">nil</span><span class="p">),</span> <span class="nx">a</span><span class="o">...</span><span class="p">)</span>
+</code></pre></div>
 <h2 id="cut">Cut</h2>
-<pre><code class="language-go">a = append(a[:i], a[j:]...)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">a</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">a</span><span class="p">[:</span><span class="nx">i</span><span class="p">],</span> <span class="nx">a</span><span class="p">[</span><span class="nx">j</span><span class="p">:]</span><span class="o">...</span><span class="p">)</span>
+</code></pre></div>
 <blockquote>
 <p>To ensure gc of structs with pointer fields or pointer as elements and prevent possible memory leaks use the following.</p>
 </blockquote>
-<pre><code class="language-go">copy(a[i:], a[j:])
-for k, n := len(a)-j+i, len(a); k &lt; n; k++ {
-    a[k] = nil // or the zero value of T
-}
-a = a[:len(a)-j+i]
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">copy</span><span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="nx">i</span><span class="p">:],</span> <span class="nx">a</span><span class="p">[</span><span class="nx">j</span><span class="p">:])</span>
+<span class="k">for</span> <span class="nx">k</span><span class="p">,</span> <span class="nx">n</span> <span class="o">:=</span> <span class="nb">len</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span><span class="o">-</span><span class="nx">j</span><span class="o">+</span><span class="nx">i</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span> <span class="nx">k</span> <span class="p">&lt;</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">k</span><span class="o">++</span> <span class="p">{</span>
+    <span class="nx">a</span><span class="p">[</span><span class="nx">k</span><span class="p">]</span> <span class="p">=</span> <span class="kc">nil</span> <span class="c1">// or the zero value of T</span>
+<span class="p">}</span>
+<span class="nx">a</span> <span class="p">=</span> <span class="nx">a</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span><span class="o">-</span><span class="nx">j</span><span class="o">+</span><span class="nx">i</span><span class="p">]</span>
+</code></pre></div>
 <h2 id="delete">Delete</h2>
-<pre><code class="language-go">a = append(a[:i], a[i+1:]...)
-// or
-a = a[:i+copy(a[i:], a[i+1:])]
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">a</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">a</span><span class="p">[:</span><span class="nx">i</span><span class="p">],</span> <span class="nx">a</span><span class="p">[</span><span class="nx">i</span><span class="o">+</span><span class="mi">1</span><span class="p">:]</span><span class="o">...</span><span class="p">)</span>
+<span class="c1">// or</span>
+<span class="nx">a</span> <span class="p">=</span> <span class="nx">a</span><span class="p">[:</span><span class="nx">i</span><span class="o">+</span><span class="nb">copy</span><span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="nx">i</span><span class="p">:],</span> <span class="nx">a</span><span class="p">[</span><span class="nx">i</span><span class="o">+</span><span class="mi">1</span><span class="p">:])]</span>
+</code></pre></div>
 <blockquote>
 <p>To ensure gc of structs with pointer fields or pointer as elements and prevent possible memory leaks use the following.</p>
 </blockquote>
-<pre><code class="language-go">copy(a[i:], a[i+1:])
-a[len(a)-1] = nil // or the zero value of T
-a = a[:len(a)-1]
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">copy</span><span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="nx">i</span><span class="p">:],</span> <span class="nx">a</span><span class="p">[</span><span class="nx">i</span><span class="o">+</span><span class="mi">1</span><span class="p">:])</span>
+<span class="nx">a</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="p">=</span> <span class="kc">nil</span> <span class="c1">// or the zero value of T</span>
+<span class="nx">a</span> <span class="p">=</span> <span class="nx">a</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div>
 <h2 id="delete-without-preserving-order">Delete without preserving order</h2>
-<pre><code class="language-go">a[i] = a[len(a)-1]
-a = a[:len(a)-1]
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">a</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="p">=</span> <span class="nx">a</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="nx">a</span> <span class="p">=</span> <span class="nx">a</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div>
 <blockquote>
 <p>To ensure gc of structs with pointer fields or pointer as elements and prevent possible memory leaks use the following.</p>
 </blockquote>
-<pre><code class="language-go">a[i] = a[len(a)-1]
-a[len(a)-1] = nil
-a = a[:len(a)-1]
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">a</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="p">=</span> <span class="nx">a</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="nx">a</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="p">=</span> <span class="kc">nil</span>
+<span class="nx">a</span> <span class="p">=</span> <span class="nx">a</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div>
 <h2 id="expand">Expand</h2>
-<pre><code class="language-go">a = append(a[:i], append(make([]T, j), a[i:]...)...)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">a</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">a</span><span class="p">[:</span><span class="nx">i</span><span class="p">],</span> <span class="nb">append</span><span class="p">(</span><span class="nb">make</span><span class="p">([]</span><span class="nx">T</span><span class="p">,</span> <span class="nx">j</span><span class="p">),</span> <span class="nx">a</span><span class="p">[</span><span class="nx">i</span><span class="p">:]</span><span class="o">...</span><span class="p">)</span><span class="o">...</span><span class="p">)</span>
+</code></pre></div>
 <h2 id="extend">Extend</h2>
-<pre><code class="language-go">a = append(a, make([]T, j)...)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">a</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nb">make</span><span class="p">([]</span><span class="nx">T</span><span class="p">,</span> <span class="nx">j</span><span class="p">)</span><span class="o">...</span><span class="p">)</span>
+</code></pre></div>
 <h2 id="insert">Insert</h2>
-<pre><code class="language-go">a = append(a[:i], append([]T{x}, a[i:]...)...)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">a</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">a</span><span class="p">[:</span><span class="nx">i</span><span class="p">],</span> <span class="nb">append</span><span class="p">([]</span><span class="nx">T</span><span class="p">{</span><span class="nx">x</span><span class="p">},</span> <span class="nx">a</span><span class="p">[</span><span class="nx">i</span><span class="p">:]</span><span class="o">...</span><span class="p">)</span><span class="o">...</span><span class="p">)</span>
+</code></pre></div>
 <blockquote>
 <p>The second append creates a new slice with its own underlying storage and copies elements in a[i:] to that slice, and these elements are then copied back to slice a (by the first append). The creation of the new slice (and thus memory garbage) and the second copy can be avoided by using an alternative way:</p>
 </blockquote>
-<pre><code class="language-go">s = append(s, 0)
-copy(s[i+1:], s[i:])
-s[i] = x
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">s</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="nb">copy</span><span class="p">(</span><span class="nx">s</span><span class="p">[</span><span class="nx">i</span><span class="o">+</span><span class="mi">1</span><span class="p">:],</span> <span class="nx">s</span><span class="p">[</span><span class="nx">i</span><span class="p">:])</span>
+<span class="nx">s</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="p">=</span> <span class="nx">x</span>
+</code></pre></div>
 <h2 id="insertvector">InsertVector</h2>
-<pre><code class="language-go">a = append(a[:i], append(b, a[i:]...)...)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">a</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">a</span><span class="p">[:</span><span class="nx">i</span><span class="p">],</span> <span class="nb">append</span><span class="p">(</span><span class="nx">b</span><span class="p">,</span> <span class="nx">a</span><span class="p">[</span><span class="nx">i</span><span class="p">:]</span><span class="o">...</span><span class="p">)</span><span class="o">...</span><span class="p">)</span>
+</code></pre></div>
 <h2 id="pop">Pop</h2>
-<pre><code class="language-go">x, a = a[0], a[1:]
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">x</span><span class="p">,</span> <span class="nx">a</span> <span class="p">=</span> <span class="nx">a</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nx">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+</code></pre></div>
 <h2 id="pop-back">Pop Back</h2>
-<pre><code class="language-go">x, a = a[len(a)-1], a[:len(a)-1]
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">x</span><span class="p">,</span> <span class="nx">a</span> <span class="p">=</span> <span class="nx">a</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="nx">a</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div>
 <h2 id="push">Push</h2>
-<pre><code class="language-go">a = append(a, x)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">a</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">x</span><span class="p">)</span>
+</code></pre></div>
 <h2 id="pushfront">PushFront</h2>
-<pre><code class="language-go">a = append([]T{ x }, a...)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">a</span> <span class="p">=</span> <span class="nb">append</span><span class="p">([]</span><span class="nx">T</span><span class="p">{</span> <span class="nx">x</span> <span class="p">},</span> <span class="nx">a</span><span class="o">...</span><span class="p">)</span>
+</code></pre></div>
 <h2 id="shift">Shift</h2>
-<pre><code class="language-go">x, a := a[0], a[1:]
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">x</span><span class="p">,</span> <span class="nx">a</span> <span class="o">:=</span> <span class="nx">a</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nx">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+</code></pre></div>
 <h2 id="unshift">Unshift</h2>
-<pre><code class="language-go">a = append([]T{x}, a...)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">a</span> <span class="p">=</span> <span class="nb">append</span><span class="p">([]</span><span class="nx">T</span><span class="p">{</span><span class="nx">x</span><span class="p">},</span> <span class="nx">a</span><span class="o">...</span><span class="p">)</span>
+</code></pre></div>
                 
                   
                 

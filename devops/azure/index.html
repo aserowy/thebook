@@ -949,22 +949,10 @@
           
 
 
-  <li class="md-nav__item">
-    <a href="../../tips_and_more/visual_studio/" class="md-nav__link">
-      Visual Studio
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
   <li class="md-nav__item md-nav__item--nested">
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8-3" type="checkbox" id="nav-8-3" >
-    <label class="md-nav__link" for="nav-8-3">
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8-2" type="checkbox" id="nav-8-2" >
+    <label class="md-nav__link" for="nav-8-2">
       <span class="md-nav__icon md-icon"></span>
       
         <a href="../../tips_and_more/go/" style="display: block">
@@ -973,7 +961,7 @@
       </a>
     </label>
     <nav class="md-nav" aria-label="Go" data-md-level="2">
-      <label class="md-nav__title" for="nav-8-3">
+      <label class="md-nav__title" for="nav-8-2">
         <span class="md-nav__icon md-icon"></span>
         
           <a href="../../tips_and_more/go/" style="display: block">
@@ -1010,6 +998,18 @@
         
       </ul>
     </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tips_and_more/visual_studio/" class="md-nav__link">
+      Visual Studio
+    </a>
   </li>
 
         
@@ -1093,19 +1093,19 @@
                 <h2 id="common-mistakes">Common mistakes</h2>
 <h3 id="predefined-variables">Predefined variables</h3>
 <p>Using predefined values in variables will not get resolved for name. The following snipped will resolve in "$(Build.SourceBranchName).11" in dev ops.</p>
-<pre><code class="language-yaml">name: $(majorMinorVersion).$(patchVersion)
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">$(majorMinorVersion).$(patchVersion)</span>
 
-variables:
-  majorMinorVersion: '$(Build.SourceBranchName)'
-  patchVersion: $[counter(variables['majorMinorVersion'], 10)]
-</code></pre>
+<span class="nt">variables</span><span class="p">:</span>
+  <span class="nt">majorMinorVersion</span><span class="p">:</span> <span class="s">&#39;$(Build.SourceBranchName)&#39;</span>
+  <span class="nt">patchVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">$[counter(variables[&#39;majorMinorVersion&#39;], 10)]</span>
+</code></pre></div>
 <p>Because variables will get determined at runtime (except expressions) you should use the predefined variable directly. Thus, the resolved name on a branch named "1.0" would be "1.0.11".</p>
-<pre><code class="language-yaml">name: $(Build.SourceBranchName).$(patchVersion)
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">$(Build.SourceBranchName).$(patchVersion)</span>
 
-variables:
-  majorMinorVersion: '$(Build.SourceBranchName)'
-  patchVersion: $[counter(variables['majorMinorVersion'], 10)]
-</code></pre>
+<span class="nt">variables</span><span class="p">:</span>
+  <span class="nt">majorMinorVersion</span><span class="p">:</span> <span class="s">&#39;$(Build.SourceBranchName)&#39;</span>
+  <span class="nt">patchVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">$[counter(variables[&#39;majorMinorVersion&#39;], 10)]</span>
+</code></pre></div>
                 
                   
                 

@@ -945,22 +945,10 @@
           
 
 
-  <li class="md-nav__item">
-    <a href="../../../tips_and_more/visual_studio/" class="md-nav__link">
-      Visual Studio
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
   <li class="md-nav__item md-nav__item--nested">
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8-3" type="checkbox" id="nav-8-3" >
-    <label class="md-nav__link" for="nav-8-3">
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8-2" type="checkbox" id="nav-8-2" >
+    <label class="md-nav__link" for="nav-8-2">
       <span class="md-nav__icon md-icon"></span>
       
         <a href="../../../tips_and_more/go/" style="display: block">
@@ -969,7 +957,7 @@
       </a>
     </label>
     <nav class="md-nav" aria-label="Go" data-md-level="2">
-      <label class="md-nav__title" for="nav-8-3">
+      <label class="md-nav__title" for="nav-8-2">
         <span class="md-nav__icon md-icon"></span>
         
           <a href="../../../tips_and_more/go/" style="display: block">
@@ -1006,6 +994,18 @@
         
       </ul>
     </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tips_and_more/visual_studio/" class="md-nav__link">
+      Visual Studio
+    </a>
   </li>
 
         
@@ -1082,27 +1082,27 @@
                 
                 <h2 id="reference-implementation">Reference implementation</h2>
 <p>Because of a narrow support for fp in c#, we need a helper to build a proper composition of functions.</p>
-<pre><code class="language-csharp">public static Func&lt;T, TNextOut&gt; Compose&lt;T, TInitOut, TNextOut&gt;(
-    this Func&lt;T, TInitOut&gt; initial,
-    Func&lt;TInitOut, TNextOut&gt; next)
-{
-    return x =&gt; next(initial(x));
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">public</span> <span class="k">static</span> <span class="n">Func</span><span class="p">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">TNextOut</span><span class="p">&gt;</span> <span class="n">Compose</span><span class="p">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">TInitOut</span><span class="p">,</span> <span class="n">TNextOut</span><span class="p">&gt;(</span>
+    <span class="k">this</span> <span class="n">Func</span><span class="p">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">TInitOut</span><span class="p">&gt;</span> <span class="n">initial</span><span class="p">,</span>
+    <span class="n">Func</span><span class="p">&lt;</span><span class="n">TInitOut</span><span class="p">,</span> <span class="n">TNextOut</span><span class="p">&gt;</span> <span class="n">next</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="p">=&gt;</span> <span class="n">next</span><span class="p">(</span><span class="n">initial</span><span class="p">(</span><span class="n">x</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>With the given extension you can compose functions with output equals input.</p>
-<pre><code class="language-csharp">public async Task&lt;IStepConfiguration&gt; ResolveAsync(IDictionary&lt;IVersion, IList&lt;IStepConfiguration&gt;&gt; versions)
-{
-    var resolverFunc = GetVersionFunc().Compose(GetStepFunc());
+<div class="highlight"><pre><span></span><code><span class="k">public</span> <span class="k">async</span> <span class="n">Task</span><span class="p">&lt;</span><span class="n">IStepConfiguration</span><span class="p">&gt;</span> <span class="n">ResolveAsync</span><span class="p">(</span><span class="n">IDictionary</span><span class="p">&lt;</span><span class="n">IVersion</span><span class="p">,</span> <span class="n">IList</span><span class="p">&lt;</span><span class="n">IStepConfiguration</span><span class="p">&gt;&gt;</span> <span class="n">versions</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">var</span> <span class="n">resolverFunc</span> <span class="p">=</span> <span class="n">GetVersionFunc</span><span class="p">().</span><span class="n">Compose</span><span class="p">(</span><span class="n">GetStepFunc</span><span class="p">());</span>
 
-    return resolverFunc(versions);
-}
+    <span class="k">return</span> <span class="nf">resolverFunc</span><span class="p">(</span><span class="n">versions</span><span class="p">);</span>
+<span class="p">}</span>
 
-private static readonly Func&lt;IDictionary&lt;IVersion, IList&lt;IStepConfiguration&gt;&gt;, IList&lt;IStepConfiguration&gt;&gt;
-    GetVersionFunc = versions =&gt; versions.FirstOrDefault().Value;
+<span class="k">private</span> <span class="k">static</span> <span class="k">readonly</span> <span class="n">Func</span><span class="p">&lt;</span><span class="n">IDictionary</span><span class="p">&lt;</span><span class="n">IVersion</span><span class="p">,</span> <span class="n">IList</span><span class="p">&lt;</span><span class="n">IStepConfiguration</span><span class="p">&gt;&gt;,</span> <span class="n">IList</span><span class="p">&lt;</span><span class="n">IStepConfiguration</span><span class="p">&gt;&gt;</span>
+    <span class="n">GetVersionFunc</span> <span class="p">=</span> <span class="n">versions</span> <span class="p">=&gt;</span> <span class="n">versions</span><span class="p">.</span><span class="n">FirstOrDefault</span><span class="p">().</span><span class="n">Value</span><span class="p">;</span>
 
-private static readonly Func&lt;IList&lt;IStepConfiguration&gt;, IStepConfiguration&gt;
-    GetStepFunc = steps =&gt; steps?.FirstOrDefault();
-</code></pre>
+<span class="k">private</span> <span class="k">static</span> <span class="k">readonly</span> <span class="n">Func</span><span class="p">&lt;</span><span class="n">IList</span><span class="p">&lt;</span><span class="n">IStepConfiguration</span><span class="p">&gt;,</span> <span class="n">IStepConfiguration</span><span class="p">&gt;</span>
+    <span class="n">GetStepFunc</span> <span class="p">=</span> <span class="n">steps</span> <span class="p">=&gt;</span> <span class="n">steps</span><span class="p">?.</span><span class="n">FirstOrDefault</span><span class="p">();</span>
+</code></pre></div>
 <p>For functions with multiple inputs you can use <a href="../currying_pattern/">Currying</a> to reduce the count of inputs to one.</p>
 <h2 id="further-reads">Further reads</h2>
 <ul>

@@ -965,22 +965,10 @@
           
 
 
-  <li class="md-nav__item">
-    <a href="../../../tips_and_more/visual_studio/" class="md-nav__link">
-      Visual Studio
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
   <li class="md-nav__item md-nav__item--nested">
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8-3" type="checkbox" id="nav-8-3" >
-    <label class="md-nav__link" for="nav-8-3">
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8-2" type="checkbox" id="nav-8-2" >
+    <label class="md-nav__link" for="nav-8-2">
       <span class="md-nav__icon md-icon"></span>
       
         <a href="../../../tips_and_more/go/" style="display: block">
@@ -989,7 +977,7 @@
       </a>
     </label>
     <nav class="md-nav" aria-label="Go" data-md-level="2">
-      <label class="md-nav__title" for="nav-8-3">
+      <label class="md-nav__title" for="nav-8-2">
         <span class="md-nav__icon md-icon"></span>
         
           <a href="../../../tips_and_more/go/" style="display: block">
@@ -1026,6 +1014,18 @@
         
       </ul>
     </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tips_and_more/visual_studio/" class="md-nav__link">
+      Visual Studio
+    </a>
   </li>
 
         
@@ -1124,72 +1124,72 @@
 <h3 id="coupling-with-factory-and-di">Coupling with factory and di</h3>
 <p>The given strategy interface contains two methods. ValidFor describes - in this example with an enum - if the strategy should be used. This validation could be a predicate for example as well.
 GetDistanceInSecondsAsync describes the encapsulated business logic for this concrete strategy.</p>
-<pre><code class="language-csharp">internal interface IDistanceQueryStrategy
-{
-    FirstResponderWayResolverStrategy ValidFor { get; }
+<div class="highlight"><pre><span></span><code><span class="k">internal</span> <span class="k">interface</span> <span class="n">IDistanceQueryStrategy</span>
+<span class="p">{</span>
+    <span class="n">FirstResponderWayResolverStrategy</span> <span class="n">ValidFor</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
 
-    Task&lt;DistanceResult&gt; GetDistanceInSecondsAsync(CoordinateDto origin, params CoordinateDto[] waypoints);
-}
-</code></pre>
+    <span class="n">Task</span><span class="p">&lt;</span><span class="n">DistanceResult</span><span class="p">&gt;</span> <span class="n">GetDistanceInSecondsAsync</span><span class="p">(</span><span class="n">CoordinateDto</span> <span class="n">origin</span><span class="p">,</span> <span class="k">params</span> <span class="n">CoordinateDto</span><span class="p">[]</span> <span class="n">waypoints</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>With dependency injection, we bind multiple concrete strategies to the same interface. Thus, we can get a complete collection of all concrete implementations with one call in our service.</p>
-<pre><code class="language-csharp">services.AddTransient&lt;IDistanceQuery, DistanceQuery&gt;();
-services.AddTransient&lt;IDistanceQueryStrategy, GoogleDistanceQueryStrategy&gt;();
-services.AddTransient&lt;IDistanceQueryStrategy, LinearDistanceQueryStrategy&gt;();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">services</span><span class="p">.</span><span class="n">AddTransient</span><span class="p">&lt;</span><span class="n">IDistanceQuery</span><span class="p">,</span> <span class="n">DistanceQuery</span><span class="p">&gt;();</span>
+<span class="n">services</span><span class="p">.</span><span class="n">AddTransient</span><span class="p">&lt;</span><span class="n">IDistanceQueryStrategy</span><span class="p">,</span> <span class="n">GoogleDistanceQueryStrategy</span><span class="p">&gt;();</span>
+<span class="n">services</span><span class="p">.</span><span class="n">AddTransient</span><span class="p">&lt;</span><span class="n">IDistanceQueryStrategy</span><span class="p">,</span> <span class="n">LinearDistanceQueryStrategy</span><span class="p">&gt;();</span>
+</code></pre></div>
 <p>In the given example a default strategy is configured to enable a robust behavior. In addition the concrete enum value is method injected. This could also be addressed within the query, to reduce the method signature (as long as we have additional information regarding the resolvement).</p>
-<pre><code class="language-csharp">internal class DistanceQuery : IDistanceQuery
-{
-    private readonly IDictionary&lt;FirstResponderWayResolverStrategy, IDistanceQueryStrategy&gt; _strategies;
+<div class="highlight"><pre><span></span><code><span class="k">internal</span> <span class="k">class</span> <span class="nc">DistanceQuery</span> <span class="p">:</span> <span class="n">IDistanceQuery</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="k">readonly</span> <span class="n">IDictionary</span><span class="p">&lt;</span><span class="n">FirstResponderWayResolverStrategy</span><span class="p">,</span> <span class="n">IDistanceQueryStrategy</span><span class="p">&gt;</span> <span class="n">_strategies</span><span class="p">;</span>
 
-    public DistanceQuery(IEnumerable&lt;IDistanceQueryStrategy&gt; strategies)
-    {
-        _strategies = strategies.ToDictionary(strategy =&gt; strategy.ValidFor, strategy =&gt; strategy);
-    }
+    <span class="k">public</span> <span class="nf">DistanceQuery</span><span class="p">(</span><span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">IDistanceQueryStrategy</span><span class="p">&gt;</span> <span class="n">strategies</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">_strategies</span> <span class="p">=</span> <span class="n">strategies</span><span class="p">.</span><span class="n">ToDictionary</span><span class="p">(</span><span class="n">strategy</span> <span class="p">=&gt;</span> <span class="n">strategy</span><span class="p">.</span><span class="n">ValidFor</span><span class="p">,</span> <span class="n">strategy</span> <span class="p">=&gt;</span> <span class="n">strategy</span><span class="p">);</span>
+    <span class="p">}</span>
 
-    public Task&lt;DistanceResult&gt; GetDistanceInSecondsAsync(
-        FirstResponderWayResolverStrategy strategy,
-        CoordinateDto origin,
-        params CoordinateDto[] waypoints)
-    {
-        var strategyToUse = FirstResponderWayResolverStrategy.GoogleDistanceResolver
-        if (_strategies.ContainsKey(strategy))
-        {
-            strategyToUse = strategy;
-        }
+    <span class="k">public</span> <span class="n">Task</span><span class="p">&lt;</span><span class="n">DistanceResult</span><span class="p">&gt;</span> <span class="n">GetDistanceInSecondsAsync</span><span class="p">(</span>
+        <span class="n">FirstResponderWayResolverStrategy</span> <span class="n">strategy</span><span class="p">,</span>
+        <span class="n">CoordinateDto</span> <span class="n">origin</span><span class="p">,</span>
+        <span class="k">params</span> <span class="n">CoordinateDto</span><span class="p">[]</span> <span class="n">waypoints</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">var</span> <span class="n">strategyToUse</span> <span class="p">=</span> <span class="n">FirstResponderWayResolverStrategy</span><span class="p">.</span><span class="n">GoogleDistanceResolver</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">_strategies</span><span class="p">.</span><span class="n">ContainsKey</span><span class="p">(</span><span class="n">strategy</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="n">strategyToUse</span> <span class="p">=</span> <span class="n">strategy</span><span class="p">;</span>
+        <span class="p">}</span>
 
-        return _strategies[strategyToUse].GetDistanceInSecondsAsync(origin, waypoints);
-    }
-}
-</code></pre>
+        <span class="k">return</span> <span class="n">_strategies</span><span class="p">[</span><span class="n">strategyToUse</span><span class="p">].</span><span class="n">GetDistanceInSecondsAsync</span><span class="p">(</span><span class="n">origin</span><span class="p">,</span> <span class="n">waypoints</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="method-injection">Method injection</h3>
 <p>The interface is used to abstract concrete implementations.</p>
-<pre><code class="language-csharp">public interface IStepStrategy
-{
-    IVersion Version { get; }
-    int Index { get; }
+<div class="highlight"><pre><span></span><code><span class="k">public</span> <span class="k">interface</span> <span class="n">IStepStrategy</span>
+<span class="p">{</span>
+    <span class="n">IVersion</span> <span class="n">Version</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+    <span class="kt">int</span> <span class="n">Index</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
 
-    public Task&lt;IEnumerable&lt;ICommand&gt;&gt; RunAsync(IEvent event);
-}
-</code></pre>
+    <span class="k">public</span> <span class="n">Task</span><span class="p">&lt;</span><span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">ICommand</span><span class="p">&gt;&gt;</span> <span class="n">RunAsync</span><span class="p">(</span><span class="n">IEvent</span> <span class="k">event</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>With this abstraction a concrete implementation for this logic can be injected at runtime.</p>
-<pre><code class="language-csharp">public async Task&lt;IEnumerable&lt;ICommand&gt;&gt; RunAsync(IEvent event, IStepStrategy step)
-{
-    var commands = await step
-        .RunAsync(event)
-        .ConfigureAwait(false);
+<div class="highlight"><pre><span></span><code><span class="k">public</span> <span class="k">async</span> <span class="n">Task</span><span class="p">&lt;</span><span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">ICommand</span><span class="p">&gt;&gt;</span> <span class="n">RunAsync</span><span class="p">(</span><span class="n">IEvent</span> <span class="k">event</span><span class="p">,</span> <span class="n">IStepStrategy</span> <span class="n">step</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">var</span> <span class="n">commands</span> <span class="p">=</span> <span class="k">await</span> <span class="n">step</span>
+        <span class="p">.</span><span class="n">RunAsync</span><span class="p">(</span><span class="k">event</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">ConfigureAwait</span><span class="p">(</span><span class="k">false</span><span class="p">);</span>
 
-    if (commands is null)
-    {
-        return Enumerable.Empty&lt;ICommand&gt;();
-    }
+    <span class="k">if</span> <span class="p">(</span><span class="n">commands</span> <span class="k">is</span> <span class="k">null</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">Enumerable</span><span class="p">.</span><span class="n">Empty</span><span class="p">&lt;</span><span class="n">ICommand</span><span class="p">&gt;();</span>
+    <span class="p">}</span>
 
-    await _store
-        .AddReferencesAsync(commands)
-        .ConfigureAwait(false);
+    <span class="k">await</span> <span class="n">_store</span>
+        <span class="p">.</span><span class="n">AddReferencesAsync</span><span class="p">(</span><span class="n">commands</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">ConfigureAwait</span><span class="p">(</span><span class="k">false</span><span class="p">);</span>
 
-    return commands;
-}
-</code></pre>
+    <span class="k">return</span> <span class="n">commands</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="further-reads">Further reads</h2>
 <ul>
 <li><a href="https://www.oodesign.com/strategy-pattern.html">https://www.oodesign.com/strategy-pattern.html</a></li>

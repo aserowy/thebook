@@ -945,22 +945,10 @@
           
 
 
-  <li class="md-nav__item">
-    <a href="../../../tips_and_more/visual_studio/" class="md-nav__link">
-      Visual Studio
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
   <li class="md-nav__item md-nav__item--nested">
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8-3" type="checkbox" id="nav-8-3" >
-    <label class="md-nav__link" for="nav-8-3">
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8-2" type="checkbox" id="nav-8-2" >
+    <label class="md-nav__link" for="nav-8-2">
       <span class="md-nav__icon md-icon"></span>
       
         <a href="../../../tips_and_more/go/" style="display: block">
@@ -969,7 +957,7 @@
       </a>
     </label>
     <nav class="md-nav" aria-label="Go" data-md-level="2">
-      <label class="md-nav__title" for="nav-8-3">
+      <label class="md-nav__title" for="nav-8-2">
         <span class="md-nav__icon md-icon"></span>
         
           <a href="../../../tips_and_more/go/" style="display: block">
@@ -1006,6 +994,18 @@
         
       </ul>
     </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tips_and_more/visual_studio/" class="md-nav__link">
+      Visual Studio
+    </a>
   </li>
 
         
@@ -1082,31 +1082,31 @@
                 
                 <h2 id="sample-implementation">Sample implementation</h2>
 <p>The given implementation abuses the builder pattern for validation. Thus, you can easily chain validation steps and reuse the configured validator object.</p>
-<pre><code class="language-csharp">public class Validator&lt;TClass&gt;
-{
-    private IList&lt;Predicate&lt;TClass&gt;&gt; _rules = new List&lt;Predicate&lt;TClass&gt;&gt;();
+<div class="highlight"><pre><span></span><code><span class="k">public</span> <span class="k">class</span> <span class="nc">Validator</span><span class="p">&lt;</span><span class="n">TClass</span><span class="p">&gt;</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="n">IList</span><span class="p">&lt;</span><span class="n">Predicate</span><span class="p">&lt;</span><span class="n">TClass</span><span class="p">&gt;&gt;</span> <span class="n">_rules</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Predicate</span><span class="p">&lt;</span><span class="n">TClass</span><span class="p">&gt;&gt;();</span>
 
-    public Validator&lt;TClass&gt; AddRule(Predicate&lt;TClass&gt; rule)
-    {
-        _rules.Add(rule);
+    <span class="k">public</span> <span class="n">Validator</span><span class="p">&lt;</span><span class="n">TClass</span><span class="p">&gt;</span> <span class="n">AddRule</span><span class="p">(</span><span class="n">Predicate</span><span class="p">&lt;</span><span class="n">TClass</span><span class="p">&gt;</span> <span class="n">rule</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">_rules</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">rule</span><span class="p">);</span>
 
-        return this;
-    }
+        <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
+    <span class="p">}</span>
 
-    public bool Validate(TClass obj)
-    {
-        foreach (var func in _rules)
-        {
-            if (!func(obj))
-            {
-                return false;
-            }
-        }
+    <span class="k">public</span> <span class="kt">bool</span> <span class="nf">Validate</span><span class="p">(</span><span class="n">TClass</span> <span class="n">obj</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">func</span> <span class="k">in</span> <span class="n">_rules</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(!</span><span class="n">func</span><span class="p">(</span><span class="n">obj</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
 
-        return true;
-    }
-}
-</code></pre>
+        <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="further-reads">Further reads</h2>
 <ul>
 <li><a href="https://www.pmichaels.net/2018/01/27/using-builder-pattern-validation/">https://www.pmichaels.net/2018/01/27/using-builder-pattern-validation/</a></li>

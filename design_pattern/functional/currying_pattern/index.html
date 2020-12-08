@@ -902,22 +902,10 @@
           
 
 
-  <li class="md-nav__item">
-    <a href="../../../tips_and_more/visual_studio/" class="md-nav__link">
-      Visual Studio
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
   <li class="md-nav__item md-nav__item--nested">
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8-3" type="checkbox" id="nav-8-3" >
-    <label class="md-nav__link" for="nav-8-3">
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8-2" type="checkbox" id="nav-8-2" >
+    <label class="md-nav__link" for="nav-8-2">
       <span class="md-nav__icon md-icon"></span>
       
         <a href="../../../tips_and_more/go/" style="display: block">
@@ -926,7 +914,7 @@
       </a>
     </label>
     <nav class="md-nav" aria-label="Go" data-md-level="2">
-      <label class="md-nav__title" for="nav-8-3">
+      <label class="md-nav__title" for="nav-8-2">
         <span class="md-nav__icon md-icon"></span>
         
           <a href="../../../tips_and_more/go/" style="display: block">
@@ -963,6 +951,18 @@
         
       </ul>
     </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tips_and_more/visual_studio/" class="md-nav__link">
+      Visual Studio
+    </a>
   </li>
 
         
@@ -1003,11 +1003,11 @@
                   <h1>Currying pattern</h1>
                 
                 <p>With Currying you can reduce the number of inputs of a function. This can get handy to e.g. reduce inputs to one and be able to compose different functions.</p>
-<pre><code class="language-csharp">private static readonly Func&lt;
-    IVersionResolver,
-    Func&lt;IDictionary&lt;IVersion, IList&lt;IStepConfiguration&gt;&gt;, IList&lt;IStepConfiguration&gt;&gt;&gt;
-        GetVersionFunc = versionResolver =&gt; (versions) =&gt; versionResolver.GetVersion(versions);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">private</span> <span class="k">static</span> <span class="k">readonly</span> <span class="n">Func</span><span class="p">&lt;</span>
+    <span class="n">IVersionResolver</span><span class="p">,</span>
+    <span class="n">Func</span><span class="p">&lt;</span><span class="n">IDictionary</span><span class="p">&lt;</span><span class="n">IVersion</span><span class="p">,</span> <span class="n">IList</span><span class="p">&lt;</span><span class="n">IStepConfiguration</span><span class="p">&gt;&gt;,</span> <span class="n">IList</span><span class="p">&lt;</span><span class="n">IStepConfiguration</span><span class="p">&gt;&gt;&gt;</span>
+        <span class="n">GetVersionFunc</span> <span class="p">=</span> <span class="n">versionResolver</span> <span class="p">=&gt;</span> <span class="p">(</span><span class="n">versions</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">versionResolver</span><span class="p">.</span><span class="n">GetVersion</span><span class="p">(</span><span class="n">versions</span><span class="p">);</span>
+</code></pre></div>
                 
                   
                 
