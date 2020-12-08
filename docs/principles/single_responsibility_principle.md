@@ -20,10 +20,10 @@ The single responsibility principle is a computer programming principle that sta
 
 ## Cohesion
 
+![Cohesion](images/cohesion.png)
+
 - Cohesion refers to the degree to which the elements inside a module belong together​
 - Measure of the strength of relationship between the class's methods and data themselves​
 - Modules can be scoped as applications, projects, classes or methods​
 - Cohesion is balanced with both unit complexity and coupling​
 - High cohesion often correlates with loose coupling​
-
-![Cohesion](images/cohesion.png)
