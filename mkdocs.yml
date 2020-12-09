@@ -13,6 +13,7 @@ plugins:
 repo_url: https://github.com/aserowy/thebook/
 site_author: Alexander Serowy
 site_name: thebook
-theme: material
+theme: 
+  name: material
   features:
     - navigation.instant
