@@ -826,9 +826,50 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#micro-vs-macro-architecture" class="md-nav__link">
+    Micro vs. macro architecture
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#minimal-architecture-overview" class="md-nav__link">
     Minimal architecture overview
   </a>
+  
+    <nav class="md-nav" aria-label="Minimal architecture overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#structure" class="md-nav__link">
+    Structure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task" class="md-nav__link">
+    Task
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#influences" class="md-nav__link">
+    Influences
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solutions" class="md-nav__link">
+    Solutions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1123,9 +1164,50 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#micro-vs-macro-architecture" class="md-nav__link">
+    Micro vs. macro architecture
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#minimal-architecture-overview" class="md-nav__link">
     Minimal architecture overview
   </a>
+  
+    <nav class="md-nav" aria-label="Minimal architecture overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#structure" class="md-nav__link">
+    Structure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task" class="md-nav__link">
+    Task
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#influences" class="md-nav__link">
+    Influences
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solutions" class="md-nav__link">
+    Solutions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1194,13 +1276,26 @@
 <h2 id="context">Context</h2>
 <h3 id="a-minimalistic-approach">A minimalistic approach</h3>
 <p>This approach is structured into four documentation types to describe the macro and micro architectures of a project.</p>
-<p>At first the minimal architecture overview provides insights about the mission and context of the architecture. Furthermore, specifications, non-functional requirements, and objectives of the architecture are also defined.  </p>
+<p>At first the minimal architecture overview provides insights about the mission and context of the architecture. Furthermore, solution approaches, specifications, non-functional requirements, and objectives of the architecture are also defined.  </p>
 <p><img alt="Overview of documentation elements" src="../images/documenting_microservices_overview.png" /></p>
 <p>Through context delimitation and mission objectives, concrete decisions for the macro architecture can be made and distributed through concepts within the team.</p>
-<p>Concepts describe why, what and how these decisions should be implemented and provide the framework for making decisions for the microarchitecture within the individual services.</p>
-<p>In order to also document the microarchitecture of the microservices, a profile is created for each service, in which specific information such as contact persons, approaches to solutions, but also technical debts are recorded.</p>
+<p>Concepts describe why, what and how these decisions should be implemented and provide the framework for making decisions for the micro architecture within the individual services.</p>
+<p>In order to also document the micro architecture of the microservices, a profile is created for each service, in which specific information such as contact persons, approaches to solutions, but also technical debts are recorded.</p>
+<h3 id="micro-vs-macro-architecture">Micro vs. macro architecture</h3>
+<p>One of the <a href="https://isa-principles.org/" title="Independent Systems Architecture principles">Independent Systems Architecture (ISA) principles</a> states, that each... </p>
+<blockquote>
+<p>"[...] system must have two clearly separated levels of architectural decisions. The macro architecture comprises decisions that cover all modules. [...] The micro architecture considers decisions which may be taken individually for each module".</p>
+</blockquote>
+<p>This leads to a fundamental decision whether a solution option at the macro-architecture level should lead to standardisation for all services or whether the solution can be re-evaluated in each service to ensure the best possible outcome.</p>
+<p>In other words, decisions at macro level offer standardisation, whereas decisions at micro level create individualisation.</p>
 <h3 id="minimal-architecture-overview">Minimal architecture overview</h3>
-<p><img alt="Content of minimal architectural overview" src="../images/documenting_microservices_minimal_overview.png" /></p>
+<h4 id="structure">Structure</h4>
+<p>The overview consists of three parts. In the first part, the task, the mission objective and a contextual definition are used to describe which objectives are to be achieved.</p>
+<p>In the second part, influences define both external specifications and architectural goals. These goals are recorded in the form of non-functional requirements.</p>
+<p>Based on the defined architectural goals, the third part contains concrete solution approaches. For example, architectural styles or concrete technologies can be defined to solve certain challenges.</p>
+<h4 id="task">Task</h4>
+<h4 id="influences">Influences</h4>
+<h4 id="solutions">Solutions</h4>
 <h3 id="decisions">Decisions</h3>
 <p><img alt="Mandatory questions to document decisions" src="../images/documenting_microservices_decision_template.png" /></p>
 <h3 id="concepts">Concepts</h3>
