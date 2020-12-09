@@ -44,7 +44,9 @@ In other words, decisions at macro level offer standardisation, whereas decision
 
 #### Structure
 
-The overview consists of three parts. In the first part, the task, the mission objective and a contextual definition are used to describe which objectives are to be achieved.
+The overview consists of three parts. In the first part, the task, the mission objective and context boundaries are used to describe which objectives are to be achieved.
+
+![Minimal architecture overview](images/documenting_microservices_minimal_architecture_overview.png)
 
 In the second part, influences define both external specifications and architectural goals. These goals are recorded in the form of non-functional requirements.
 
