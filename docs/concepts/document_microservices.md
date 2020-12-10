@@ -48,11 +48,23 @@ The overview consists of three parts. In the first part, the task, the mission o
 
 ![Minimal architecture overview](images/documenting_microservices_minimal_architecture_overview.png)
 
-In the second part, influences define both external specifications and architectural goals. These goals are recorded in the form of non-functional requirements.
+In the second part, influences define both external specifications and architectural goals. These goals are recorded in the form of non-functional requirements and are derived from the work result of the first part.
 
-Based on the defined architectural goals, the third part contains concrete solution approaches. For example, architectural styles or concrete technologies can be defined to solve certain challenges.
+Based on the defined influences, the third part contains concrete solution approaches. For example, architectural styles or concrete technologies can be defined to solve certain challenges.
 
 #### Task
+
+In the mission statement, the tasks and objectives of the system are described in a short description, either in brief or in short sentences. The following guiding questions should be answered briefly and concisely:
+
+- What is the software system for?
+- What is the central sales/use argument? ("claim", "slogan")
+- Who benefits from it?
+- What are the main features of the system?
+- How does it differ from products of competitors, or the previous version?
+
+By means of context boundaries, the mission statement is narrowed down and users and external systems with which the system interacts are visualised.
+
+![Context boundaries](images/documenting_microservices_context_boundaries.png)
 
 #### Influences
 
