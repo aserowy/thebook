@@ -54,7 +54,7 @@ Based on the defined influences, the third part contains concrete solution appro
 
 #### Task
 
-In the mission statement, the tasks and objectives of the system are described in a short description, either in brief or in short sentences. The following guiding questions should be answered briefly and concisely:
+In the mission statement, the tasks and objectives of the system are described in bullet points or short sentences. The following guiding questions should be answered briefly and concisely:
 
 - What is the software system for?
 - What is the central sales/use argument? ("claim", "slogan")
