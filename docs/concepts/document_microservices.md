@@ -68,7 +68,15 @@ By means of context boundaries, the mission statement is narrowed down and users
 
 #### Influences
 
-#### Solutions
+Influences describe core requirements of the system by means of two vectors. On the one hand, external specifications reduce the solution space and exclude options in advance. These include technical requirements such as "we are going to the cloud" as well as organisational requirements such as working methods or team composition.
+
+On the other hand, the top three to five [non-functional requirements][2] are defined and tabulated by means of a short description or motivation in order to describe the architectural goals of the system. It is crucial to take these into account as early as possible in the decision-making process, as these requirements shape the solution and can only be integrated subsequently at great additional expense.
+
+It is also important that each requirement of the system is checked for interactions between the individual influences, as influences can also exclude each other. For example, it would make sense to introduce CAPTCHAs at login to increase security. However, usability would suffer because users find additional security measures disturbing. In such cases, compromises are made.
+
+[2]: <https://www.embarc.de/software-qualitaet-iso-25010/> "ISO, weshalb warum? Ist Software-Qualität Geschmackssache?"
+
+#### Solution approaches
 
 ### Decisions
 
