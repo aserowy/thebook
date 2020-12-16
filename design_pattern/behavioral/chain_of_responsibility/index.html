@@ -1190,40 +1190,61 @@
         <span class="k">private</span> <span class="k">void</span> <span class="nf">ConfigureType</span><span class="p">(</span><span class="n">Type</span> <span class="n">currentType</span><span class="p">)</span>
         <span class="p">{</span>
             <span class="c1">// gets the next type, as that will be injected in the current type</span>
-            <span class="kt">var</span> <span class="n">nextType</span> <span class="p">=</span> <span class="n">_types</span><span class="p">.</span><span class="n">SkipWhile</span><span class="p">(</span><span class="n">x</span> <span class="p">=&gt;</span> <span class="n">x</span> <span class="p">!=</span> <span class="n">currentType</span><span class="p">).</span><span class="n">SkipWhile</span><span class="p">(</span><span class="n">x</span> <span class="p">=&gt;</span> <span class="n">x</span> <span class="p">==</span> <span class="n">currentType</span><span class="p">).</span><span class="n">FirstOrDefault</span><span class="p">();</span>
+            <span class="kt">var</span> <span class="n">nextType</span> <span class="p">=</span> <span class="n">_types</span>
+                <span class="p">.</span><span class="n">SkipWhile</span><span class="p">(</span><span class="n">x</span> <span class="p">=&gt;</span> <span class="n">x</span> <span class="p">!=</span> <span class="n">currentType</span><span class="p">)</span>
+                <span class="p">.</span><span class="n">SkipWhile</span><span class="p">(</span><span class="n">x</span> <span class="p">=&gt;</span> <span class="n">x</span> <span class="p">==</span> <span class="n">currentType</span><span class="p">)</span>
+                <span class="p">.</span><span class="n">FirstOrDefault</span><span class="p">();</span>
 
             <span class="c1">// Makes a parameter expression, that is the IServiceProvider x </span>
             <span class="kt">var</span> <span class="n">parameter</span> <span class="p">=</span> <span class="n">Expression</span><span class="p">.</span><span class="n">Parameter</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">IServiceProvider</span><span class="p">),</span> <span class="s">&quot;x&quot;</span><span class="p">);</span>
 
-            <span class="c1">// get constructor with highest number of parameters. Ideally, there should be only 1 constructor, but better be safe.</span>
-            <span class="kt">var</span> <span class="n">ctor</span> <span class="p">=</span> <span class="n">currentType</span><span class="p">.</span><span class="n">GetConstructors</span><span class="p">().</span><span class="n">OrderByDescending</span><span class="p">(</span><span class="n">x</span> <span class="p">=&gt;</span> <span class="n">x</span><span class="p">.</span><span class="n">GetParameters</span><span class="p">().</span><span class="n">Count</span><span class="p">()).</span><span class="n">First</span><span class="p">();</span>
+            <span class="c1">// get constructor with highest number of parameters. Ideally, there should be only 1 </span>
+            <span class="c1">// constructor, but better be safe.</span>
+            <span class="kt">var</span> <span class="n">ctor</span> <span class="p">=</span> <span class="n">currentType</span>
+                <span class="p">.</span><span class="n">GetConstructors</span><span class="p">()</span>
+                <span class="p">.</span><span class="n">OrderByDescending</span><span class="p">(</span><span class="n">x</span> <span class="p">=&gt;</span> <span class="n">x</span><span class="p">.</span><span class="n">GetParameters</span><span class="p">().</span><span class="n">Count</span><span class="p">())</span>
+                <span class="p">.</span><span class="n">First</span><span class="p">();</span>
 
             <span class="c1">// for each parameter in the constructor</span>
             <span class="kt">var</span> <span class="n">ctorParameters</span> <span class="p">=</span> <span class="n">ctor</span><span class="p">.</span><span class="n">GetParameters</span><span class="p">().</span><span class="n">Select</span><span class="p">(</span><span class="n">p</span> <span class="p">=&gt;</span>
             <span class="p">{</span>
-                <span class="c1">// check if it implements the interface. That&#39;s how we find which parameter to inject the next handler.</span>
+                <span class="c1">// check if it implements the interface. That&#39;s how we find which parameter to inject</span>
+                <span class="c1">// the next handler.</span>
                 <span class="k">if</span> <span class="p">(</span><span class="n">_interfaceType</span><span class="p">.</span><span class="n">IsAssignableFrom</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">ParameterType</span><span class="p">))</span>
                 <span class="p">{</span>
                     <span class="k">if</span> <span class="p">(</span><span class="n">nextType</span> <span class="k">is</span> <span class="k">null</span><span class="p">)</span>
                     <span class="p">{</span>
-                        <span class="c1">// if there&#39;s no next type, current type is the last in the chain, so it just receives null</span>
+                        <span class="c1">// if there&#39;s no next type, current type is the last in the chain, so it just</span>
+                        <span class="c1">// receives null</span>
                         <span class="k">return</span> <span class="n">Expression</span><span class="p">.</span><span class="n">Constant</span><span class="p">(</span><span class="k">null</span><span class="p">,</span> <span class="n">_interfaceType</span><span class="p">);</span>
                     <span class="p">}</span>
                     <span class="k">else</span>
                     <span class="p">{</span>
-                        <span class="c1">// if there is, then we call IServiceProvider.GetRequiredService to resolve next type for us</span>
-                        <span class="k">return</span> <span class="n">Expression</span><span class="p">.</span><span class="n">Call</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">ServiceProviderServiceExtensions</span><span class="p">),</span> <span class="s">&quot;GetRequiredService&quot;</span><span class="p">,</span> <span class="k">new</span> <span class="n">Type</span><span class="p">[]</span> <span class="p">{</span> <span class="n">nextType</span> <span class="p">},</span> <span class="n">parameter</span><span class="p">);</span>
+                        <span class="c1">// if there is, then we call IServiceProvider.GetRequiredService to resolve next</span>
+                        <span class="c1">// type for us</span>
+                        <span class="k">return</span> <span class="n">Expression</span><span class="p">.</span><span class="n">Call</span><span class="p">(</span>
+                            <span class="k">typeof</span><span class="p">(</span><span class="n">ServiceProviderServiceExtensions</span><span class="p">),</span> 
+                            <span class="s">&quot;GetRequiredService&quot;</span><span class="p">,</span> 
+                            <span class="k">new</span> <span class="n">Type</span><span class="p">[]</span> <span class="p">{</span> <span class="n">nextType</span> <span class="p">},</span> 
+                            <span class="n">parameter</span><span class="p">);</span>
                     <span class="p">}</span>
                 <span class="p">}</span>
 
-                <span class="c1">// this is a parameter we don&#39;t care about, so we just ask GetRequiredService to resolve it for us </span>
-                <span class="k">return</span> <span class="p">(</span><span class="n">Expression</span><span class="p">)</span><span class="n">Expression</span><span class="p">.</span><span class="n">Call</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">ServiceProviderServiceExtensions</span><span class="p">),</span> <span class="s">&quot;GetRequiredService&quot;</span><span class="p">,</span> <span class="k">new</span> <span class="n">Type</span><span class="p">[]</span> <span class="p">{</span> <span class="n">p</span><span class="p">.</span><span class="n">ParameterType</span> <span class="p">},</span> <span class="n">parameter</span><span class="p">);</span>
+                <span class="c1">// this is a parameter we don&#39;t care about, so we just ask GetRequiredService to</span>
+                <span class="c1">// resolve it for us </span>
+                <span class="k">return</span> <span class="p">(</span><span class="n">Expression</span><span class="p">)</span><span class="n">Expression</span><span class="p">.</span><span class="n">Call</span><span class="p">(</span>
+                    <span class="k">typeof</span><span class="p">(</span><span class="n">ServiceProviderServiceExtensions</span><span class="p">),</span>
+                     <span class="s">&quot;GetRequiredService&quot;</span><span class="p">,</span> 
+                     <span class="k">new</span> <span class="n">Type</span><span class="p">[]</span> <span class="p">{</span> <span class="n">p</span><span class="p">.</span><span class="n">ParameterType</span> <span class="p">},</span> 
+                     <span class="n">parameter</span><span class="p">);</span>
             <span class="p">});</span>
 
-            <span class="c1">// cool, we have all of our constructors parameters set, so we build a &quot;new&quot; expression to invoke it.</span>
+            <span class="c1">// cool, we have all of our constructors parameters set, so we build a &quot;new&quot;</span>
+            <span class="c1">// expression to invoke it.</span>
             <span class="kt">var</span> <span class="n">body</span> <span class="p">=</span> <span class="n">Expression</span><span class="p">.</span><span class="n">New</span><span class="p">(</span><span class="n">ctor</span><span class="p">,</span> <span class="n">ctorParameters</span><span class="p">.</span><span class="n">ToArray</span><span class="p">());</span>
 
-            <span class="c1">// if current type is the first in our list, then we register it by the interface, otherwise by the concrete type</span>
+            <span class="c1">// if current type is the first in our list, then we register it by the interface, otherwise</span>
+            <span class="c1">// by the concrete type</span>
             <span class="kt">var</span> <span class="n">first</span> <span class="p">=</span> <span class="n">_types</span><span class="p">[</span><span class="m">0</span><span class="p">]</span> <span class="p">==</span> <span class="n">currentType</span><span class="p">;</span>
             <span class="kt">var</span> <span class="n">resolveType</span> <span class="p">=</span> <span class="n">first</span> <span class="p">?</span> <span class="n">_interfaceType</span> <span class="p">:</span> <span class="n">currentType</span><span class="p">;</span>
             <span class="kt">var</span> <span class="n">expressionType</span> <span class="p">=</span> <span class="n">Expression</span><span class="p">.</span><span class="n">GetFuncType</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">IServiceProvider</span><span class="p">),</span> <span class="n">resolveType</span><span class="p">);</span>
