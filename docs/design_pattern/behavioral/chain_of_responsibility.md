@@ -68,40 +68,61 @@ public static class ChainConfigurator
         private void ConfigureType(Type currentType)
         {
             // gets the next type, as that will be injected in the current type
-            var nextType = _types.SkipWhile(x => x != currentType).SkipWhile(x => x == currentType).FirstOrDefault();
+            var nextType = _types
+                .SkipWhile(x => x != currentType)
+                .SkipWhile(x => x == currentType)
+                .FirstOrDefault();
 
             // Makes a parameter expression, that is the IServiceProvider x 
             var parameter = Expression.Parameter(typeof(IServiceProvider), "x");
 
-            // get constructor with highest number of parameters. Ideally, there should be only 1 constructor, but better be safe.
-            var ctor = currentType.GetConstructors().OrderByDescending(x => x.GetParameters().Count()).First();
+            // get constructor with highest number of parameters. Ideally, there should be only 1 
+            // constructor, but better be safe.
+            var ctor = currentType
+                .GetConstructors()
+                .OrderByDescending(x => x.GetParameters().Count())
+                .First();
 
             // for each parameter in the constructor
             var ctorParameters = ctor.GetParameters().Select(p =>
             {
-                // check if it implements the interface. That's how we find which parameter to inject the next handler.
+                // check if it implements the interface. That's how we find which parameter to inject
+                // the next handler.
                 if (_interfaceType.IsAssignableFrom(p.ParameterType))
                 {
                     if (nextType is null)
                     {
-                        // if there's no next type, current type is the last in the chain, so it just receives null
+                        // if there's no next type, current type is the last in the chain, so it just
+                        // receives null
                         return Expression.Constant(null, _interfaceType);
                     }
                     else
                     {
-                        // if there is, then we call IServiceProvider.GetRequiredService to resolve next type for us
-                        return Expression.Call(typeof(ServiceProviderServiceExtensions), "GetRequiredService", new Type[] { nextType }, parameter);
+                        // if there is, then we call IServiceProvider.GetRequiredService to resolve next
+                        // type for us
+                        return Expression.Call(
+                            typeof(ServiceProviderServiceExtensions), 
+                            "GetRequiredService", 
+                            new Type[] { nextType }, 
+                            parameter);
                     }
                 }
                 
-                // this is a parameter we don't care about, so we just ask GetRequiredService to resolve it for us 
-                return (Expression)Expression.Call(typeof(ServiceProviderServiceExtensions), "GetRequiredService", new Type[] { p.ParameterType }, parameter);
+                // this is a parameter we don't care about, so we just ask GetRequiredService to
+                // resolve it for us 
+                return (Expression)Expression.Call(
+                    typeof(ServiceProviderServiceExtensions),
+                     "GetRequiredService", 
+                     new Type[] { p.ParameterType }, 
+                     parameter);
             });
 
-            // cool, we have all of our constructors parameters set, so we build a "new" expression to invoke it.
+            // cool, we have all of our constructors parameters set, so we build a "new"
+            // expression to invoke it.
             var body = Expression.New(ctor, ctorParameters.ToArray());
             
-            // if current type is the first in our list, then we register it by the interface, otherwise by the concrete type
+            // if current type is the first in our list, then we register it by the interface, otherwise
+            // by the concrete type
             var first = _types[0] == currentType;
             var resolveType = first ? _interfaceType : currentType;
             var expressionType = Expression.GetFuncType(typeof(IServiceProvider), resolveType);
