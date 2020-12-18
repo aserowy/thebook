@@ -78,6 +78,16 @@ It is also important that each requirement of the system is checked for interact
 
 #### Solution approaches
 
+The solutions are derived from the previously defined influences and assigned to the non-functional requirements. In this way, a table is developed that specifies concrete "high level" solutions for each requirement. As an example, the requirement availability can be assigned to "operation in the Azure Cloud" and "use of the circuit breaker pattern" in order to increase availability and resilience.
+
+It is important to note that the defined solutions can be pure ideas or approaches as well as concrete decisions or concepts (see below).
+
+![Solution approaches as table](images/documenting_microservices_solution_approaches_table.png)
+
+To concretise these solutions, the approaches are visualised in a diagram of the architecture. The aim here is not to provide a complete overview, but to illustrate where the solutions are used. This is important to achieve a delineation of which requirements need to be considered at which levels of the architecture. For example, if Resilience is covered by a service mesh in k8s, the circuit breaker pattern would no longer need to be integrated into the individual services.
+
+TODO Picture
+
 ### Decisions
 
 ![Mandatory questions to document decisions](images/documenting_microservices_decision_template.png)
