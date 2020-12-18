@@ -1349,6 +1349,11 @@
 <p>On the other hand, the top three to five <a href="https://www.embarc.de/software-qualitaet-iso-25010/" title="ISO, weshalb warum? Ist Software-Qualität Geschmackssache?">non-functional requirements</a> are defined and tabulated by means of a short description or motivation in order to describe the architectural goals of the system. It is crucial to take these into account as early as possible in the decision-making process, as these requirements shape the solution and can only be integrated subsequently at great additional expense.</p>
 <p>It is also important that each requirement of the system is checked for interactions between the individual influences, as influences can also exclude each other. For example, it would make sense to introduce CAPTCHAs at login to increase security. However, usability would suffer because users find additional security measures disturbing. In such cases, compromises are made.</p>
 <h4 id="solution-approaches">Solution approaches</h4>
+<p>The solutions are derived from the previously defined influences and assigned to the non-functional requirements. In this way, a table is developed that specifies concrete "high level" solutions for each requirement. As an example, the requirement availability can be assigned to "operation in the Azure Cloud" and "use of the circuit breaker pattern" in order to increase availability and resilience.</p>
+<p>It is important to note that the defined solutions can be pure ideas or approaches as well as concrete decisions or concepts (see below).</p>
+<p><img alt="Solution approaches as table" src="../images/documenting_microservices_solution_approaches_table.png" /></p>
+<p>To concretise these solutions, the approaches are visualised in a diagram of the architecture. The aim here is not to provide a complete overview, but to illustrate where the solutions are used. This is important to achieve a delineation of which requirements need to be considered at which levels of the architecture. For example, if Resilience is covered by a service mesh in k8s, the circuit breaker pattern would no longer need to be integrated into the individual services.</p>
+<p>TODO Picture</p>
 <h3 id="decisions">Decisions</h3>
 <p><img alt="Mandatory questions to document decisions" src="../images/documenting_microservices_decision_template.png" /></p>
 <h3 id="concepts">Concepts</h3>
