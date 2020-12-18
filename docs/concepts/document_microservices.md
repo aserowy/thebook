@@ -17,7 +17,7 @@ It is important to use a documentation template that requires minimal maintenanc
 
 ### A minimalistic approach
 
-This approach is structured into four documentation types to describe the macro and micro architectures of a project.
+This approach is structured into four documentation types to describe the macro and micro architectures of a project. Method and example were described by [Stefan Zörner][1].
 
 At first the minimal architecture overview provides insights about the mission and context of the architecture. Furthermore, solution approaches, specifications, non-functional requirements, and objectives of the architecture are also defined.  
 
@@ -31,14 +31,12 @@ In order to also document the micro architecture of the microservices, a profile
 
 ### Micro vs. macro architecture
 
-One of the [Independent Systems Architecture (ISA) principles][1] states, that each... 
+One of the [Independent Systems Architecture (ISA) principles][2] states, that each... 
 > "[...] system must have two clearly separated levels of architectural decisions. The macro architecture comprises decisions that cover all modules. [...] The micro architecture considers decisions which may be taken individually for each module".
 
 This leads to a fundamental decision whether a solution option at the macro-architecture level should lead to standardisation for all services or whether the solution can be re-evaluated in each service to ensure the best possible outcome.
 
 In other words, decisions at macro level offer standardisation, whereas decisions at micro level create individualisation.
-
-[1]: <https://isa-principles.org/> "Independent Systems Architecture principles"
 
 ### Minimal architecture overview
 
@@ -70,11 +68,9 @@ By means of context boundaries, the mission statement is narrowed down and users
 
 Influences describe core requirements of the system by means of two vectors. On the one hand, external specifications reduce the solution space and exclude options in advance. These include technical requirements such as "we are going to the cloud" as well as organisational requirements such as working methods or team composition.
 
-On the other hand, the top three to five [non-functional requirements][2] are defined and tabulated by means of a short description or motivation in order to describe the architectural goals of the system. It is crucial to take these into account as early as possible in the decision-making process, as these requirements shape the solution and can only be integrated subsequently at great additional expense.
+On the other hand, the top three to five [non-functional requirements][3] are defined and tabulated by means of a short description or motivation in order to describe the architectural goals of the system. It is crucial to take these into account as early as possible in the decision-making process, as these requirements shape the solution and can only be integrated subsequently at great additional expense.
 
 It is also important that each requirement of the system is checked for interactions between the individual influences, as influences can also exclude each other. For example, it would make sense to introduce CAPTCHAs at login to increase security. However, usability would suffer because users find additional security measures disturbing. In such cases, compromises are made.
-
-[2]: <https://www.embarc.de/software-qualitaet-iso-25010/> "ISO, weshalb warum? Ist Software-Qualität Geschmackssache?"
 
 #### Solution approaches
 
@@ -112,3 +108,7 @@ Typical contents for a service profile:
 ## Example
 
 ## Next steps
+
+[1]: <https://www.embarc.de/stefan-zoerner/> "Gut das ist? Umgekehrte Architekturbewertung eines Internetgiganten"
+[2]: <https://isa-principles.org/> "Independent Systems Architecture principles"
+[3]: <https://www.embarc.de/software-qualitaet-iso-25010/> "ISO, weshalb warum? Ist Software-Qualität Geschmackssache?"
