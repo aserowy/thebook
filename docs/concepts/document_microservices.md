@@ -82,7 +82,7 @@ It is important to note that the defined solutions can be pure ideas or approach
 
 To concretise these solutions, the approaches are visualised in a diagram of the architecture. The aim here is not to provide a complete overview, but to illustrate where the solutions are used. This is important to achieve a delineation of which requirements need to be considered at which levels of the architecture. For example, if Resilience is covered by a service mesh in k8s, the circuit breaker pattern would no longer need to be integrated into the individual services.
 
-TODO Picture
+![Solution approaches visualized](images/documenting_microservices_solution_approaches_visualization.png)
 
 ### Decisions
 
