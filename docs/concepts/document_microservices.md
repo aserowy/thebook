@@ -94,7 +94,7 @@ In order to make architectural decisions comprehensible and thus achieve greater
 - Influencing factors
 - Assumptions
 - Alternatives
-- decision
+- Decision
 
 In the [template for architectural decisions](templates/template_architectural_decisions.md), the phases are enriched with additional questions. The template thus provides a basis for what content should be documented in the respective phases.
 
