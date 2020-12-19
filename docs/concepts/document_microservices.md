@@ -31,7 +31,7 @@ In order to also document the micro architecture of the microservices, a profile
 
 ### Micro vs. macro architecture
 
-One of the [Independent Systems Architecture (ISA) principles][2] states, that each... 
+One of the [Independent Systems Architecture (ISA) principles][2] states, that each...
 > "[...] system must have two clearly separated levels of architectural decisions. The macro architecture comprises decisions that cover all modules. [...] The micro architecture considers decisions which may be taken individually for each module".
 
 This leads to a fundamental decision whether a solution option at the macro-architecture level should lead to standardisation for all services or whether the solution can be re-evaluated in each service to ensure the best possible outcome.
@@ -80,13 +80,25 @@ It is important to note that the defined solutions can be pure ideas or approach
 
 ![Solution approaches as table](images/documenting_microservices_solution_approaches_table.png)
 
-To concretise these solutions, the approaches are visualised in a diagram of the architecture. The aim here is not to provide a complete overview, but to illustrate where the solutions are used. This is important to achieve a delineation of which requirements need to be considered at which levels of the architecture. For example, if Resilience is covered by a service mesh in k8s, the circuit breaker pattern would no longer need to be integrated into the individual services.
+To concretise these solutions, the approaches are visualised in a diagram of the architecture. The aim here is not to provide a complete overview, but to illustrate where the solutions are used. This is important to achieve a delineation of which requirements need to be considered at which levels of the architecture. For example, if resilience is covered by a service mesh in k8s, the circuit breaker pattern would no longer need to be integrated into the individual services.
 
 ![Solution approaches visualized](images/documenting_microservices_solution_approaches_visualization.png)
 
 ### Decisions
 
-![Mandatory questions to document decisions](images/documenting_microservices_decision_template.png)
+Decisions are an essential part of the architecture documentation. Decisions define concrete specifications in order to drive standardised solutions into the architecture. This does not mean that decisions are imposed from above, but should be discussed, developed and made jointly by the team.
+
+In order to make architectural decisions comprehensible and thus achieve greater acceptance in the team, the following five phases of decision-making are documented:
+
+- Question
+- Influencing factors
+- Assumptions
+- Alternatives
+- decision
+
+In the [template for architectural decisions](templates/template_architectural_decisions.md), the phases are enriched with additional questions. The template thus provides a basis for what content should be documented in the respective phases.
+
+TODO Wie zur Fragestellung... usw.
 
 ### Concepts
 
