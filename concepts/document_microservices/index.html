@@ -977,6 +977,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../templates/template_architectural_decisions/" class="md-nav__link">
+      Templates
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1321,7 +1333,7 @@
 <p>Concepts describe why, what and how these decisions should be implemented and provide the framework for making decisions for the micro architecture within the individual services.</p>
 <p>In order to also document the micro architecture of the microservices, a profile is created for each service, in which specific information such as contact persons, approaches to solutions, but also technical debts are recorded.</p>
 <h3 id="micro-vs-macro-architecture">Micro vs. macro architecture</h3>
-<p>One of the <a href="https://isa-principles.org/" title="Independent Systems Architecture principles">Independent Systems Architecture (ISA) principles</a> states, that each... </p>
+<p>One of the <a href="https://isa-principles.org/" title="Independent Systems Architecture principles">Independent Systems Architecture (ISA) principles</a> states, that each...</p>
 <blockquote>
 <p>"[...] system must have two clearly separated levels of architectural decisions. The macro architecture comprises decisions that cover all modules. [...] The micro architecture considers decisions which may be taken individually for each module".</p>
 </blockquote>
@@ -1352,10 +1364,20 @@
 <p>The solutions are derived from the previously defined influences and assigned to the non-functional requirements. In this way, a table is developed that specifies concrete "high level" solutions for each requirement. As an example, the requirement availability can be assigned to "operation in the Azure Cloud" and "use of the circuit breaker pattern" in order to increase availability and resilience.</p>
 <p>It is important to note that the defined solutions can be pure ideas or approaches as well as concrete decisions or concepts (see below).</p>
 <p><img alt="Solution approaches as table" src="../images/documenting_microservices_solution_approaches_table.png" /></p>
-<p>To concretise these solutions, the approaches are visualised in a diagram of the architecture. The aim here is not to provide a complete overview, but to illustrate where the solutions are used. This is important to achieve a delineation of which requirements need to be considered at which levels of the architecture. For example, if Resilience is covered by a service mesh in k8s, the circuit breaker pattern would no longer need to be integrated into the individual services.</p>
+<p>To concretise these solutions, the approaches are visualised in a diagram of the architecture. The aim here is not to provide a complete overview, but to illustrate where the solutions are used. This is important to achieve a delineation of which requirements need to be considered at which levels of the architecture. For example, if resilience is covered by a service mesh in k8s, the circuit breaker pattern would no longer need to be integrated into the individual services.</p>
 <p><img alt="Solution approaches visualized" src="../images/documenting_microservices_solution_approaches_visualization.png" /></p>
 <h3 id="decisions">Decisions</h3>
-<p><img alt="Mandatory questions to document decisions" src="../images/documenting_microservices_decision_template.png" /></p>
+<p>Decisions are an essential part of the architecture documentation. Decisions define concrete specifications in order to drive standardised solutions into the architecture. This does not mean that decisions are imposed from above, but should be discussed, developed and made jointly by the team.</p>
+<p>In order to make architectural decisions comprehensible and thus achieve greater acceptance in the team, the following five phases of decision-making are documented:</p>
+<ul>
+<li>Question</li>
+<li>Influencing factors</li>
+<li>Assumptions</li>
+<li>Alternatives</li>
+<li>decision</li>
+</ul>
+<p>In the <a href="../templates/template_architectural_decisions/">template for architectural decisions</a>, the phases are enriched with additional questions. The template thus provides a basis for what content should be documented in the respective phases.</p>
+<p>TODO Wie zur Fragestellung... usw.</p>
 <h3 id="concepts">Concepts</h3>
 <ul>
 <li><a href="../write_concepts/">How to write concepts</a></li>
