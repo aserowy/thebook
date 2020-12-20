@@ -90,15 +90,20 @@ Decisions are an essential part of the architecture documentation. Decisions def
 
 In order to make architectural decisions comprehensible and thus achieve greater acceptance in the team, the following five phases of decision-making are documented:
 
-- Question
-- Influencing factors
-- Assumptions
-- Alternatives
-- Decision
+![Decision process](images/documenting_microservices_decision.png)
 
 In the [template for architectural decisions](templates/template_architectural_decisions.md), the phases are enriched with additional questions. The template thus provides a basis for what content should be documented in the respective phases.
 
-TODO Wie zur Fragestellung... usw.
+But how exactly does a question arise in the first place? Basically, the need for decisions arises from mission statement, architectural goals and the context boundaries, for example to document solution approaches or the introduction of concepts. In this context, typical questions would be:
+
+- What user interfaces do the different users get?
+- How do we integrate certain external systems?
+- Which product/technology do we use to solve certain requirements?
+- How do components of our system communicate with each other?
+- How do we address cross-cutting issues such as logging or resilience?
+- Make or buy?
+
+A good starting point for questions would be the centralisation of the UI, centralisation of security and whether or how internal services communicate with each other. Of course, these topics should only be the beginning to describe the architecture on the basis of decisions!
 
 ### Concepts
 
@@ -120,6 +125,8 @@ Typical contents for a service profile:
 ## Example
 
 ## Next steps
+
+- ADRs
 
 [1]: <https://www.embarc.de/stefan-zoerner/> "Gut das ist? Umgekehrte Architekturbewertung eines Internetgiganten"
 [2]: <https://isa-principles.org/> "Independent Systems Architecture principles"

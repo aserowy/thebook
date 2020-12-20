@@ -1,6 +1,6 @@
 ---
-title: Template achitectural decision
-summary: A template for achitectural decision documentation.
+title: Architectural decision
+summary: A template for architectural decision documentation.
 authors:
     - Alexander Serowy
 tags:
@@ -27,7 +27,7 @@ tags:
 ## Influencing factors
 
 > Which fixed framework conditions do we have to comply with?
-> Which quality objectives are to be considered?
+> Which architectural goals are to be considered?
 > Which risks are affected?
 
 ## Assumptions
