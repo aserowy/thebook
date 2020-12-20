@@ -94,7 +94,7 @@ In order to make architectural decisions comprehensible and thus achieve greater
 
 In the [template for architectural decisions](templates/template_architectural_decisions.md), the phases are enriched with additional questions. The template thus provides a basis for what content should be documented in the respective phases.
 
-But how exactly does a question arise in the first place? Basically, the need for decisions arises from mission statement, architectural goals and the context boundaries, for example to document solution approaches or the introduction of concepts. In this context, typical questions would be:
+But how exactly does a question arise in the first place? Basically, the need for decisions arises from mission statement, architectural goals and the context boundaries, to document for example solution approaches or the introduction of concepts. In this context, typical questions would be:
 
 - What user interfaces do the different users get?
 - How do we integrate certain external systems?
