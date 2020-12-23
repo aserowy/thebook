@@ -107,7 +107,9 @@ A good starting point for questions would be the centralisation of the UI, centr
 
 ### Concepts
 
-- [How to write concepts](write_concepts.md)
+Concepts are the last building block of macroarchitecture. They make it possible to document the implementation of decisions made and answer why what is solved and how.
+
+A [standardised structure](write_concepts.md) allows concepts to be managed in a project-neutral way, for example in a team or company, and to be integrated into one's own architecture documentation if required. This reduces the amount of documentation that has to be written and increases the flexibility of the team composition through the standardisation of the solutions.
 
 ### Profiles
 
