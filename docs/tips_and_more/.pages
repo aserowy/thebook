@@ -2,4 +2,5 @@ arrange:
   - README.md
   - csharp.md
   - go
+  - sh
   - visual_studio.md
