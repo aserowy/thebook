@@ -1,0 +1,14 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {},
+  "extensions": {
+    "recommendations": [
+      "vscode-icons-team.vscode-icons",
+      "davidanson.vscode-markdownlint"
+    ]
+  }
+}
