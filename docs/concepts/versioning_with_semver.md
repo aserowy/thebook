@@ -28,14 +28,19 @@ These triggers are not feasible in a software solution that is used by customers
 
 In this type of software solution
 
-- MAJOR changes when
-  - new feature sets are added
-  - features are revised and are not backward compatible
-- MINOR changes when
-  - new features are added to existing feature sets
-  - features are revised and are backwards compatible
-- PATCH changes when
-  - fixes are provided
+`MAJOR changes when`
+
+- new feature sets are added
+- features are revised and are not backward compatible
+
+`MINOR changes when`
+
+- new features are added to existing feature sets
+- features are revised and are backwards compatible
+
+`PATCH changes when`
+
+- fixes are provided
 
 To ensure that these rules are used throughout the software lifecycle and are predictable for future releases, define these triggers as follows:
 
