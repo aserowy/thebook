@@ -1071,13 +1071,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#code-metrics" class="md-nav__link">
-    Code metrics
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#code-style-per-project" class="md-nav__link">
     Code style (per project)
   </a>
@@ -1171,79 +1164,6 @@
   
   
   
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_3" type="checkbox" id="__nav_8_3" >
-      
-      <label class="md-nav__link" for="__nav_8_3">
-        <span class="md-nav__icon md-icon"></span>
-        
-          <a href="../sh/" class="md-nav__link"
-            style="margin: initial; padding: initial; pointer-events: initial">
-        
-          Sh
-        </a>
-      </label>
-      <nav class="md-nav" aria-label="Sh" data-md-level="2">
-        <label class="md-nav__title" for="__nav_8_3">
-          <span class="md-nav__icon md-icon"></span>
-          
-            <a href="../sh/" class="md-nav__link"
-              style="margin: initial; padding: initial; pointer-events: initial">
-          
-            Sh
-          </a>
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../sh/provision/" class="md-nav__link">
-        Provision Raspbian with Home Assistant
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../sh/update_container/" class="md-nav__link">
-        Update container automatically
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../sh/backup/" class="md-nav__link">
-        Backup with rclone and borg
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-          
-            
-  
-  
-  
     <li class="md-nav__item">
       <a href="../visual_studio/" class="md-nav__link">
         Visual Studio
@@ -1303,13 +1223,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#code-metrics" class="md-nav__link">
-    Code metrics
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#code-style-per-project" class="md-nav__link">
     Code style (per project)
   </a>
@@ -1353,39 +1266,6 @@
 <ul>
 <li><a href="https://devblogs.microsoft.com/dotnet/configureawait-faq/">https://devblogs.microsoft.com/dotnet/configureawait-faq/</a></li>
 </ul>
-<h2 id="code-metrics">Code metrics</h2>
-<p><a href="https://docs.microsoft.com/en-us/visualstudio/code-quality/how-to-generate-code-metrics-data?view=vs-2019">https://docs.microsoft.com/en-us/visualstudio/code-quality/how-to-generate-code-metrics-data?view=vs-2019</a></p>
-<p>Both configurations - .editorconfig and CodeMetricsConfig.txt - should get added to the solution. Name of metrics configuration must match exactly 'CodeMetricsConfig.txt'. Add links of both files in each project and ensure the metrics configuration is added as additional file.</p>
-<p>Excerpt from an .editorconfig:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Remove the line below if you want to inherit .editorconfig settings from higher directories</span>
-<span class="na">root</span> <span class="o">=</span> <span class="s">true</span>
-
-<span class="c1"># C# files</span>
-<span class="k">[*.cs]</span>
-
-<span class="c1"># CA1303: Do not pass literals as localized parameters</span>
-<span class="na">dotnet_diagnostic.CA1303.severity</span> <span class="o">=</span> <span class="s">none</span>
-
-<span class="c1"># CA1501: Avoid excessive inheritance</span>
-<span class="na">dotnet_diagnostic.CA1501.severity</span> <span class="o">=</span> <span class="s">warning</span>
-
-<span class="c1"># CA1502: Avoid excessive complexity</span>
-<span class="na">dotnet_diagnostic.CA1502.severity</span> <span class="o">=</span> <span class="s">warning</span>
-
-<span class="c1"># CA1505: Avoid unmaintainable code</span>
-<span class="na">dotnet_diagnostic.CA1505.severity</span> <span class="o">=</span> <span class="s">warning</span>
-
-<span class="c1"># CA1506: Avoid excessive class coupling</span>
-<span class="na">dotnet_diagnostic.CA1506.severity</span> <span class="o">=</span> <span class="s">warning</span>
-<span class="na">...</span>
-</code></pre></div>
-<p>Example of CodeMetricsConfig.txt:</p>
-<div class="highlight"><pre><span></span><code>CA1501: 3
-CA1502: 15
-CA1505: 40
-CA1506: 9
-</code></pre></div>
-<p>It should get added that these numbers can barely reached in test projects. A second metric configuration for test projects is a wise decision. In specific cases e.g. AutoMapper-Profiles class coupling cannot be reached as well.</p>
 <h2 id="code-style-per-project">Code style (per project)</h2>
 <ul>
 <li><a href="https://www.nuget.org/packages/Microsoft.CodeAnalysis.FxCopAnalyzers/">https://www.nuget.org/packages/Microsoft.CodeAnalysis.FxCopAnalyzers/</a></li>
