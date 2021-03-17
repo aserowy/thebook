@@ -1,7 +1,7 @@
 ---
 title: Visual Studio
 authors:
-    - Alexander Serowy
+  - Alexander Serowy
 ---
 
 ## Code cleanup
@@ -13,8 +13,8 @@ With the introduction of .editorconfig you can introduce style profiles on a sol
 
 ## Commands
 
-| Command | Scheme | Binding |
-|---|---|---|
+| Command      | Scheme          | Binding    |
+| ------------ | --------------- | ---------- |
 | Edit.GoToAll | Visual Studio 6 | `CTRL + ,` |
 
 ## Configurations
@@ -28,9 +28,9 @@ With the introduction of .editorconfig you can introduce style profiles on a sol
 
 - Options > Text Editor > C# > Code Style > Naming
 - Manage naming styles > Add
-  - Name: "Begins with _"
-  - Required Prefix: "_"
+  - Name: "Begins with \_"
+  - Required Prefix: "\_"
   - Capitalization: camel Case Name
 - Add
   - Specification: Private or Internal Field
-  - Required Style: Begins with _
+  - Required Style: Begins with \_

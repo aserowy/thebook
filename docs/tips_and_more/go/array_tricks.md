@@ -1,7 +1,7 @@
 ---
 title: Array tricks
 authors:
-    - Alexander Serowy
+  - Alexander Serowy
 ---
 
 ## Filtering without allocating

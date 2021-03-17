@@ -1,7 +1,7 @@
 ---
 title: Array Operations
 authors:
-    - Alexander Serowy
+  - Alexander Serowy
 ---
 
 ## AppendVector
@@ -25,7 +25,7 @@ b = append([]T(nil), a...)
 a = append(a[:i], a[j:]...)
 ```
 
->To ensure gc of structs with pointer fields or pointer as elements and prevent possible memory leaks use the following.
+> To ensure gc of structs with pointer fields or pointer as elements and prevent possible memory leaks use the following.
 
 ```go
 copy(a[i:], a[j:])
@@ -43,7 +43,7 @@ a = append(a[:i], a[i+1:]...)
 a = a[:i+copy(a[i:], a[i+1:])]
 ```
 
->To ensure gc of structs with pointer fields or pointer as elements and prevent possible memory leaks use the following.
+> To ensure gc of structs with pointer fields or pointer as elements and prevent possible memory leaks use the following.
 
 ```go
 copy(a[i:], a[i+1:])
@@ -58,7 +58,7 @@ a[i] = a[len(a)-1]
 a = a[:len(a)-1]
 ```
 
->To ensure gc of structs with pointer fields or pointer as elements and prevent possible memory leaks use the following.
+> To ensure gc of structs with pointer fields or pointer as elements and prevent possible memory leaks use the following.
 
 ```go
 a[i] = a[len(a)-1]
@@ -84,7 +84,7 @@ a = append(a, make([]T, j)...)
 a = append(a[:i], append([]T{x}, a[i:]...)...)
 ```
 
->The second append creates a new slice with its own underlying storage and copies elements in a[i:] to that slice, and these elements are then copied back to slice a (by the first append). The creation of the new slice (and thus memory garbage) and the second copy can be avoided by using an alternative way:
+> The second append creates a new slice with its own underlying storage and copies elements in a[i:] to that slice, and these elements are then copied back to slice a (by the first append). The creation of the new slice (and thus memory garbage) and the second copy can be avoided by using an alternative way:
 
 ```go
 s = append(s, 0)
