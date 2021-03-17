@@ -5,6 +5,8 @@
 		"dockerfile": "Dockerfile",
 	},
 	"extensions": [
+		"eamodio.gitlens",
+		"mhutchie.git-graph",
 		"yzane.markdown-pdf",
 		"davidanson.vscode-markdownlint",
 		"esbenp.prettier-vscode"
