@@ -4,17 +4,5 @@
       "path": "."
     }
   ],
-  "settings": {},
-  "extensions": {
-    "recommendations": [
-      "vscode-icons-team.vscode-icons",
-      "davidanson.vscode-markdownlint",
-      "yzane.markdown-pdf"
-    ]
-  },
-  "recommendations": [
-    "vscode-icons-team.vscode-icons",
-    "davidanson.vscode-markdownlint",
-    "yzane.markdown-pdf"
-  ]
+  "settings": {}
 }
