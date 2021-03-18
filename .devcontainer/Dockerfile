@@ -9,6 +9,6 @@ RUN pip3 install --no-cache "mkdocs-awesome-pages-plugin>=2.4.0"
 RUN pip3 install --no-cache "mkdocs-material>=6.1.7"
 RUN pip3 install --no-cache "mkdocs-section-index>=0.2.1"
 
-WORKDIR /workspaces/thebook
+WORKDIR /workspace/
 
 ENTRYPOINT mkdocs serve
