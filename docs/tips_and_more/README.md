@@ -12,3 +12,28 @@ Install on windows with `choco install firacode -y`. After installation you can 
 
 - [Visual Studio](https://github.com/tonsky/FiraCode/wiki/Visual-Studio-Instructions)
 - [VS Code](https://github.com/tonsky/FiraCode/wiki/VS-Code-Instructions)
+
+## Shell
+
+Install nerd fonds for better powerlevel10k support on windows
+
+```sh
+choco install nerdfont-hack -y
+```
+
+Install zsh on linux shell (wsl2) with
+
+```sh
+sudo apt update
+sudo apt install git zsh -y
+```
+
+Install oh my zsh with curl or wget
+
+```sh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+Install the powerlevel10k schema
+
+<https://github.com/romkatv/powerlevel10k>
