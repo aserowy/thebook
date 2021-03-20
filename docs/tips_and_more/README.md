@@ -17,9 +17,7 @@ Install on windows with `choco install firacode -y`. After installation you can 
 
 Install nerd fonds for better powerlevel10k support on windows
 
-```sh
-choco install nerdfont-hack -y
-```
+<https://github.com/romkatv/powerlevel10k>
 
 Install zsh on linux shell (wsl2) with
 
@@ -37,3 +35,16 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 Install the powerlevel10k schema
 
 <https://github.com/romkatv/powerlevel10k>
+
+Change default settings of windows terminal
+
+```json
+"profiles":
+{
+    "defaults":
+    {
+        // Put settings here that you want to apply to all profiles.
+        "colorScheme": "Solarized Dark",
+        "fontFace": "MesloLGS NF"
+    },
+```
