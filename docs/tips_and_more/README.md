@@ -53,3 +53,54 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 ```ini
 plugins=(git docker docker-compose debian)
 ```
+
+## Windows Terminal
+
+Some of my favorite themes for windows terminal. These are not default themes. Thus, you have to add them in your settings.
+
+```json
+[
+  {
+    "name": "Solarized Dark Higher Contrast",
+    "black": "#002831",
+    "red": "#d11c24",
+    "green": "#6cbe6c",
+    "yellow": "#a57706",
+    "blue": "#2176c7",
+    "purple": "#c61c6f",
+    "cyan": "#259286",
+    "white": "#eae3cb",
+    "brightBlack": "#006488",
+    "brightRed": "#f5163b",
+    "brightGreen": "#51ef84",
+    "brightYellow": "#b27e28",
+    "brightBlue": "#178ec8",
+    "brightPurple": "#e24d8e",
+    "brightCyan": "#00b39e",
+    "brightWhite": "#fcf4dc",
+    "background": "#001e27",
+    "foreground": "#9cc2c3"
+  },
+  {
+    "name": "Sundried",
+    "black": "#302b2a",
+    "red": "#a7463d",
+    "green": "#587744",
+    "yellow": "#9d602a",
+    "blue": "#485b98",
+    "purple": "#864651",
+    "cyan": "#9c814f",
+    "white": "#c9c9c9",
+    "brightBlack": "#4d4e48",
+    "brightRed": "#aa000c",
+    "brightGreen": "#128c21",
+    "brightYellow": "#fc6a21",
+    "brightBlue": "#7999f7",
+    "brightPurple": "#fd8aa1",
+    "brightCyan": "#fad484",
+    "brightWhite": "#ffffff",
+    "background": "#1a1818",
+    "foreground": "#c9c9c9"
+  }
+]
+```
