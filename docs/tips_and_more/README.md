@@ -31,9 +31,10 @@ Install nerd fonds for better powerlevel10k support on windows. Download them fr
 Now install zsh on your linux shell (e.g. debian in wsl2) and upgrade zsh with ohmyzsh. Both commands regarding ohmyzsh and powerlevel10k must not executed with sudo. Otherwise you would install the extensions for root and not for the current user.
 
 ```sh
-sudo apt update
-sudo apt install git zsh -y
+sudo apt update && sudo apt install git zsh curl -y
+```
 
+```sh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
@@ -44,6 +45,10 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 ```
 
 While editing `~/.zshrc` you can add plugins to your new shell as well. You can find a list of available plugins [here](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins).
+
+```ini
+ZSH_THEME="powerlevel10k/powerlevel10k"
+```
 
 ```ini
 plugins=(git docker docker-compose debian)
