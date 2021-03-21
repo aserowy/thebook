@@ -1196,18 +1196,7 @@
 <li><a href="https://github.com/tonsky/FiraCode/wiki/VS-Code-Instructions">VS Code</a></li>
 </ul>
 <h2 id="shell">Shell</h2>
-<p>Install nerd fonds for better powerlevel10k support on windows</p>
-<p><a href="https://github.com/romkatv/powerlevel10k">https://github.com/romkatv/powerlevel10k</a></p>
-<p>Install zsh on linux shell (wsl2) with</p>
-<div class="highlight"><pre><span></span><code>sudo apt update
-sudo apt install git zsh -y
-</code></pre></div>
-<p>Install oh my zsh with curl or wget</p>
-<div class="highlight"><pre><span></span><code>sh -c <span class="s2">&quot;</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span class="k">)</span><span class="s2">&quot;</span>
-</code></pre></div>
-<p>Install the powerlevel10k schema</p>
-<p><a href="https://github.com/romkatv/powerlevel10k">https://github.com/romkatv/powerlevel10k</a></p>
-<p>Change default settings of windows terminal</p>
+<p>Install nerd fonds for better powerlevel10k support on windows. Download them from <a href="https://github.com/romkatv/powerlevel10k">powerlevel10k git</a> and follow the install instructions. After installation, change the default settings of the your terminal to use <code>MesloGS NF</code>. For e.g. windows terminal edit <code>settings.json</code> with the following defaults:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">&quot;profiles&quot;</span><span class="p">:</span>
 <span class="p">{</span>
     <span class="nt">&quot;defaults&quot;</span><span class="p">:</span>
@@ -1216,6 +1205,18 @@ sudo apt install git zsh -y
         <span class="nt">&quot;colorScheme&quot;</span><span class="p">:</span> <span class="s2">&quot;Solarized Dark&quot;</span><span class="p">,</span>
         <span class="nt">&quot;fontFace&quot;</span><span class="p">:</span> <span class="s2">&quot;MesloLGS NF&quot;</span>
     <span class="p">},</span>
+</code></pre></div>
+<p>Now install zsh on your linux shell (e.g. debian in wsl2) and upgrade zsh with ohmyzsh. Both commands regarding ohmyzsh and powerlevel10k must not executed with sudo. Otherwise you would install the extensions for root and not for the current user.</p>
+<div class="highlight"><pre><span></span><code>sudo apt update
+sudo apt install git zsh -y
+
+sh -c <span class="s2">&quot;</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span class="k">)</span><span class="s2">&quot;</span>
+</code></pre></div>
+<p>After both extensions are installed, you can install the beloved <a href="https://github.com/romkatv/powerlevel10k">POWERLEVEL10K</a> theme. Follow the instructions to set the theme as default in <code>~/.zshrc</code> and make sure, the new fonts are installed and used in your terminal!</p>
+<div class="highlight"><pre><span></span><code>git clone --depth<span class="o">=</span><span class="m">1</span> https://github.com/romkatv/powerlevel10k.git <span class="si">${</span><span class="nv">ZSH_CUSTOM</span><span class="k">:-</span><span class="nv">$HOME</span><span class="p">/.oh-my-zsh/custom</span><span class="si">}</span>/themes/powerlevel10k
+</code></pre></div>
+<p>While editing <code>~/.zshrc</code> you can add plugins to your new shell as well. You can find a list of available plugins <a href="https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins">here</a>.</p>
+<div class="highlight"><pre><span></span><code><span class="na">plugins</span><span class="o">=</span><span class="s">(git docker docker-compose debian)</span>
 </code></pre></div>
                 
                   
