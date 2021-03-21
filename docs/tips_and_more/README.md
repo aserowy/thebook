@@ -15,28 +15,7 @@ Install on windows with `choco install firacode -y`. After installation you can 
 
 ## Shell
 
-Install nerd fonds for better powerlevel10k support on windows
-
-<https://github.com/romkatv/powerlevel10k>
-
-Install zsh on linux shell (wsl2) with
-
-```sh
-sudo apt update
-sudo apt install git zsh -y
-```
-
-Install oh my zsh with curl or wget
-
-```sh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
-
-Install the powerlevel10k schema
-
-<https://github.com/romkatv/powerlevel10k>
-
-Change default settings of windows terminal
+Install nerd fonds for better powerlevel10k support on windows. Download them from [powerlevel10k git](https://github.com/romkatv/powerlevel10k) and follow the install instructions. After installation, change the default settings of the your terminal to use `MesloGS NF`. For e.g. windows terminal edit `settings.json` with the following defaults:
 
 ```json
 "profiles":
@@ -47,4 +26,25 @@ Change default settings of windows terminal
         "colorScheme": "Solarized Dark",
         "fontFace": "MesloLGS NF"
     },
+```
+
+Now install zsh on your linux shell (e.g. debian in wsl2) and upgrade zsh with ohmyzsh. Both commands regarding ohmyzsh and powerlevel10k must not executed with sudo. Otherwise you would install the extensions for root and not for the current user.
+
+```sh
+sudo apt update
+sudo apt install git zsh -y
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+After both extensions are installed, you can install the beloved [POWERLEVEL10K](https://github.com/romkatv/powerlevel10k) theme. Follow the instructions to set the theme as default in `~/.zshrc` and make sure, the new fonts are installed and used in your terminal!
+
+```sh
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+```
+
+While editing `~/.zshrc` you can add plugins to your new shell as well. You can find a list of available plugins [here](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins).
+
+```ini
+plugins=(git docker docker-compose debian)
 ```
