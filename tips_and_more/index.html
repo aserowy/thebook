@@ -1222,9 +1222,26 @@
 <div class="highlight"><pre><span></span><code>git clone --depth<span class="o">=</span><span class="m">1</span> https://github.com/romkatv/powerlevel10k.git <span class="si">${</span><span class="nv">ZSH_CUSTOM</span><span class="k">:-</span><span class="nv">$HOME</span><span class="p">/.oh-my-zsh/custom</span><span class="si">}</span>/themes/powerlevel10k
 </code></pre></div>
 <p>While editing <code>~/.zshrc</code> you can add plugins to your new shell as well. You can find a list of available plugins <a href="https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins">here</a>.</p>
-<div class="highlight"><pre><span></span><code><span class="na">ZSH_THEME</span><span class="o">=</span><span class="s">&quot;powerlevel10k/powerlevel10k&quot;</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="na">plugins</span><span class="o">=</span><span class="s">(git docker docker-compose debian)</span>
+<p>My standard configuration for <code>.zshrc</code> is currently extreme lean. Important to note: you should replace ssh key ids with keys existing in your <code>~/.ssh/</code> folder.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># instant prompt</span>
+<span class="k">if</span> <span class="o">[[</span> -r <span class="s2">&quot;</span><span class="si">${</span><span class="nv">XDG_CACHE_HOME</span><span class="k">:-</span><span class="nv">$HOME</span><span class="p">/.cache</span><span class="si">}</span><span class="s2">/p10k-instant-prompt-</span><span class="si">${</span><span class="p">(%)</span><span class="k">:-</span><span class="p">%n</span><span class="si">}</span><span class="s2">.zsh&quot;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+  <span class="nb">source</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">XDG_CACHE_HOME</span><span class="k">:-</span><span class="nv">$HOME</span><span class="p">/.cache</span><span class="si">}</span><span class="s2">/p10k-instant-prompt-</span><span class="si">${</span><span class="p">(%)</span><span class="k">:-</span><span class="p">%n</span><span class="si">}</span><span class="s2">.zsh&quot;</span>
+<span class="k">fi</span>
+
+<span class="c1"># zsh</span>
+<span class="nb">export</span> <span class="nv">ZSH</span><span class="o">=</span><span class="s2">&quot;/home/serowy/.oh-my-zsh&quot;</span>
+
+<span class="nv">ZSH_THEME</span><span class="o">=</span><span class="s2">&quot;powerlevel10k/powerlevel10k&quot;</span>
+
+<span class="c1"># ohmyzsh</span>
+<span class="nv">plugins</span><span class="o">=(</span>git docker docker-compose debian ssh-agent<span class="o">)</span>
+
+zstyle :omz:plugins:ssh-agent identities ssh_key_1 ssh_key_2
+
+<span class="nb">source</span> <span class="nv">$ZSH</span>/oh-my-zsh.sh
+
+<span class="c1"># user configuration</span>
+<span class="o">[[</span> ! -f ~/.p10k.zsh <span class="o">]]</span> <span class="o">||</span> <span class="nb">source</span> ~/.p10k.zsh
 </code></pre></div>
 <h2 id="windows-terminal">Windows Terminal</h2>
 <p>Some of my favorite themes for windows terminal. These are not default themes. Thus, you have to add them in your settings.</p>
