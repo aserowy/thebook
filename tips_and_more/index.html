@@ -1234,7 +1234,13 @@
 <span class="nv">ZSH_THEME</span><span class="o">=</span><span class="s2">&quot;powerlevel10k/powerlevel10k&quot;</span>
 
 <span class="c1"># ohmyzsh</span>
-<span class="nv">plugins</span><span class="o">=(</span>git docker docker-compose debian ssh-agent<span class="o">)</span>
+<span class="nv">plugins</span><span class="o">=(</span>
+  debian
+  docker
+  docker-compose
+  git
+  ssh-agent
+<span class="o">)</span>
 
 zstyle :omz:plugins:ssh-agent identities ssh_key_1 ssh_key_2
 
