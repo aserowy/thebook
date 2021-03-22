@@ -60,7 +60,13 @@ export ZSH="/home/serowy/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # ohmyzsh
-plugins=(git docker docker-compose debian ssh-agent)
+plugins=(
+  debian
+  docker
+  docker-compose
+  git
+  ssh-agent
+)
 
 zstyle :omz:plugins:ssh-agent identities ssh_key_1 ssh_key_2
 
