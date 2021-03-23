@@ -46,7 +46,7 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 
 While editing `~/.zshrc` you can add plugins to your new shell as well. You can find a list of available plugins [here](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins).
 
-My standard configuration for `.zshrc` is currently extreme lean. Important to note: you should replace ssh key ids with keys existing in your `~/.ssh/` folder.
+My standard configuration for `.zshrc` is currently extreme lean. Important to note: you should replace ssh key ids with keys existing in your `~/.ssh/` folder, if you want to load them on startup by default.
 
 ```zsh
 # instant prompt
@@ -55,7 +55,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # zsh
-export ZSH="/home/serowy/.oh-my-zsh"
+export ZSH="~/.oh-my-zsh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 

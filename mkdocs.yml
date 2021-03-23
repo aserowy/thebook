@@ -5,7 +5,6 @@ markdown_extensions:
 nav:
   - Introduction: README.md
   - ...
-  - links.md
 plugins:
   - awesome-pages:
   - search:
@@ -13,7 +12,7 @@ plugins:
 repo_url: https://github.com/aserowy/thebook/
 site_author: Alexander Serowy
 site_name: thebook
-theme: 
+theme:
   name: material
   features:
     - navigation.instant

@@ -1,5 +1,8 @@
 arrange:
   - README.md
   - csharp.md
+  - git.md
   - go
+  - perf.md
+  - rust.md
   - visual_studio.md

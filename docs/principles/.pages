@@ -1,0 +1,7 @@
+arrange:
+  - README.md
+  - single_responsibility_principle.md
+  - open_closed_principle.md
+  - liskov_substitution_principle.md
+  - interface_segregation_principle.md
+  - dependency_inversion_principle.md

@@ -1,7 +1,7 @@
 ---
 title: Single Responsibility principle
 authors:
-    - Alexander Serowy
+  - Alexander Serowy
 ---
 
 ## Definition
@@ -16,7 +16,7 @@ The single responsibility principle is a computer programming principle that sta
 - Dont reference external frameworks in POCO/DTO​
 - Prevent god classes to increase cohesion and readability​
 - Give meaningful names​
-- Write small classes so that everything can be seen at a glance​
+- Write small classes so that everything can be seen at a glance​ (10 seconds)
 
 ## Cohesion
 
