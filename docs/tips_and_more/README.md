@@ -46,6 +46,12 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 
 While editing `~/.zshrc` you can add plugins to your new shell as well. You can find a list of available plugins [here](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins).
 
+To get the same keybindings like in vi, install [zsh-vi-mode](https://github.com/jeffreytse/zsh-vi-mode). Like the commands for e.g. ohmyzsh you should not use sudo.
+
+```sh
+git clone https://github.com/jeffreytse/zsh-vi-mode $HOME/.oh-my-zsh/custom/plugins/zsh-vi-mode
+```
+
 My standard configuration for `.zshrc` is currently extreme lean. Important to note: you should replace ssh key ids with keys existing in your `~/.ssh/` folder, if you want to load them on startup by default.
 
 ```zsh
@@ -66,7 +72,7 @@ plugins=(
   docker-compose
   git
   ssh-agent
-  vi-mode
+  zsh-vi-mode
 )
 
 zstyle :omz:plugins:ssh-agent identities ssh_key_1 ssh_key_2
