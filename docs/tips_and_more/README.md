@@ -75,9 +75,7 @@ plugins=(
   zsh-vi-mode
 )
 
-zstyle :omz:plugins:ssh-agent identities ssh_key_1 ssh_key_2
-
-source $ZSH/oh-my-zsh.sh
+ZVM_VI_ESCAPE_BINDKEY=jk
 
 # user configuration
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
