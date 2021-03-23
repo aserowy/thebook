@@ -66,6 +66,7 @@ plugins=(
   docker-compose
   git
   ssh-agent
+  vi-mode
 )
 
 zstyle :omz:plugins:ssh-agent identities ssh_key_1 ssh_key_2
