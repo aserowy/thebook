@@ -61,7 +61,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # zsh
-export ZSH="~/.oh-my-zsh"
+export ZSH="/home/serowy/.oh-my-zsh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
@@ -75,6 +75,12 @@ plugins=(
   zsh-vi-mode
 )
 
+zstyle :omz:plugins:ssh-agent identities github_aserowy_ed25519
+
+source $ZSH/oh-my-zsh.sh
+
+# zvm configuration
+ZVM_LINE_INIT_MODE=$ZVM_MODE_NORMAL
 ZVM_VI_ESCAPE_BINDKEY=jk
 
 # user configuration
