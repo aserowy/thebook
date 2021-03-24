@@ -1253,7 +1253,7 @@
 <span class="k">fi</span>
 
 <span class="c1"># zsh</span>
-<span class="nb">export</span> <span class="nv">ZSH</span><span class="o">=</span><span class="s2">&quot;~/.oh-my-zsh&quot;</span>
+<span class="nb">export</span> <span class="nv">ZSH</span><span class="o">=</span><span class="s2">&quot;/home/serowy/.oh-my-zsh&quot;</span>
 
 <span class="nv">ZSH_THEME</span><span class="o">=</span><span class="s2">&quot;powerlevel10k/powerlevel10k&quot;</span>
 
@@ -1267,6 +1267,12 @@
   zsh-vi-mode
 <span class="o">)</span>
 
+zstyle :omz:plugins:ssh-agent identities github_aserowy_ed25519
+
+<span class="nb">source</span> <span class="nv">$ZSH</span>/oh-my-zsh.sh
+
+<span class="c1"># zvm configuration</span>
+<span class="nv">ZVM_LINE_INIT_MODE</span><span class="o">=</span><span class="nv">$ZVM_MODE_NORMAL</span>
 <span class="nv">ZVM_VI_ESCAPE_BINDKEY</span><span class="o">=</span>jk
 
 <span class="c1"># user configuration</span>
