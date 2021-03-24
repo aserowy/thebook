@@ -81,7 +81,6 @@ source $ZSH/oh-my-zsh.sh
 
 # zvm configuration
 ZVM_LINE_INIT_MODE=$ZVM_MODE_NORMAL
-ZVM_VI_ESCAPE_BINDKEY=jk
 
 # user configuration
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
