@@ -67,11 +67,11 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # ohmyzsh
 plugins=(
-  debian
   docker
   docker-compose
   git
   ssh-agent
+  ubuntu
   zsh-vi-mode
 )
 
