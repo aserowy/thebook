@@ -136,3 +136,15 @@ Some of my favorite themes for windows terminal. These are not default themes. T
   }
 ]
 ```
+
+Besides theming, it is important to modify the default setting to ensure `C-v` reacts correctly. You have to comment the following passage out.
+
+```json
+  "actions": [
+      // Copy and paste are bound to Ctrl+Shift+C and Ctrl+Shift+V in your defaults.json.
+      // These two lines additionally bind them to Ctrl+C and Ctrl+V.
+      // To learn more about selection, visit https://aka.ms/terminal-selection
+      { "command": { "action": "copy", "singleLine": false }, "keys": "ctrl+c" },
+      { "command": "paste", "keys": "ctrl+v" }
+```
+
