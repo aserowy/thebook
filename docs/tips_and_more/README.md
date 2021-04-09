@@ -23,8 +23,10 @@ Install nerd fonds for better powerlevel10k support on windows. Download them fr
     "defaults":
     {
         // Put settings here that you want to apply to all profiles.
+        "bellStyle": "none",
         "colorScheme": "Solarized Dark",
-        "fontFace": "MesloLGS NF"
+        "fontFace": "MesloLGS NF",
+        "padding": "0"
     },
 ```
 
@@ -75,7 +77,7 @@ plugins=(
   zsh-vi-mode
 )
 
-zstyle :omz:plugins:ssh-agent identities github_aserowy_ed25519
+zstyle :omz:plugins:ssh-agent identities ssh_name01 ssh_name02
 
 source $ZSH/oh-my-zsh.sh
 

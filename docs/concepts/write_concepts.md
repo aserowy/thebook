@@ -2,9 +2,9 @@
 title: How to write concepts
 summary: A concept to write homogenised and reuseable concepts.
 authors:
-    - Alexander Serowy
+  - Alexander Serowy
 tags:
-    - concept
+  - concept
 ---
 
 ## Motivation
@@ -24,21 +24,21 @@ For the structural design of concepts, we use the [four quadrant model][1]. As t
 
 The following table shows possible topics or possibilities to answer the questions. It is important that the order of the questions should not be changed in your writing.
 
-| Quadrant  | Topics\possibilities |
-| ---       | --- |
-| Why       | purposes, motivate, raise awareness |
+| Quadrant  | Topics\possibilities                                    |
+| --------- | ------------------------------------------------------- |
+| Why       | purposes, motivate, raise awareness                     |
 | What      | explaining terms, creating a background, go into detail |
-| How to    | examples, give concrete instructions, tutorials |
-| What else | alternative solutions, looking ahead, related topics |
+| How to    | examples, give concrete instructions, tutorials         |
+| What else | alternative solutions, looking ahead, related topics    |
 
 To meet expectations, first-level headings should be similar in all concepts. Of course, deeper level headings should have a technical reference. The following are possible headings for the individual quadrants.
 
-| Quadrant  | Headings |
-| ---       | --- |
-| Why       | motivation, task |
+| Quadrant  | Headings                                                         |
+| --------- | ---------------------------------------------------------------- |
+| Why       | motivation, task                                                 |
 | What      | context, influencing factors, alternatives, solution, background |
-| How to    | example, application, step by step |
-| What else | next steps, extensions, feedback, outlook |
+| How to    | example, application, step by step                               |
+| What else | next steps, extensions, feedback, outlook                        |
 
 At the start of the document, a section for meta-information is defined, in which the author, title, and a short summary are specified.
 
@@ -47,14 +47,15 @@ At the start of the document, a section for meta-information is defined, in whic
 title: My Document
 summary: A brief description of my document.
 authors:
-    - Alexander Serowy
-    - Tom Tucker
+  - Alexander Serowy
+  - Tom Tucker
 tags:
-    - concept
+  - concept
 ---
+
 ```
 
-[1]: <https://www.amazon.de/-/en/Uwe-Vigenschow/dp/3864906970> "Soft Skills für Softwareentwickler"
+[1]: https://www.amazon.de/-/en/Uwe-Vigenschow/dp/3864906970 "Soft Skills für Softwareentwickler"
 
 ## Step by step
 
