@@ -27,6 +27,7 @@ Install nerd fonds for better powerlevel10k support on windows. Download them fr
         "colorScheme": "Solarized Dark",
         "fontFace": "FiraCode NF",
         "fontSize": 14,
+        "fontWeight": "light",
         "padding": "0"
     },
 ```
