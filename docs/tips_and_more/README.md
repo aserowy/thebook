@@ -15,7 +15,7 @@ Install on windows with `choco install firacode -y`. After installation you can 
 
 ## Shell
 
-Install nerd fonds for better powerlevel10k support on windows. Download them from [powerlevel10k git](https://github.com/romkatv/powerlevel10k) and follow the install instructions. After installation, change the default settings of the your terminal to use `MesloGS NF`. For e.g. windows terminal edit `settings.json` with the following defaults:
+Install nerd fonds for better powerlevel10k support on windows. Download them from [nerdfonts](https://www.nerdfonts.com/font-downloads). My favorite is FiraCode with `Fira Code Light Nerd Font Complete Mono`. After installation, change the default settings of the your terminal to use the installed font. For e.g. windows terminal edit `settings.json` with the following defaults:
 
 ```json
 "profiles":
@@ -25,7 +25,8 @@ Install nerd fonds for better powerlevel10k support on windows. Download them fr
         // Put settings here that you want to apply to all profiles.
         "bellStyle": "none",
         "colorScheme": "Solarized Dark",
-        "fontFace": "MesloLGS NF",
+        "fontFace": "FiraCode NF",
+        "fontSize": 14,
         "padding": "0"
     },
 ```
