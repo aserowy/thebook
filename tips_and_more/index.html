@@ -1203,6 +1203,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#cygwin-in-windows-terminal" class="md-nav__link">
+    Cygwin in Windows Terminal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#windows-terminal" class="md-nav__link">
     Windows Terminal
   </a>
@@ -1236,7 +1243,7 @@
 <li><a href="https://github.com/tonsky/FiraCode/wiki/VS-Code-Instructions">VS Code</a></li>
 </ul>
 <h2 id="shell">Shell</h2>
-<p>Install nerd fonds for better powerlevel10k support on windows. Download them from <a href="https://www.nerdfonts.com/font-downloads">nerdfonts</a>. My favorite is FiraCode with <code>Fira Code Light Nerd Font Complete Mono</code>. After installation, change the default settings of the your terminal to use the installed font. For e.g. windows terminal edit <code>settings.json</code> with the following defaults:</p>
+<p>Install nerd fonds for better powerlevel10k support on windows. Download them from <a href="https://www.nerdfonts.com/font-downloads">nerdfonts</a>. My favorite is FiraCode with <code>Fira Code Light Nerd Font Complete Mono</code>. After installation, change the default settings of your terminal to use the installed font. For e.g. windows terminal edit <code>settings.json</code> with the following defaults:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">&quot;profiles&quot;</span><span class="p">:</span>
 <span class="p">{</span>
     <span class="nt">&quot;defaults&quot;</span><span class="p">:</span>
@@ -1269,7 +1276,7 @@
 <span class="k">fi</span>
 
 <span class="c1"># zsh</span>
-<span class="nb">export</span> <span class="nv">ZSH</span><span class="o">=</span><span class="s2">&quot;/home/serowy/.oh-my-zsh&quot;</span>
+<span class="nb">export</span> <span class="nv">ZSH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.oh-my-zsh&quot;</span>
 
 <span class="nv">ZSH_THEME</span><span class="o">=</span><span class="s2">&quot;powerlevel10k/powerlevel10k&quot;</span>
 
@@ -1279,11 +1286,11 @@
   docker-compose
   git
   ssh-agent
-  ubuntu
+  &lt;!-- ubuntu --&gt;
   zsh-vi-mode
 <span class="o">)</span>
 
-zstyle :omz:plugins:ssh-agent identities ssh_name01 ssh_name02
+&lt;!-- zstyle :omz:plugins:ssh-agent identities ssh_name01 ssh_name02 --&gt;
 
 <span class="nb">source</span> <span class="nv">$ZSH</span>/oh-my-zsh.sh
 
@@ -1293,6 +1300,31 @@ zstyle :omz:plugins:ssh-agent identities ssh_name01 ssh_name02
 <span class="c1"># user configuration</span>
 <span class="o">[[</span> ! -f ~/.p10k.zsh <span class="o">]]</span> <span class="o">||</span> <span class="nb">source</span> ~/.p10k.zsh
 </code></pre></div>
+<h2 id="cygwin-in-windows-terminal">Cygwin in Windows Terminal</h2>
+<p>Install cygwin with choco, navigate to the install folder, and start <code>cygwinsetup.exe</code>. Navigate till packages and select a version for <code>wget</code>. Complete the installation afterwards.</p>
+<p>Execute <code>C:\tools\cygwin\Cygwin.bat</code> and install the following.</p>
+<blockquote>
+<p>Install git even if you have git for windows installed. Otherwise cloning in the shell will create the files in <code>C:\home\user\</code> and not in the right place.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>wget rawgit.com/transcode-open/apt-cyg/master/apt-cyg
+install apt-cyg /bin
+apt-cyg install zsh git gdb dos2unix openssh
+</code></pre></div>
+<p>To ensure zsh starts as default, edit your <code>settings.json</code>. Add the following profile to <code>profiles.list</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;guid&quot;</span><span class="p">:</span> <span class="s2">&quot;{00000000-0000-0000-0000-000000000001}&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;commandline&quot;</span><span class="p">:</span> <span class="s2">&quot;C:\\tools\\cygwin\\bin\\zsh --login -i&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;icon&quot;</span><span class="p">:</span> <span class="s2">&quot;C:\\tools\\cygwin\\Cygwin-Terminal.ico&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;hidden&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Cygwin&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;startingDirectory&quot;</span><span class="p">:</span> <span class="s2">&quot;C:\\tools\\cygwin\\bin&quot;</span>
+<span class="p">},</span>
+</code></pre></div>
+<p>Now start the shell in terminal and install oh-my-zsh.</p>
+<div class="highlight"><pre><span></span><code>git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+</code></pre></div>
+<p>Follow now the guide for powerlevel10k.</p>
 <h2 id="windows-terminal">Windows Terminal</h2>
 <p>Some of my favorite themes for windows terminal. These are not default themes. Thus, you have to add them in your settings.</p>
 <div class="highlight"><pre><span></span><code><span class="p">[</span>
