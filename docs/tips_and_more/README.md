@@ -15,7 +15,7 @@ Install on windows with `choco install firacode -y`. After installation you can 
 
 ## Shell
 
-Install nerd fonds for better powerlevel10k support on windows. Download them from [nerdfonts](https://www.nerdfonts.com/font-downloads). My favorite is FiraCode with `Fira Code Light Nerd Font Complete Mono`. After installation, change the default settings of the your terminal to use the installed font. For e.g. windows terminal edit `settings.json` with the following defaults:
+Install nerd fonds for better powerlevel10k support on windows. Download them from [nerdfonts](https://www.nerdfonts.com/font-downloads). My favorite is FiraCode with `Fira Code Light Nerd Font Complete Mono`. After installation, change the default settings of your terminal to use the installed font. For e.g. windows terminal edit `settings.json` with the following defaults:
 
 ```json
 "profiles":
@@ -65,7 +65,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # zsh
-export ZSH="/home/serowy/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
@@ -75,11 +75,11 @@ plugins=(
   docker-compose
   git
   ssh-agent
-  ubuntu
+  <!-- ubuntu -->
   zsh-vi-mode
 )
 
-zstyle :omz:plugins:ssh-agent identities ssh_name01 ssh_name02
+<!-- zstyle :omz:plugins:ssh-agent identities ssh_name01 ssh_name02 -->
 
 source $ZSH/oh-my-zsh.sh
 
@@ -89,6 +89,42 @@ ZVM_LINE_INIT_MODE=$ZVM_MODE_NORMAL
 # user configuration
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 ```
+
+## Cygwin in Windows Terminal
+
+Install cygwin with choco, navigate to the install folder, and start `cygwinsetup.exe`. Navigate till packages and select a version for `wget`. Complete the installation afterwards.
+
+Execute `C:\tools\cygwin\Cygwin.bat` and install the following.
+
+> Install git even if you have git for windows installed. Otherwise cloning in the shell will create the files in `C:\home\user\` and not in the right place.
+
+```sh
+wget rawgit.com/transcode-open/apt-cyg/master/apt-cyg
+install apt-cyg /bin
+apt-cyg install zsh git gdb dos2unix openssh
+```
+
+To ensure zsh starts as default, edit your `settings.json`. Add the following profile to `profiles.list`.
+
+```json
+{
+    "guid": "{00000000-0000-0000-0000-000000000001}",
+    "commandline": "C:\\tools\\cygwin\\bin\\zsh --login -i",
+    "icon": "C:\\tools\\cygwin\\Cygwin-Terminal.ico",
+    "hidden": false,
+    "name": "Cygwin",
+    "startingDirectory": "C:\\tools\\cygwin\\bin"
+},
+```
+
+Now start the shell in terminal and install oh-my-zsh.
+
+```sh
+git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+```
+
+Follow now the guide for powerlevel10k.
 
 ## Windows Terminal
 
@@ -151,4 +187,3 @@ Besides theming, it is important to modify the default setting to ensure `C-v` r
       { "command": { "action": "copy", "singleLine": false }, "keys": "ctrl+c" },
       { "command": "paste", "keys": "ctrl+v" }
 ```
-
