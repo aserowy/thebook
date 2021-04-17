@@ -1196,22 +1196,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#shell" class="md-nav__link">
-    Shell
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cygwin-in-windows-terminal" class="md-nav__link">
-    Cygwin in Windows Terminal
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#windows-terminal" class="md-nav__link">
     Windows Terminal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#msys2" class="md-nav__link">
+    msys2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shell" class="md-nav__link">
+    shell
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zsh-configuration" class="md-nav__link">
+    zsh configuration
   </a>
   
 </li>
@@ -1242,8 +1249,8 @@
 <li><a href="https://github.com/tonsky/FiraCode/wiki/Visual-Studio-Instructions">Visual Studio</a></li>
 <li><a href="https://github.com/tonsky/FiraCode/wiki/VS-Code-Instructions">VS Code</a></li>
 </ul>
-<h2 id="shell">Shell</h2>
-<p>Install nerd fonds for better powerlevel10k support on windows. Download them from <a href="https://www.nerdfonts.com/font-downloads">nerdfonts</a>. My favorite is FiraCode with <code>Fira Code Light Nerd Font Complete Mono</code>. After installation, change the default settings of your terminal to use the installed font. For e.g. windows terminal edit <code>settings.json</code> with the following defaults:</p>
+<h2 id="windows-terminal">Windows Terminal</h2>
+<p>Install nerd fonds for better powerlevel10k support on windows. Download them from <a href="https://www.nerdfonts.com/font-downloads">nerdfonts</a>. My favorite is FiraCode with <code>Fira Code Light Nerd Font Complete Mono</code>. After installation, change the default settings of your terminal to use the installed font.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">&quot;profiles&quot;</span><span class="p">:</span>
 <span class="p">{</span>
     <span class="nt">&quot;defaults&quot;</span><span class="p">:</span>
@@ -1257,12 +1264,43 @@
         <span class="nt">&quot;padding&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span>
     <span class="p">},</span>
 </code></pre></div>
-<p>Now install zsh on your linux shell (e.g. debian in wsl2) and upgrade zsh with ohmyzsh. Both commands regarding ohmyzsh and powerlevel10k must not executed with sudo. Otherwise you would install the extensions for root and not for the current user.</p>
+<p>You have to comment the following two bindings out as well to ensure <code>C-v</code> reacts correctly in nvim.</p>
+<div class="highlight"><pre><span></span><code>  <span class="nt">&quot;actions&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="err">//</span> <span class="err">Copy</span> <span class="err">a</span><span class="kc">n</span><span class="err">d</span> <span class="err">pas</span><span class="kc">te</span> <span class="err">are</span> <span class="err">bou</span><span class="kc">n</span><span class="err">d</span> <span class="kc">t</span><span class="err">o</span> <span class="err">C</span><span class="kc">trl</span><span class="err">+Shi</span><span class="kc">ft</span><span class="err">+C</span> <span class="err">a</span><span class="kc">n</span><span class="err">d</span> <span class="err">C</span><span class="kc">trl</span><span class="err">+Shi</span><span class="kc">ft</span><span class="err">+V</span> <span class="err">i</span><span class="kc">n</span> <span class="err">your</span> <span class="err">de</span><span class="kc">faults</span><span class="err">.jso</span><span class="kc">n</span><span class="err">.</span>
+      <span class="err">//</span> <span class="err">These</span> <span class="kc">t</span><span class="err">wo</span> <span class="err">li</span><span class="kc">nes</span> <span class="err">addi</span><span class="kc">t</span><span class="err">io</span><span class="kc">nall</span><span class="err">y</span> <span class="err">bi</span><span class="kc">n</span><span class="err">d</span> <span class="kc">t</span><span class="err">hem</span> <span class="kc">t</span><span class="err">o</span> <span class="err">C</span><span class="kc">trl</span><span class="err">+C</span> <span class="err">a</span><span class="kc">n</span><span class="err">d</span> <span class="err">C</span><span class="kc">trl</span><span class="err">+V.</span>
+      <span class="err">//</span> <span class="err">To</span> <span class="err">lear</span><span class="kc">n</span> <span class="err">more</span> <span class="err">abou</span><span class="kc">t</span> <span class="err">selec</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="p">,</span> <span class="err">visi</span><span class="kc">t</span> <span class="err">h</span><span class="kc">tt</span><span class="err">ps</span><span class="p">:</span><span class="err">//aka.ms/</span><span class="kc">ter</span><span class="err">mi</span><span class="kc">nal</span><span class="mi">-</span><span class="err">selec</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span>
+      <span class="p">{</span> <span class="nt">&quot;command&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&quot;action&quot;</span><span class="p">:</span> <span class="s2">&quot;copy&quot;</span><span class="p">,</span> <span class="nt">&quot;singleLine&quot;</span><span class="p">:</span> <span class="kc">false</span> <span class="p">},</span> <span class="nt">&quot;keys&quot;</span><span class="p">:</span> <span class="s2">&quot;ctrl+c&quot;</span> <span class="p">},</span>
+      <span class="p">{</span> <span class="nt">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;paste&quot;</span><span class="p">,</span> <span class="nt">&quot;keys&quot;</span><span class="p">:</span> <span class="s2">&quot;ctrl+v&quot;</span> <span class="p">}</span>
+</code></pre></div>
+<h2 id="msys2">msys2</h2>
+<p>Install <code>msys2</code> with choco and start the shell (<code>C:\tools\msys64\mingw64.exe</code>). Use pacman to update and prepare your environment.</p>
+<blockquote>
+<p>Before installing git, uninstall git for windows and remove all remaining files under your program folder.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>pacman -Syu
+
+pacman -S git msys/openssh msys/zsh unzip
+</code></pre></div>
+<p>Close the shell window, add the following profile to your terminal settings, and start the shell in windows terminal.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;guid&quot;</span><span class="p">:</span> <span class="s2">&quot;{17da3cac-b318-431e-8a3e-7fcdefe6d114}&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;msys2&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;commandline&quot;</span><span class="p">:</span> <span class="s2">&quot;C:/tools/msys64/msys2_shell.cmd -defterm -here -no-start -mingw64 -use-full-path -ic &#39;exec zsh&#39;&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;startingDirectory&quot;</span><span class="p">:</span> <span class="s2">&quot;C:/tools/msys64/home/%USERNAME%&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;icon&quot;</span><span class="p">:</span> <span class="s2">&quot;C:/tools/msys64/mingw64.ico&quot;</span>
+<span class="p">},</span>
+</code></pre></div>
+<p>Now install oh-my-zsh and follow the instructions to install p10k. At the end replace the <code>.zshrc</code> with the given content.</p>
+<div class="highlight"><pre><span></span><code>git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+</code></pre></div>
+<h2 id="shell">shell</h2>
+<p>Install zsh on your linux shell (e.g. debian in wsl2) and upgrade zsh with ohmyzsh. Both commands regarding ohmyzsh and powerlevel10k must not executed with sudo. Otherwise you would install the extensions for root and not for the current user.</p>
 <div class="highlight"><pre><span></span><code>sudo apt update <span class="o">&amp;&amp;</span> sudo apt install git zsh curl -y
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>sh -c <span class="s2">&quot;</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span class="k">)</span><span class="s2">&quot;</span>
 </code></pre></div>
 <p>After both extensions are installed, you can install the beloved <a href="https://github.com/romkatv/powerlevel10k">POWERLEVEL10K</a> theme. Follow the instructions to set the theme as default in <code>~/.zshrc</code> and make sure, the new fonts are installed and used in your terminal!</p>
+<h2 id="zsh-configuration">zsh configuration</h2>
 <div class="highlight"><pre><span></span><code>git clone --depth<span class="o">=</span><span class="m">1</span> https://github.com/romkatv/powerlevel10k.git <span class="si">${</span><span class="nv">ZSH_CUSTOM</span><span class="k">:-</span><span class="nv">$HOME</span><span class="p">/.oh-my-zsh/custom</span><span class="si">}</span>/themes/powerlevel10k
 </code></pre></div>
 <p>While editing <code>~/.zshrc</code> you can add plugins to your new shell as well. You can find a list of available plugins <a href="https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins">here</a>.</p>
@@ -1299,86 +1337,6 @@
 
 <span class="c1"># user configuration</span>
 <span class="o">[[</span> ! -f ~/.p10k.zsh <span class="o">]]</span> <span class="o">||</span> <span class="nb">source</span> ~/.p10k.zsh
-</code></pre></div>
-<h2 id="cygwin-in-windows-terminal">Cygwin in Windows Terminal</h2>
-<p>Install cygwin with choco, navigate to the install folder, and start <code>cygwinsetup.exe</code>. Navigate till packages and select a version for <code>wget</code>. Complete the installation afterwards.</p>
-<p>Execute <code>C:\tools\cygwin\Cygwin.bat</code> and install the following.</p>
-<blockquote>
-<p>Install git even if you have git for windows installed. Otherwise cloning in the shell will create the files in <code>C:\home\user\</code> and not in the right place.</p>
-</blockquote>
-<div class="highlight"><pre><span></span><code>wget rawgit.com/transcode-open/apt-cyg/master/apt-cyg
-install apt-cyg /bin
-apt-cyg install zsh git gdb dos2unix openssh
-</code></pre></div>
-<p>To ensure zsh starts as default, edit your <code>settings.json</code>. Add the following profile to <code>profiles.list</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-    <span class="nt">&quot;guid&quot;</span><span class="p">:</span> <span class="s2">&quot;{00000000-0000-0000-0000-000000000001}&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;commandline&quot;</span><span class="p">:</span> <span class="s2">&quot;C:\\tools\\cygwin\\bin\\zsh --login -i&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;icon&quot;</span><span class="p">:</span> <span class="s2">&quot;C:\\tools\\cygwin\\Cygwin-Terminal.ico&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;hidden&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Cygwin&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;startingDirectory&quot;</span><span class="p">:</span> <span class="s2">&quot;C:\\tools\\cygwin\\bin&quot;</span>
-<span class="p">},</span>
-</code></pre></div>
-<p>Now start the shell in terminal and install oh-my-zsh.</p>
-<div class="highlight"><pre><span></span><code>git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
-</code></pre></div>
-<p>Follow now the guide for powerlevel10k.</p>
-<h2 id="windows-terminal">Windows Terminal</h2>
-<p>Some of my favorite themes for windows terminal. These are not default themes. Thus, you have to add them in your settings.</p>
-<div class="highlight"><pre><span></span><code><span class="p">[</span>
-  <span class="p">{</span>
-    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Solarized Dark Higher Contrast&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;black&quot;</span><span class="p">:</span> <span class="s2">&quot;#002831&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;red&quot;</span><span class="p">:</span> <span class="s2">&quot;#d11c24&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;green&quot;</span><span class="p">:</span> <span class="s2">&quot;#6cbe6c&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;yellow&quot;</span><span class="p">:</span> <span class="s2">&quot;#a57706&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;blue&quot;</span><span class="p">:</span> <span class="s2">&quot;#2176c7&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;purple&quot;</span><span class="p">:</span> <span class="s2">&quot;#c61c6f&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;cyan&quot;</span><span class="p">:</span> <span class="s2">&quot;#259286&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;white&quot;</span><span class="p">:</span> <span class="s2">&quot;#eae3cb&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;brightBlack&quot;</span><span class="p">:</span> <span class="s2">&quot;#006488&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;brightRed&quot;</span><span class="p">:</span> <span class="s2">&quot;#f5163b&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;brightGreen&quot;</span><span class="p">:</span> <span class="s2">&quot;#51ef84&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;brightYellow&quot;</span><span class="p">:</span> <span class="s2">&quot;#b27e28&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;brightBlue&quot;</span><span class="p">:</span> <span class="s2">&quot;#178ec8&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;brightPurple&quot;</span><span class="p">:</span> <span class="s2">&quot;#e24d8e&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;brightCyan&quot;</span><span class="p">:</span> <span class="s2">&quot;#00b39e&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;brightWhite&quot;</span><span class="p">:</span> <span class="s2">&quot;#fcf4dc&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;background&quot;</span><span class="p">:</span> <span class="s2">&quot;#001e27&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;foreground&quot;</span><span class="p">:</span> <span class="s2">&quot;#9cc2c3&quot;</span>
-  <span class="p">},</span>
-  <span class="p">{</span>
-    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Sundried&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;black&quot;</span><span class="p">:</span> <span class="s2">&quot;#302b2a&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;red&quot;</span><span class="p">:</span> <span class="s2">&quot;#a7463d&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;green&quot;</span><span class="p">:</span> <span class="s2">&quot;#587744&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;yellow&quot;</span><span class="p">:</span> <span class="s2">&quot;#9d602a&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;blue&quot;</span><span class="p">:</span> <span class="s2">&quot;#485b98&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;purple&quot;</span><span class="p">:</span> <span class="s2">&quot;#864651&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;cyan&quot;</span><span class="p">:</span> <span class="s2">&quot;#9c814f&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;white&quot;</span><span class="p">:</span> <span class="s2">&quot;#c9c9c9&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;brightBlack&quot;</span><span class="p">:</span> <span class="s2">&quot;#4d4e48&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;brightRed&quot;</span><span class="p">:</span> <span class="s2">&quot;#aa000c&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;brightGreen&quot;</span><span class="p">:</span> <span class="s2">&quot;#128c21&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;brightYellow&quot;</span><span class="p">:</span> <span class="s2">&quot;#fc6a21&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;brightBlue&quot;</span><span class="p">:</span> <span class="s2">&quot;#7999f7&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;brightPurple&quot;</span><span class="p">:</span> <span class="s2">&quot;#fd8aa1&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;brightCyan&quot;</span><span class="p">:</span> <span class="s2">&quot;#fad484&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;brightWhite&quot;</span><span class="p">:</span> <span class="s2">&quot;#ffffff&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;background&quot;</span><span class="p">:</span> <span class="s2">&quot;#1a1818&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;foreground&quot;</span><span class="p">:</span> <span class="s2">&quot;#c9c9c9&quot;</span>
-  <span class="p">}</span>
-<span class="p">]</span>
-</code></pre></div>
-<p>Besides theming, it is important to modify the default setting to ensure <code>C-v</code> reacts correctly. You have to comment the following passage out.</p>
-<div class="highlight"><pre><span></span><code>  <span class="nt">&quot;actions&quot;</span><span class="p">:</span> <span class="p">[</span>
-      <span class="err">//</span> <span class="err">Copy</span> <span class="err">a</span><span class="kc">n</span><span class="err">d</span> <span class="err">pas</span><span class="kc">te</span> <span class="err">are</span> <span class="err">bou</span><span class="kc">n</span><span class="err">d</span> <span class="kc">t</span><span class="err">o</span> <span class="err">C</span><span class="kc">trl</span><span class="err">+Shi</span><span class="kc">ft</span><span class="err">+C</span> <span class="err">a</span><span class="kc">n</span><span class="err">d</span> <span class="err">C</span><span class="kc">trl</span><span class="err">+Shi</span><span class="kc">ft</span><span class="err">+V</span> <span class="err">i</span><span class="kc">n</span> <span class="err">your</span> <span class="err">de</span><span class="kc">faults</span><span class="err">.jso</span><span class="kc">n</span><span class="err">.</span>
-      <span class="err">//</span> <span class="err">These</span> <span class="kc">t</span><span class="err">wo</span> <span class="err">li</span><span class="kc">nes</span> <span class="err">addi</span><span class="kc">t</span><span class="err">io</span><span class="kc">nall</span><span class="err">y</span> <span class="err">bi</span><span class="kc">n</span><span class="err">d</span> <span class="kc">t</span><span class="err">hem</span> <span class="kc">t</span><span class="err">o</span> <span class="err">C</span><span class="kc">trl</span><span class="err">+C</span> <span class="err">a</span><span class="kc">n</span><span class="err">d</span> <span class="err">C</span><span class="kc">trl</span><span class="err">+V.</span>
-      <span class="err">//</span> <span class="err">To</span> <span class="err">lear</span><span class="kc">n</span> <span class="err">more</span> <span class="err">abou</span><span class="kc">t</span> <span class="err">selec</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="p">,</span> <span class="err">visi</span><span class="kc">t</span> <span class="err">h</span><span class="kc">tt</span><span class="err">ps</span><span class="p">:</span><span class="err">//aka.ms/</span><span class="kc">ter</span><span class="err">mi</span><span class="kc">nal</span><span class="mi">-</span><span class="err">selec</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span>
-      <span class="p">{</span> <span class="nt">&quot;command&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&quot;action&quot;</span><span class="p">:</span> <span class="s2">&quot;copy&quot;</span><span class="p">,</span> <span class="nt">&quot;singleLine&quot;</span><span class="p">:</span> <span class="kc">false</span> <span class="p">},</span> <span class="nt">&quot;keys&quot;</span><span class="p">:</span> <span class="s2">&quot;ctrl+c&quot;</span> <span class="p">},</span>
-      <span class="p">{</span> <span class="nt">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;paste&quot;</span><span class="p">,</span> <span class="nt">&quot;keys&quot;</span><span class="p">:</span> <span class="s2">&quot;ctrl+v&quot;</span> <span class="p">}</span>
 </code></pre></div>
                 
                   
