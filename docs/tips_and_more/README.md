@@ -13,9 +13,9 @@ Install on windows with `choco install firacode -y`. After installation you can 
 - [Visual Studio](https://github.com/tonsky/FiraCode/wiki/Visual-Studio-Instructions)
 - [VS Code](https://github.com/tonsky/FiraCode/wiki/VS-Code-Instructions)
 
-## Shell
+## Windows Terminal
 
-Install nerd fonds for better powerlevel10k support on windows. Download them from [nerdfonts](https://www.nerdfonts.com/font-downloads). My favorite is FiraCode with `Fira Code Light Nerd Font Complete Mono`. After installation, change the default settings of your terminal to use the installed font. For e.g. windows terminal edit `settings.json` with the following defaults:
+Install nerd fonds for better powerlevel10k support on windows. Download them from [nerdfonts](https://www.nerdfonts.com/font-downloads). My favorite is FiraCode with `Fira Code Light Nerd Font Complete Mono`. After installation, change the default settings of your terminal to use the installed font.
 
 ```json
 "profiles":
@@ -32,7 +32,50 @@ Install nerd fonds for better powerlevel10k support on windows. Download them fr
     },
 ```
 
-Now install zsh on your linux shell (e.g. debian in wsl2) and upgrade zsh with ohmyzsh. Both commands regarding ohmyzsh and powerlevel10k must not executed with sudo. Otherwise you would install the extensions for root and not for the current user.
+You have to comment the following two bindings out as well to ensure `C-v` reacts correctly in nvim.
+
+```json
+  "actions": [
+      // Copy and paste are bound to Ctrl+Shift+C and Ctrl+Shift+V in your defaults.json.
+      // These two lines additionally bind them to Ctrl+C and Ctrl+V.
+      // To learn more about selection, visit https://aka.ms/terminal-selection
+      { "command": { "action": "copy", "singleLine": false }, "keys": "ctrl+c" },
+      { "command": "paste", "keys": "ctrl+v" }
+```
+
+## msys2
+
+Install `msys2` with choco and start the shell (`C:\tools\msys64\mingw64.exe`). Use pacman to update and prepare your environment.
+
+> Before installing git, uninstall git for windows and remove all remaining files under your program folder.
+
+```sh
+pacman -Syu
+
+pacman -S git msys/openssh msys/zsh unzip
+```
+
+Close the shell window, add the following profile to your terminal settings, and start the shell in windows terminal.
+
+```json
+{
+  "guid": "{17da3cac-b318-431e-8a3e-7fcdefe6d114}",
+  "name": "msys2",
+  "commandline": "C:/tools/msys64/msys2_shell.cmd -defterm -here -no-start -mingw64 -use-full-path -ic 'exec zsh'",
+  "startingDirectory": "C:/tools/msys64/home/%USERNAME%",
+  "icon": "C:/tools/msys64/mingw64.ico"
+},
+```
+
+Now install oh-my-zsh and follow the instructions to install p10k. At the end replace the `.zshrc` with the given content.
+
+```sh
+git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+```
+
+## shell
+
+Install zsh on your linux shell (e.g. debian in wsl2) and upgrade zsh with ohmyzsh. Both commands regarding ohmyzsh and powerlevel10k must not executed with sudo. Otherwise you would install the extensions for root and not for the current user.
 
 ```sh
 sudo apt update && sudo apt install git zsh curl -y
@@ -43,6 +86,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 ```
 
 After both extensions are installed, you can install the beloved [POWERLEVEL10K](https://github.com/romkatv/powerlevel10k) theme. Follow the instructions to set the theme as default in `~/.zshrc` and make sure, the new fonts are installed and used in your terminal!
+
+## zsh configuration
 
 ```sh
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
@@ -88,102 +133,4 @@ ZVM_LINE_INIT_MODE=$ZVM_MODE_NORMAL
 
 # user configuration
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-```
-
-## Cygwin in Windows Terminal
-
-Install cygwin with choco, navigate to the install folder, and start `cygwinsetup.exe`. Navigate till packages and select a version for `wget`. Complete the installation afterwards.
-
-Execute `C:\tools\cygwin\Cygwin.bat` and install the following.
-
-> Install git even if you have git for windows installed. Otherwise cloning in the shell will create the files in `C:\home\user\` and not in the right place.
-
-```sh
-wget rawgit.com/transcode-open/apt-cyg/master/apt-cyg
-install apt-cyg /bin
-apt-cyg install zsh git gdb dos2unix openssh
-```
-
-To ensure zsh starts as default, edit your `settings.json`. Add the following profile to `profiles.list`.
-
-```json
-{
-    "guid": "{00000000-0000-0000-0000-000000000001}",
-    "commandline": "C:\\tools\\cygwin\\bin\\zsh --login -i",
-    "icon": "C:\\tools\\cygwin\\Cygwin-Terminal.ico",
-    "hidden": false,
-    "name": "Cygwin",
-    "startingDirectory": "C:\\tools\\cygwin\\bin"
-},
-```
-
-Now start the shell in terminal and install oh-my-zsh.
-
-```sh
-git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
-```
-
-Follow now the guide for powerlevel10k.
-
-## Windows Terminal
-
-Some of my favorite themes for windows terminal. These are not default themes. Thus, you have to add them in your settings.
-
-```json
-[
-  {
-    "name": "Solarized Dark Higher Contrast",
-    "black": "#002831",
-    "red": "#d11c24",
-    "green": "#6cbe6c",
-    "yellow": "#a57706",
-    "blue": "#2176c7",
-    "purple": "#c61c6f",
-    "cyan": "#259286",
-    "white": "#eae3cb",
-    "brightBlack": "#006488",
-    "brightRed": "#f5163b",
-    "brightGreen": "#51ef84",
-    "brightYellow": "#b27e28",
-    "brightBlue": "#178ec8",
-    "brightPurple": "#e24d8e",
-    "brightCyan": "#00b39e",
-    "brightWhite": "#fcf4dc",
-    "background": "#001e27",
-    "foreground": "#9cc2c3"
-  },
-  {
-    "name": "Sundried",
-    "black": "#302b2a",
-    "red": "#a7463d",
-    "green": "#587744",
-    "yellow": "#9d602a",
-    "blue": "#485b98",
-    "purple": "#864651",
-    "cyan": "#9c814f",
-    "white": "#c9c9c9",
-    "brightBlack": "#4d4e48",
-    "brightRed": "#aa000c",
-    "brightGreen": "#128c21",
-    "brightYellow": "#fc6a21",
-    "brightBlue": "#7999f7",
-    "brightPurple": "#fd8aa1",
-    "brightCyan": "#fad484",
-    "brightWhite": "#ffffff",
-    "background": "#1a1818",
-    "foreground": "#c9c9c9"
-  }
-]
-```
-
-Besides theming, it is important to modify the default setting to ensure `C-v` reacts correctly. You have to comment the following passage out.
-
-```json
-  "actions": [
-      // Copy and paste are bound to Ctrl+Shift+C and Ctrl+Shift+V in your defaults.json.
-      // These two lines additionally bind them to Ctrl+C and Ctrl+V.
-      // To learn more about selection, visit https://aka.ms/terminal-selection
-      { "command": { "action": "copy", "singleLine": false }, "keys": "ctrl+c" },
-      { "command": "paste", "keys": "ctrl+v" }
 ```
