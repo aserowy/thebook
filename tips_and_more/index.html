@@ -12,7 +12,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.1">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.5">
     
     
       
@@ -20,7 +20,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.9299cb39.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.bde7dde4.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
@@ -61,7 +61,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#fonts" class="md-skip">
+        <a href="#dotfiles" class="md-skip">
           Skip to content
         </a>
       
@@ -1182,6 +1182,7 @@
   
   
   
+  
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
@@ -1189,36 +1190,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#fonts" class="md-nav__link">
-    Fonts
+  <a href="#dotfiles" class="md-nav__link">
+    dotfiles
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#windows-terminal" class="md-nav__link">
-    Windows Terminal
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#msys2" class="md-nav__link">
-    msys2
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#shell" class="md-nav__link">
-    shell
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#zsh-configuration" class="md-nav__link">
-    zsh configuration
+  <a href="#nvim-configurations" class="md-nav__link">
+    nvim configurations
   </a>
   
 </li>
@@ -1242,101 +1222,14 @@
                 
                   <h1>Tips and more</h1>
                 
-                <h2 id="fonts">Fonts</h2>
-<p>Fira Code is a free monospaced font containing ligatures for common programming multi-character combinations. This is just a font rendering feature: underlying code remains ASCII-compatible. This helps to read and understand code faster. For some frequent sequences like .. or //, ligatures allow us to correct spacing.</p>
-<p>Install on windows with <code>choco install firacode -y</code>. After installation you can use fira with</p>
+                <h2 id="dotfiles">dotfiles</h2>
 <ul>
-<li><a href="https://github.com/tonsky/FiraCode/wiki/Visual-Studio-Instructions">Visual Studio</a></li>
-<li><a href="https://github.com/tonsky/FiraCode/wiki/VS-Code-Instructions">VS Code</a></li>
+<li><a href="https://github.com/aserowy/dots">aserowy/dots</a>: dotfiles working in linux and windows (in cygwin)</li>
 </ul>
-<h2 id="windows-terminal">Windows Terminal</h2>
-<p>Install nerd fonds for better powerlevel10k support on windows. Download them from <a href="https://www.nerdfonts.com/font-downloads">nerdfonts</a>. My favorite is FiraCode with <code>Fira Code Light Nerd Font Complete Mono</code>. After installation, change the default settings of your terminal to use the installed font.</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&quot;profiles&quot;</span><span class="p">:</span>
-<span class="p">{</span>
-    <span class="nt">&quot;defaults&quot;</span><span class="p">:</span>
-    <span class="p">{</span>
-        <span class="err">//</span> <span class="err">Pu</span><span class="kc">t</span> <span class="err">se</span><span class="kc">tt</span><span class="err">i</span><span class="kc">n</span><span class="err">gs</span> <span class="err">here</span> <span class="kc">t</span><span class="err">ha</span><span class="kc">t</span> <span class="err">you</span> <span class="err">wa</span><span class="kc">nt</span> <span class="kc">t</span><span class="err">o</span> <span class="err">apply</span> <span class="kc">t</span><span class="err">o</span> <span class="err">all</span> <span class="err">pro</span><span class="kc">f</span><span class="err">iles.</span>
-        <span class="nt">&quot;bellStyle&quot;</span><span class="p">:</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;colorScheme&quot;</span><span class="p">:</span> <span class="s2">&quot;Solarized Dark&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;fontFace&quot;</span><span class="p">:</span> <span class="s2">&quot;FiraCode NF&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;fontSize&quot;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
-        <span class="nt">&quot;fontWeight&quot;</span><span class="p">:</span> <span class="s2">&quot;light&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;padding&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span>
-    <span class="p">},</span>
-</code></pre></div>
-<p>You have to comment the following two bindings out as well to ensure <code>C-v</code> reacts correctly in nvim.</p>
-<div class="highlight"><pre><span></span><code>  <span class="nt">&quot;actions&quot;</span><span class="p">:</span> <span class="p">[</span>
-      <span class="err">//</span> <span class="err">Copy</span> <span class="err">a</span><span class="kc">n</span><span class="err">d</span> <span class="err">pas</span><span class="kc">te</span> <span class="err">are</span> <span class="err">bou</span><span class="kc">n</span><span class="err">d</span> <span class="kc">t</span><span class="err">o</span> <span class="err">C</span><span class="kc">trl</span><span class="err">+Shi</span><span class="kc">ft</span><span class="err">+C</span> <span class="err">a</span><span class="kc">n</span><span class="err">d</span> <span class="err">C</span><span class="kc">trl</span><span class="err">+Shi</span><span class="kc">ft</span><span class="err">+V</span> <span class="err">i</span><span class="kc">n</span> <span class="err">your</span> <span class="err">de</span><span class="kc">faults</span><span class="err">.jso</span><span class="kc">n</span><span class="err">.</span>
-      <span class="err">//</span> <span class="err">These</span> <span class="kc">t</span><span class="err">wo</span> <span class="err">li</span><span class="kc">nes</span> <span class="err">addi</span><span class="kc">t</span><span class="err">io</span><span class="kc">nall</span><span class="err">y</span> <span class="err">bi</span><span class="kc">n</span><span class="err">d</span> <span class="kc">t</span><span class="err">hem</span> <span class="kc">t</span><span class="err">o</span> <span class="err">C</span><span class="kc">trl</span><span class="err">+C</span> <span class="err">a</span><span class="kc">n</span><span class="err">d</span> <span class="err">C</span><span class="kc">trl</span><span class="err">+V.</span>
-      <span class="err">//</span> <span class="err">To</span> <span class="err">lear</span><span class="kc">n</span> <span class="err">more</span> <span class="err">abou</span><span class="kc">t</span> <span class="err">selec</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="p">,</span> <span class="err">visi</span><span class="kc">t</span> <span class="err">h</span><span class="kc">tt</span><span class="err">ps</span><span class="p">:</span><span class="err">//aka.ms/</span><span class="kc">ter</span><span class="err">mi</span><span class="kc">nal</span><span class="mi">-</span><span class="err">selec</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span>
-      <span class="p">{</span> <span class="nt">&quot;command&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&quot;action&quot;</span><span class="p">:</span> <span class="s2">&quot;copy&quot;</span><span class="p">,</span> <span class="nt">&quot;singleLine&quot;</span><span class="p">:</span> <span class="kc">false</span> <span class="p">},</span> <span class="nt">&quot;keys&quot;</span><span class="p">:</span> <span class="s2">&quot;ctrl+c&quot;</span> <span class="p">},</span>
-      <span class="p">{</span> <span class="nt">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;paste&quot;</span><span class="p">,</span> <span class="nt">&quot;keys&quot;</span><span class="p">:</span> <span class="s2">&quot;ctrl+v&quot;</span> <span class="p">}</span>
-</code></pre></div>
-<h2 id="msys2">msys2</h2>
-<p>Install <code>msys2</code> with choco and start the shell (<code>C:\tools\msys64\mingw64.exe</code>). Use pacman to update and prepare your environment.</p>
-<blockquote>
-<p>Before installing git, uninstall git for windows and remove all remaining files under your program folder.</p>
-</blockquote>
-<div class="highlight"><pre><span></span><code>pacman -Syu
-
-pacman -S git msys/openssh msys/zsh unzip
-</code></pre></div>
-<p>Close the shell window, add the following profile to your terminal settings, and start the shell in windows terminal.</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-  <span class="nt">&quot;guid&quot;</span><span class="p">:</span> <span class="s2">&quot;{17da3cac-b318-431e-8a3e-7fcdefe6d114}&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;msys2&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;commandline&quot;</span><span class="p">:</span> <span class="s2">&quot;C:/tools/msys64/msys2_shell.cmd -defterm -here -no-start -mingw64 -use-full-path -ic &#39;exec zsh&#39;&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;startingDirectory&quot;</span><span class="p">:</span> <span class="s2">&quot;C:/tools/msys64/home/%USERNAME%&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;icon&quot;</span><span class="p">:</span> <span class="s2">&quot;C:/tools/msys64/mingw64.ico&quot;</span>
-<span class="p">},</span>
-</code></pre></div>
-<p>Now install oh-my-zsh and follow the instructions to install p10k. At the end replace the <code>.zshrc</code> with the given content.</p>
-<div class="highlight"><pre><span></span><code>git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-</code></pre></div>
-<h2 id="shell">shell</h2>
-<p>Install zsh on your linux shell (e.g. debian in wsl2) and upgrade zsh with ohmyzsh. Both commands regarding ohmyzsh and powerlevel10k must not executed with sudo. Otherwise you would install the extensions for root and not for the current user.</p>
-<div class="highlight"><pre><span></span><code>sudo apt update <span class="o">&amp;&amp;</span> sudo apt install git zsh curl -y
-sh -c <span class="s2">&quot;</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span class="k">)</span><span class="s2">&quot;</span>
-</code></pre></div>
-<h2 id="zsh-configuration">zsh configuration</h2>
-<p>After both extensions are installed, you can install the beloved <a href="https://github.com/romkatv/powerlevel10k">POWERLEVEL10K</a> theme. Follow the instructions to set the theme as default in <code>~/.zshrc</code> and make sure, the new fonts are installed and used in your terminal!</p>
-<div class="highlight"><pre><span></span><code>git clone --depth<span class="o">=</span><span class="m">1</span> https://github.com/romkatv/powerlevel10k.git <span class="si">${</span><span class="nv">ZSH_CUSTOM</span><span class="k">:-</span><span class="nv">$HOME</span><span class="p">/.oh-my-zsh/custom</span><span class="si">}</span>/themes/powerlevel10k
-</code></pre></div>
-<p>While editing <code>~/.zshrc</code> you can add plugins to your new shell as well. You can find a list of available plugins <a href="https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins">here</a>.</p>
-<p>To get the same keybindings like in vi, install <a href="https://github.com/jeffreytse/zsh-vi-mode">zsh-vi-mode</a>. Like the commands for e.g. ohmyzsh you should not use sudo.</p>
-<div class="highlight"><pre><span></span><code>git clone https://github.com/jeffreytse/zsh-vi-mode <span class="nv">$HOME</span>/.oh-my-zsh/custom/plugins/zsh-vi-mode
-</code></pre></div>
-<p>My standard configuration for <code>.zshrc</code> is currently extreme lean. Important to note: you should replace ssh key ids with keys existing in your <code>~/.ssh/</code> folder, if you want to load them on startup by default.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># instant prompt</span>
-<span class="k">if</span> <span class="o">[[</span> -r <span class="s2">&quot;</span><span class="si">${</span><span class="nv">XDG_CACHE_HOME</span><span class="k">:-</span><span class="nv">$HOME</span><span class="p">/.cache</span><span class="si">}</span><span class="s2">/p10k-instant-prompt-</span><span class="si">${</span><span class="p">(%)</span><span class="k">:-</span><span class="p">%n</span><span class="si">}</span><span class="s2">.zsh&quot;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
-  <span class="nb">source</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">XDG_CACHE_HOME</span><span class="k">:-</span><span class="nv">$HOME</span><span class="p">/.cache</span><span class="si">}</span><span class="s2">/p10k-instant-prompt-</span><span class="si">${</span><span class="p">(%)</span><span class="k">:-</span><span class="p">%n</span><span class="si">}</span><span class="s2">.zsh&quot;</span>
-<span class="k">fi</span>
-
-<span class="c1"># zsh</span>
-<span class="nb">export</span> <span class="nv">ZSH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.oh-my-zsh&quot;</span>
-
-<span class="nv">ZSH_THEME</span><span class="o">=</span><span class="s2">&quot;powerlevel10k/powerlevel10k&quot;</span>
-
-<span class="c1"># ohmyzsh</span>
-<span class="nv">plugins</span><span class="o">=(</span>
-  docker
-  docker-compose
-  git
-  ssh-agent
-  &lt;!-- ubuntu --&gt;
-  zsh-vi-mode
-<span class="o">)</span>
-
-&lt;!-- zstyle :omz:plugins:ssh-agent identities ssh_name01 ssh_name02 --&gt;
-
-<span class="nb">source</span> <span class="nv">$ZSH</span>/oh-my-zsh.sh
-
-<span class="c1"># zvm configuration</span>
-<span class="nv">ZVM_LINE_INIT_MODE</span><span class="o">=</span><span class="nv">$ZVM_MODE_NORMAL</span>
-
-<span class="c1"># user configuration</span>
-<span class="o">[[</span> ! -f ~/.p10k.zsh <span class="o">]]</span> <span class="o">||</span> <span class="nb">source</span> ~/.p10k.zsh
-</code></pre></div>
+<h2 id="nvim-configurations">nvim configurations</h2>
+<ul>
+<li><a href="https://github.com/aserowy/NeoCode">aserowy/neocode</a>: configuration to work fluent in nvim and vscode</li>
+</ul>
                 
                   
                 
@@ -1407,10 +1300,10 @@ sh -c <span class="s2">&quot;</span><span class="k">$(</span>curl -fsSL https://
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.d351de03.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.7353b375.min.js"></script>
+      <script src="../assets/javascripts/bundle.a1609d9a.min.js"></script>
       
     
   </body>
