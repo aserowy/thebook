@@ -16,7 +16,7 @@
     
     
       
-        <title>Creational - thebook</title>
+        <title>Composition pattern - thebook</title>
       
     
     
@@ -62,6 +62,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#reference-implementation" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -88,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Creational
+              Composition pattern
             
           </span>
         </div>
@@ -596,19 +601,17 @@
             
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
       
       <label class="md-nav__link" for="__nav_5_2">
         <span class="md-nav__icon md-icon"></span>
         
-          <a href="index.html" class="md-nav__link md-nav__link--active"
+          <a href="../creational/index.html" class="md-nav__link"
             style="margin: initial; padding: initial; pointer-events: initial">
         
           Creational
@@ -618,7 +621,7 @@
         <label class="md-nav__title" for="__nav_5_2">
           <span class="md-nav__icon md-icon"></span>
           
-            <a href="index.html" class="md-nav__link md-nav__link--active"
+            <a href="../creational/index.html" class="md-nav__link"
               style="margin: initial; padding: initial; pointer-events: initial">
           
             Creational
@@ -631,7 +634,7 @@
   
   
     <li class="md-nav__item">
-      <a href="builder_pattern.html" class="md-nav__link">
+      <a href="../creational/builder_pattern.html" class="md-nav__link">
         Builder pattern
       </a>
     </li>
@@ -647,17 +650,19 @@
             
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" checked>
       
       <label class="md-nav__link" for="__nav_5_3">
         <span class="md-nav__icon md-icon"></span>
         
-          <a href="../functional/index.html" class="md-nav__link"
+          <a href="index.html" class="md-nav__link"
             style="margin: initial; padding: initial; pointer-events: initial">
         
           Functional
@@ -667,7 +672,7 @@
         <label class="md-nav__title" for="__nav_5_3">
           <span class="md-nav__icon md-icon"></span>
           
-            <a href="../functional/index.html" class="md-nav__link"
+            <a href="index.html" class="md-nav__link"
               style="margin: initial; padding: initial; pointer-events: initial">
           
             Functional
@@ -678,11 +683,59 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../functional/composition_pattern.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          <span class="md-nav__icon md-icon"></span>
+          
+            <a href="composition_pattern.html" class="md-nav__link md-nav__link--active"
+              style="margin: initial; padding: initial; pointer-events: initial">
+          
+            Composition pattern
+          </a>
+        </label>
+      
+      <a href="composition_pattern.html" class="md-nav__link md-nav__link--active">
         Composition pattern
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#reference-implementation" class="md-nav__link">
+    Reference implementation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#further-reads" class="md-nav__link">
+    Further reads
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -692,7 +745,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../functional/currying_pattern.html" class="md-nav__link">
+      <a href="currying_pattern.html" class="md-nav__link">
         Currying pattern
       </a>
     </li>
@@ -1184,19 +1237,85 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#reference-implementation" class="md-nav__link">
+    Reference implementation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#further-reads" class="md-nav__link">
+    Further reads
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/aserowy/thebook/blob/master/docs/design_pattern/creational/README.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/aserowy/thebook/blob/master/docs/design_pattern/functional/composition_pattern.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                  <h1>Creational</h1>
+                  <h1>Composition pattern</h1>
                 
+                <h2 id="reference-implementation">Reference implementation</h2>
+<p>Because of a narrow support for fp in c#, we need a helper to build a proper composition of functions.</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span> <span class="k">static</span> <span class="n">Func</span><span class="p">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">TNextOut</span><span class="p">&gt;</span> <span class="n">Compose</span><span class="p">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">TInitOut</span><span class="p">,</span> <span class="n">TNextOut</span><span class="p">&gt;(</span>
+    <span class="k">this</span> <span class="n">Func</span><span class="p">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">TInitOut</span><span class="p">&gt;</span> <span class="n">initial</span><span class="p">,</span>
+    <span class="n">Func</span><span class="p">&lt;</span><span class="n">TInitOut</span><span class="p">,</span> <span class="n">TNextOut</span><span class="p">&gt;</span> <span class="n">next</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="p">=&gt;</span> <span class="n">next</span><span class="p">(</span><span class="n">initial</span><span class="p">(</span><span class="n">x</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>With the given extension you can compose functions with output equals input.</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span> <span class="k">async</span> <span class="n">Task</span><span class="p">&lt;</span><span class="n">IStepConfiguration</span><span class="p">&gt;</span> <span class="n">ResolveAsync</span><span class="p">(</span><span class="n">IDictionary</span><span class="p">&lt;</span><span class="n">IVersion</span><span class="p">,</span> <span class="n">IList</span><span class="p">&lt;</span><span class="n">IStepConfiguration</span><span class="p">&gt;&gt;</span> <span class="n">versions</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">var</span> <span class="n">resolverFunc</span> <span class="p">=</span> <span class="n">GetVersionFunc</span><span class="p">().</span><span class="n">Compose</span><span class="p">(</span><span class="n">GetStepFunc</span><span class="p">());</span>
+
+    <span class="k">return</span> <span class="nf">resolverFunc</span><span class="p">(</span><span class="n">versions</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">private</span> <span class="k">static</span> <span class="k">readonly</span> <span class="n">Func</span><span class="p">&lt;</span><span class="n">IDictionary</span><span class="p">&lt;</span><span class="n">IVersion</span><span class="p">,</span> <span class="n">IList</span><span class="p">&lt;</span><span class="n">IStepConfiguration</span><span class="p">&gt;&gt;,</span> <span class="n">IList</span><span class="p">&lt;</span><span class="n">IStepConfiguration</span><span class="p">&gt;&gt;</span>
+    <span class="n">GetVersionFunc</span> <span class="p">=</span> <span class="n">versions</span> <span class="p">=&gt;</span> <span class="n">versions</span><span class="p">.</span><span class="n">FirstOrDefault</span><span class="p">().</span><span class="n">Value</span><span class="p">;</span>
+
+<span class="k">private</span> <span class="k">static</span> <span class="k">readonly</span> <span class="n">Func</span><span class="p">&lt;</span><span class="n">IList</span><span class="p">&lt;</span><span class="n">IStepConfiguration</span><span class="p">&gt;,</span> <span class="n">IStepConfiguration</span><span class="p">&gt;</span>
+    <span class="n">GetStepFunc</span> <span class="p">=</span> <span class="n">steps</span> <span class="p">=&gt;</span> <span class="n">steps</span><span class="p">?.</span><span class="n">FirstOrDefault</span><span class="p">();</span>
+</code></pre></div>
+<p>For functions with multiple inputs you can use <a href="currying_pattern.html">Currying</a> to reduce the count of inputs to one.</p>
+<h2 id="further-reads">Further reads</h2>
+<ul>
+<li><a href="http://hamidmosalla.com/2019/04/25/functional-programming-in-c-sharp-a-brief-guide/">http://hamidmosalla.com/2019/04/25/functional-programming-in-c-sharp-a-brief-guide/</a></li>
+</ul>
                 
+                  
                 
               
               
@@ -1216,7 +1335,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../behavioral/strategy_pattern.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Strategy pattern" rel="prev">
+        <a href="index.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Functional" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1225,20 +1344,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Strategy pattern
+              Functional
             </div>
           </div>
         </a>
       
       
         
-        <a href="builder_pattern.html" class="md-footer__link md-footer__link--next" aria-label="Next: Builder pattern" rel="next">
+        <a href="currying_pattern.html" class="md-footer__link md-footer__link--next" aria-label="Next: Currying pattern" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Builder pattern
+              Currying pattern
             </div>
           </div>
           <div class="md-footer__button md-icon">

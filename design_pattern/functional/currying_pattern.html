@@ -16,7 +16,7 @@
     
     
       
-        <title>Creational - thebook</title>
+        <title>Currying pattern - thebook</title>
       
     
     
@@ -88,7 +88,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Creational
+              Currying pattern
             
           </span>
         </div>
@@ -596,19 +596,17 @@
             
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
       
       <label class="md-nav__link" for="__nav_5_2">
         <span class="md-nav__icon md-icon"></span>
         
-          <a href="index.html" class="md-nav__link md-nav__link--active"
+          <a href="../creational/index.html" class="md-nav__link"
             style="margin: initial; padding: initial; pointer-events: initial">
         
           Creational
@@ -618,7 +616,7 @@
         <label class="md-nav__title" for="__nav_5_2">
           <span class="md-nav__icon md-icon"></span>
           
-            <a href="index.html" class="md-nav__link md-nav__link--active"
+            <a href="../creational/index.html" class="md-nav__link"
               style="margin: initial; padding: initial; pointer-events: initial">
           
             Creational
@@ -631,7 +629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="builder_pattern.html" class="md-nav__link">
+      <a href="../creational/builder_pattern.html" class="md-nav__link">
         Builder pattern
       </a>
     </li>
@@ -647,17 +645,19 @@
             
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" checked>
       
       <label class="md-nav__link" for="__nav_5_3">
         <span class="md-nav__icon md-icon"></span>
         
-          <a href="../functional/index.html" class="md-nav__link"
+          <a href="index.html" class="md-nav__link"
             style="margin: initial; padding: initial; pointer-events: initial">
         
           Functional
@@ -667,7 +667,7 @@
         <label class="md-nav__title" for="__nav_5_3">
           <span class="md-nav__icon md-icon"></span>
           
-            <a href="../functional/index.html" class="md-nav__link"
+            <a href="index.html" class="md-nav__link"
               style="margin: initial; padding: initial; pointer-events: initial">
           
             Functional
@@ -680,7 +680,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../functional/composition_pattern.html" class="md-nav__link">
+      <a href="composition_pattern.html" class="md-nav__link">
         Composition pattern
       </a>
     </li>
@@ -690,11 +690,19 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../functional/currying_pattern.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="currying_pattern.html" class="md-nav__link md-nav__link--active">
         Currying pattern
       </a>
+      
     </li>
   
 
@@ -1189,14 +1197,21 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/aserowy/thebook/blob/master/docs/design_pattern/creational/README.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/aserowy/thebook/blob/master/docs/design_pattern/functional/currying_pattern.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                  <h1>Creational</h1>
+                  <h1>Currying pattern</h1>
                 
+                <p>With Currying you can reduce the number of inputs of a function. This can get handy to e.g. reduce inputs to one and be able to compose different functions.</p>
+<div class="highlight"><pre><span></span><code><span class="k">private</span> <span class="k">static</span> <span class="k">readonly</span> <span class="n">Func</span><span class="p">&lt;</span>
+    <span class="n">IVersionResolver</span><span class="p">,</span>
+    <span class="n">Func</span><span class="p">&lt;</span><span class="n">IDictionary</span><span class="p">&lt;</span><span class="n">IVersion</span><span class="p">,</span> <span class="n">IList</span><span class="p">&lt;</span><span class="n">IStepConfiguration</span><span class="p">&gt;&gt;,</span> <span class="n">IList</span><span class="p">&lt;</span><span class="n">IStepConfiguration</span><span class="p">&gt;&gt;&gt;</span>
+        <span class="n">GetVersionFunc</span> <span class="p">=</span> <span class="n">versionResolver</span> <span class="p">=&gt;</span> <span class="p">(</span><span class="n">versions</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">versionResolver</span><span class="p">.</span><span class="n">GetVersion</span><span class="p">(</span><span class="n">versions</span><span class="p">);</span>
+</code></pre></div>
                 
+                  
                 
               
               
@@ -1216,7 +1231,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../behavioral/strategy_pattern.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Strategy pattern" rel="prev">
+        <a href="composition_pattern.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Composition pattern" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1225,20 +1240,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Strategy pattern
+              Composition pattern
             </div>
           </div>
         </a>
       
       
         
-        <a href="builder_pattern.html" class="md-footer__link md-footer__link--next" aria-label="Next: Builder pattern" rel="next">
+        <a href="../resource_oriented/index.html" class="md-footer__link md-footer__link--next" aria-label="Next: Resource oriented" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Builder pattern
+              Resource oriented
             </div>
           </div>
           <div class="md-footer__button md-icon">

@@ -16,7 +16,7 @@
     
     
       
-        <title>Creational - thebook</title>
+        <title>Builder pattern - thebook</title>
       
     
     
@@ -62,6 +62,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#sample-implementation" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -88,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Creational
+              Builder pattern
             
           </span>
         </div>
@@ -608,7 +613,7 @@
       <label class="md-nav__link" for="__nav_5_2">
         <span class="md-nav__icon md-icon"></span>
         
-          <a href="index.html" class="md-nav__link md-nav__link--active"
+          <a href="index.html" class="md-nav__link"
             style="margin: initial; padding: initial; pointer-events: initial">
         
           Creational
@@ -618,7 +623,7 @@
         <label class="md-nav__title" for="__nav_5_2">
           <span class="md-nav__icon md-icon"></span>
           
-            <a href="index.html" class="md-nav__link md-nav__link--active"
+            <a href="index.html" class="md-nav__link"
               style="margin: initial; padding: initial; pointer-events: initial">
           
             Creational
@@ -629,11 +634,59 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="builder_pattern.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          <span class="md-nav__icon md-icon"></span>
+          
+            <a href="builder_pattern.html" class="md-nav__link md-nav__link--active"
+              style="margin: initial; padding: initial; pointer-events: initial">
+          
+            Builder pattern
+          </a>
+        </label>
+      
+      <a href="builder_pattern.html" class="md-nav__link md-nav__link--active">
         Builder pattern
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sample-implementation" class="md-nav__link">
+    Sample implementation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#further-reads" class="md-nav__link">
+    Further reads
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1184,19 +1237,88 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sample-implementation" class="md-nav__link">
+    Sample implementation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#further-reads" class="md-nav__link">
+    Further reads
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/aserowy/thebook/blob/master/docs/design_pattern/creational/README.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/aserowy/thebook/blob/master/docs/design_pattern/creational/builder_pattern.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                  <h1>Creational</h1>
+                  <h1>Builder pattern</h1>
                 
+                <h2 id="sample-implementation">Sample implementation</h2>
+<p>The given implementation abuses the builder pattern for validation. Thus, you can easily chain validation steps and reuse the configured validator object.</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span> <span class="k">class</span> <span class="nc">Validator</span><span class="p">&lt;</span><span class="n">TClass</span><span class="p">&gt;</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="n">IList</span><span class="p">&lt;</span><span class="n">Predicate</span><span class="p">&lt;</span><span class="n">TClass</span><span class="p">&gt;&gt;</span> <span class="n">_rules</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Predicate</span><span class="p">&lt;</span><span class="n">TClass</span><span class="p">&gt;&gt;();</span>
+
+    <span class="k">public</span> <span class="n">Validator</span><span class="p">&lt;</span><span class="n">TClass</span><span class="p">&gt;</span> <span class="n">AddRule</span><span class="p">(</span><span class="n">Predicate</span><span class="p">&lt;</span><span class="n">TClass</span><span class="p">&gt;</span> <span class="n">rule</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">_rules</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">rule</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="kt">bool</span> <span class="nf">Validate</span><span class="p">(</span><span class="n">TClass</span> <span class="n">obj</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">func</span> <span class="k">in</span> <span class="n">_rules</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(!</span><span class="n">func</span><span class="p">(</span><span class="n">obj</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="further-reads">Further reads</h2>
+<ul>
+<li><a href="https://www.pmichaels.net/2018/01/27/using-builder-pattern-validation/">https://www.pmichaels.net/2018/01/27/using-builder-pattern-validation/</a></li>
+</ul>
                 
+                  
                 
               
               
@@ -1216,7 +1338,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../behavioral/strategy_pattern.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Strategy pattern" rel="prev">
+        <a href="index.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Creational" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1225,20 +1347,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Strategy pattern
+              Creational
             </div>
           </div>
         </a>
       
       
         
-        <a href="builder_pattern.html" class="md-footer__link md-footer__link--next" aria-label="Next: Builder pattern" rel="next">
+        <a href="../functional/index.html" class="md-footer__link md-footer__link--next" aria-label="Next: Functional" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Builder pattern
+              Functional
             </div>
           </div>
           <div class="md-footer__button md-icon">

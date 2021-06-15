@@ -16,7 +16,7 @@
     
     
       
-        <title>Creational - thebook</title>
+        <title>Strategy pattern - thebook</title>
       
     
     
@@ -62,6 +62,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#sample-implementations" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -88,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Creational
+              Strategy pattern
             
           </span>
         </div>
@@ -535,17 +540,19 @@
             
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_1" type="checkbox" id="__nav_5_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_1" type="checkbox" id="__nav_5_1" checked>
       
       <label class="md-nav__link" for="__nav_5_1">
         <span class="md-nav__icon md-icon"></span>
         
-          <a href="../behavioral/index.html" class="md-nav__link"
+          <a href="index.html" class="md-nav__link"
             style="margin: initial; padding: initial; pointer-events: initial">
         
           Behavioral
@@ -555,7 +562,7 @@
         <label class="md-nav__title" for="__nav_5_1">
           <span class="md-nav__icon md-icon"></span>
           
-            <a href="../behavioral/index.html" class="md-nav__link"
+            <a href="index.html" class="md-nav__link"
               style="margin: initial; padding: initial; pointer-events: initial">
           
             Behavioral
@@ -568,7 +575,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../behavioral/chain_of_responsibility.html" class="md-nav__link">
+      <a href="chain_of_responsibility.html" class="md-nav__link">
         Chain of responsibility pattern
       </a>
     </li>
@@ -578,11 +585,79 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../behavioral/strategy_pattern.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          <span class="md-nav__icon md-icon"></span>
+          
+            <a href="strategy_pattern.html" class="md-nav__link md-nav__link--active"
+              style="margin: initial; padding: initial; pointer-events: initial">
+          
+            Strategy pattern
+          </a>
+        </label>
+      
+      <a href="strategy_pattern.html" class="md-nav__link md-nav__link--active">
         Strategy pattern
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sample-implementations" class="md-nav__link">
+    Sample implementations
+  </a>
+  
+    <nav class="md-nav" aria-label="Sample implementations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#coupling-with-factory-and-di" class="md-nav__link">
+    Coupling with factory and di
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-injection" class="md-nav__link">
+    Method injection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#further-reads" class="md-nav__link">
+    Further reads
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -596,19 +671,17 @@
             
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
       
       <label class="md-nav__link" for="__nav_5_2">
         <span class="md-nav__icon md-icon"></span>
         
-          <a href="index.html" class="md-nav__link md-nav__link--active"
+          <a href="../creational/index.html" class="md-nav__link"
             style="margin: initial; padding: initial; pointer-events: initial">
         
           Creational
@@ -618,7 +691,7 @@
         <label class="md-nav__title" for="__nav_5_2">
           <span class="md-nav__icon md-icon"></span>
           
-            <a href="index.html" class="md-nav__link md-nav__link--active"
+            <a href="../creational/index.html" class="md-nav__link"
               style="margin: initial; padding: initial; pointer-events: initial">
           
             Creational
@@ -631,7 +704,7 @@
   
   
     <li class="md-nav__item">
-      <a href="builder_pattern.html" class="md-nav__link">
+      <a href="../creational/builder_pattern.html" class="md-nav__link">
         Builder pattern
       </a>
     </li>
@@ -1184,19 +1257,151 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sample-implementations" class="md-nav__link">
+    Sample implementations
+  </a>
+  
+    <nav class="md-nav" aria-label="Sample implementations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#coupling-with-factory-and-di" class="md-nav__link">
+    Coupling with factory and di
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-injection" class="md-nav__link">
+    Method injection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#further-reads" class="md-nav__link">
+    Further reads
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/aserowy/thebook/blob/master/docs/design_pattern/creational/README.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/aserowy/thebook/blob/master/docs/design_pattern/behavioral/strategy_pattern.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                  <h1>Creational</h1>
+                  <h1>Strategy pattern</h1>
                 
+                <h2 id="sample-implementations">Sample implementations</h2>
+<h3 id="coupling-with-factory-and-di">Coupling with factory and di</h3>
+<p>The given strategy interface contains two methods. ValidFor describes - in this example with an enum - if the strategy should be used. This validation could be a predicate for example as well.
+GetDistanceInSecondsAsync describes the encapsulated business logic for this concrete strategy.</p>
+<div class="highlight"><pre><span></span><code><span class="k">internal</span> <span class="k">interface</span> <span class="n">IDistanceQueryStrategy</span>
+<span class="p">{</span>
+    <span class="n">FirstResponderWayResolverStrategy</span> <span class="n">ValidFor</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="n">Task</span><span class="p">&lt;</span><span class="n">DistanceResult</span><span class="p">&gt;</span> <span class="n">GetDistanceInSecondsAsync</span><span class="p">(</span><span class="n">CoordinateDto</span> <span class="n">origin</span><span class="p">,</span> <span class="k">params</span> <span class="n">CoordinateDto</span><span class="p">[]</span> <span class="n">waypoints</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>With dependency injection, we bind multiple concrete strategies to the same interface. Thus, we can get a complete collection of all concrete implementations with one call in our service.</p>
+<div class="highlight"><pre><span></span><code><span class="n">services</span><span class="p">.</span><span class="n">AddTransient</span><span class="p">&lt;</span><span class="n">IDistanceQuery</span><span class="p">,</span> <span class="n">DistanceQuery</span><span class="p">&gt;();</span>
+<span class="n">services</span><span class="p">.</span><span class="n">AddTransient</span><span class="p">&lt;</span><span class="n">IDistanceQueryStrategy</span><span class="p">,</span> <span class="n">GoogleDistanceQueryStrategy</span><span class="p">&gt;();</span>
+<span class="n">services</span><span class="p">.</span><span class="n">AddTransient</span><span class="p">&lt;</span><span class="n">IDistanceQueryStrategy</span><span class="p">,</span> <span class="n">LinearDistanceQueryStrategy</span><span class="p">&gt;();</span>
+</code></pre></div>
+<p>In the given example a default strategy is configured to enable a robust behavior. In addition the concrete enum value is method injected. This could also be addressed within the query, to reduce the method signature (as long as we have additional information regarding the resolvement).</p>
+<div class="highlight"><pre><span></span><code><span class="k">internal</span> <span class="k">class</span> <span class="nc">DistanceQuery</span> <span class="p">:</span> <span class="n">IDistanceQuery</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="k">readonly</span> <span class="n">IDictionary</span><span class="p">&lt;</span><span class="n">FirstResponderWayResolverStrategy</span><span class="p">,</span> <span class="n">IDistanceQueryStrategy</span><span class="p">&gt;</span> <span class="n">_strategies</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="nf">DistanceQuery</span><span class="p">(</span><span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">IDistanceQueryStrategy</span><span class="p">&gt;</span> <span class="n">strategies</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">_strategies</span> <span class="p">=</span> <span class="n">strategies</span><span class="p">.</span><span class="n">ToDictionary</span><span class="p">(</span><span class="n">strategy</span> <span class="p">=&gt;</span> <span class="n">strategy</span><span class="p">.</span><span class="n">ValidFor</span><span class="p">,</span> <span class="n">strategy</span> <span class="p">=&gt;</span> <span class="n">strategy</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="n">Task</span><span class="p">&lt;</span><span class="n">DistanceResult</span><span class="p">&gt;</span> <span class="n">GetDistanceInSecondsAsync</span><span class="p">(</span>
+        <span class="n">FirstResponderWayResolverStrategy</span> <span class="n">strategy</span><span class="p">,</span>
+        <span class="n">CoordinateDto</span> <span class="n">origin</span><span class="p">,</span>
+        <span class="k">params</span> <span class="n">CoordinateDto</span><span class="p">[]</span> <span class="n">waypoints</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">var</span> <span class="n">strategyToUse</span> <span class="p">=</span> <span class="n">FirstResponderWayResolverStrategy</span><span class="p">.</span><span class="n">GoogleDistanceResolver</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">_strategies</span><span class="p">.</span><span class="n">ContainsKey</span><span class="p">(</span><span class="n">strategy</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="n">strategyToUse</span> <span class="p">=</span> <span class="n">strategy</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">_strategies</span><span class="p">[</span><span class="n">strategyToUse</span><span class="p">].</span><span class="n">GetDistanceInSecondsAsync</span><span class="p">(</span><span class="n">origin</span><span class="p">,</span> <span class="n">waypoints</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="method-injection">Method injection</h3>
+<p>The interface is used to abstract concrete implementations.</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span> <span class="k">interface</span> <span class="n">IStepStrategy</span>
+<span class="p">{</span>
+    <span class="n">IVersion</span> <span class="n">Version</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+    <span class="kt">int</span> <span class="n">Index</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="k">public</span> <span class="n">Task</span><span class="p">&lt;</span><span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">ICommand</span><span class="p">&gt;&gt;</span> <span class="n">RunAsync</span><span class="p">(</span><span class="n">IEvent</span> <span class="k">event</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>With this abstraction a concrete implementation for this logic can be injected at runtime.</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span> <span class="k">async</span> <span class="n">Task</span><span class="p">&lt;</span><span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">ICommand</span><span class="p">&gt;&gt;</span> <span class="n">RunAsync</span><span class="p">(</span><span class="n">IEvent</span> <span class="k">event</span><span class="p">,</span> <span class="n">IStepStrategy</span> <span class="n">step</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">var</span> <span class="n">commands</span> <span class="p">=</span> <span class="k">await</span> <span class="n">step</span>
+        <span class="p">.</span><span class="n">RunAsync</span><span class="p">(</span><span class="k">event</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">ConfigureAwait</span><span class="p">(</span><span class="k">false</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">commands</span> <span class="k">is</span> <span class="k">null</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">Enumerable</span><span class="p">.</span><span class="n">Empty</span><span class="p">&lt;</span><span class="n">ICommand</span><span class="p">&gt;();</span>
+    <span class="p">}</span>
+
+    <span class="k">await</span> <span class="n">_store</span>
+        <span class="p">.</span><span class="n">AddReferencesAsync</span><span class="p">(</span><span class="n">commands</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">ConfigureAwait</span><span class="p">(</span><span class="k">false</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="n">commands</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="further-reads">Further reads</h2>
+<ul>
+<li><a href="https://www.oodesign.com/strategy-pattern.html">https://www.oodesign.com/strategy-pattern.html</a></li>
+</ul>
                 
+                  
                 
               
               
@@ -1216,7 +1421,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../behavioral/strategy_pattern.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Strategy pattern" rel="prev">
+        <a href="chain_of_responsibility.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Chain of responsibility pattern" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1225,20 +1430,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Strategy pattern
+              Chain of responsibility pattern
             </div>
           </div>
         </a>
       
       
         
-        <a href="builder_pattern.html" class="md-footer__link md-footer__link--next" aria-label="Next: Builder pattern" rel="next">
+        <a href="../creational/index.html" class="md-footer__link md-footer__link--next" aria-label="Next: Creational" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Builder pattern
+              Creational
             </div>
           </div>
           <div class="md-footer__button md-icon">

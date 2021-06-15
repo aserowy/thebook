@@ -16,7 +16,7 @@
     
     
       
-        <title>Creational - thebook</title>
+        <title>Chain of responsibility pattern - thebook</title>
       
     
     
@@ -62,6 +62,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#sample-implementations" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -88,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Creational
+              Chain of responsibility pattern
             
           </span>
         </div>
@@ -535,17 +540,19 @@
             
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_1" type="checkbox" id="__nav_5_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_1" type="checkbox" id="__nav_5_1" checked>
       
       <label class="md-nav__link" for="__nav_5_1">
         <span class="md-nav__icon md-icon"></span>
         
-          <a href="../behavioral/index.html" class="md-nav__link"
+          <a href="index.html" class="md-nav__link"
             style="margin: initial; padding: initial; pointer-events: initial">
         
           Behavioral
@@ -555,7 +562,7 @@
         <label class="md-nav__title" for="__nav_5_1">
           <span class="md-nav__icon md-icon"></span>
           
-            <a href="../behavioral/index.html" class="md-nav__link"
+            <a href="index.html" class="md-nav__link"
               style="margin: initial; padding: initial; pointer-events: initial">
           
             Behavioral
@@ -566,11 +573,65 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../behavioral/chain_of_responsibility.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          <span class="md-nav__icon md-icon"></span>
+          
+            <a href="chain_of_responsibility.html" class="md-nav__link md-nav__link--active"
+              style="margin: initial; padding: initial; pointer-events: initial">
+          
+            Chain of responsibility pattern
+          </a>
+        </label>
+      
+      <a href="chain_of_responsibility.html" class="md-nav__link md-nav__link--active">
         Chain of responsibility pattern
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sample-implementations" class="md-nav__link">
+    Sample implementations
+  </a>
+  
+    <nav class="md-nav" aria-label="Sample implementations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#registration-with-ms-dependency-injection-container-source" class="md-nav__link">
+    Registration with ms dependency injection container (source)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -580,7 +641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../behavioral/strategy_pattern.html" class="md-nav__link">
+      <a href="strategy_pattern.html" class="md-nav__link">
         Strategy pattern
       </a>
     </li>
@@ -596,19 +657,17 @@
             
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
       
       <label class="md-nav__link" for="__nav_5_2">
         <span class="md-nav__icon md-icon"></span>
         
-          <a href="index.html" class="md-nav__link md-nav__link--active"
+          <a href="../creational/index.html" class="md-nav__link"
             style="margin: initial; padding: initial; pointer-events: initial">
         
           Creational
@@ -618,7 +677,7 @@
         <label class="md-nav__title" for="__nav_5_2">
           <span class="md-nav__icon md-icon"></span>
           
-            <a href="index.html" class="md-nav__link md-nav__link--active"
+            <a href="../creational/index.html" class="md-nav__link"
               style="margin: initial; padding: initial; pointer-events: initial">
           
             Creational
@@ -631,7 +690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="builder_pattern.html" class="md-nav__link">
+      <a href="../creational/builder_pattern.html" class="md-nav__link">
         Builder pattern
       </a>
     </li>
@@ -1184,19 +1243,193 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sample-implementations" class="md-nav__link">
+    Sample implementations
+  </a>
+  
+    <nav class="md-nav" aria-label="Sample implementations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#registration-with-ms-dependency-injection-container-source" class="md-nav__link">
+    Registration with ms dependency injection container (source)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/aserowy/thebook/blob/master/docs/design_pattern/creational/README.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/aserowy/thebook/blob/master/docs/design_pattern/behavioral/chain_of_responsibility.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                  <h1>Creational</h1>
+                  <h1>Chain of responsibility pattern</h1>
                 
+                <h2 id="sample-implementations">Sample implementations</h2>
+<h3 id="registration-with-ms-dependency-injection-container-source">Registration with ms dependency injection container (<a href="https://stackoverflow.com/questions/55476378/how-to-inject-the-dependency-of-the-next-handler-in-a-chain-of-responsibility/55476379#55476379">source</a>)</h3>
+<div class="highlight"><pre><span></span><code><span class="k">public</span> <span class="k">void</span> <span class="nf">ConfigureServices</span><span class="p">(</span><span class="n">IServiceCollection</span> <span class="n">services</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">services</span><span class="p">.</span><span class="n">Chain</span><span class="p">&lt;</span><span class="n">IChainOfResponsibility</span><span class="p">&gt;()</span>
+        <span class="p">.</span><span class="n">Add</span><span class="p">&lt;</span><span class="n">HandlerOne</span><span class="p">&gt;()</span>
+        <span class="p">.</span><span class="n">Add</span><span class="p">&lt;</span><span class="n">HandlerTwo</span><span class="p">&gt;()</span>
+        <span class="p">.</span><span class="n">Configure</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">public</span> <span class="k">static</span> <span class="k">class</span> <span class="nc">ChainConfigurator</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="n">IChainConfigurator</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">Chain</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="k">this</span> <span class="n">IServiceCollection</span> <span class="n">services</span><span class="p">)</span> <span class="k">where</span> <span class="n">T</span> <span class="p">:</span> <span class="k">class</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">ChainConfiguratorImpl</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="n">services</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">interface</span> <span class="n">IChainConfigurator</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span>
+    <span class="p">{</span>
+        <span class="n">IChainConfigurator</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">Add</span><span class="p">&lt;</span><span class="n">TImplementation</span><span class="p">&gt;()</span> <span class="k">where</span> <span class="n">TImplementation</span> <span class="p">:</span> <span class="n">T</span><span class="p">;</span>
+        <span class="k">void</span> <span class="nf">Configure</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="k">private</span> <span class="k">class</span> <span class="nc">ChainConfiguratorImpl</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="p">:</span> <span class="n">IChainConfigurator</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="k">where</span> <span class="n">T</span> <span class="p">:</span> <span class="k">class</span>
+    <span class="p">{</span>
+        <span class="k">private</span> <span class="k">readonly</span> <span class="n">IServiceCollection</span> <span class="n">_services</span><span class="p">;</span>
+        <span class="k">private</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Type</span><span class="p">&gt;</span> <span class="n">_types</span><span class="p">;</span>
+        <span class="k">private</span> <span class="n">Type</span> <span class="n">_interfaceType</span><span class="p">;</span>
+
+        <span class="k">public</span> <span class="nf">ChainConfiguratorImpl</span><span class="p">(</span><span class="n">IServiceCollection</span> <span class="n">services</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">_services</span> <span class="p">=</span> <span class="n">services</span><span class="p">;</span>
+            <span class="n">_types</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Type</span><span class="p">&gt;();</span>
+            <span class="n">_interfaceType</span> <span class="p">=</span> <span class="k">typeof</span><span class="p">(</span><span class="n">T</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">public</span> <span class="n">IChainConfigurator</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">Add</span><span class="p">&lt;</span><span class="n">TImplementation</span><span class="p">&gt;()</span> <span class="k">where</span> <span class="n">TImplementation</span> <span class="p">:</span> <span class="n">T</span>
+        <span class="p">{</span>
+            <span class="kt">var</span> <span class="n">type</span> <span class="p">=</span> <span class="k">typeof</span><span class="p">(</span><span class="n">TImplementation</span><span class="p">);</span>
+
+            <span class="n">_types</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">type</span><span class="p">);</span>
+
+            <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">public</span> <span class="k">void</span> <span class="nf">Configure</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">_types</span><span class="p">.</span><span class="n">Count</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span>
+                <span class="k">throw</span> <span class="k">new</span> <span class="nf">InvalidOperationException</span><span class="p">(</span><span class="err">$</span><span class="s">&quot;No implementation defined for {_interfaceType.Name}&quot;</span><span class="p">);</span>
+
+            <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">type</span> <span class="k">in</span> <span class="n">_types</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">ConfigureType</span><span class="p">(</span><span class="n">type</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="k">private</span> <span class="k">void</span> <span class="nf">ConfigureType</span><span class="p">(</span><span class="n">Type</span> <span class="n">currentType</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="c1">// gets the next type, as that will be injected in the current type</span>
+            <span class="kt">var</span> <span class="n">nextType</span> <span class="p">=</span> <span class="n">_types</span>
+                <span class="p">.</span><span class="n">SkipWhile</span><span class="p">(</span><span class="n">x</span> <span class="p">=&gt;</span> <span class="n">x</span> <span class="p">!=</span> <span class="n">currentType</span><span class="p">)</span>
+                <span class="p">.</span><span class="n">SkipWhile</span><span class="p">(</span><span class="n">x</span> <span class="p">=&gt;</span> <span class="n">x</span> <span class="p">==</span> <span class="n">currentType</span><span class="p">)</span>
+                <span class="p">.</span><span class="n">FirstOrDefault</span><span class="p">();</span>
+
+            <span class="c1">// Makes a parameter expression, that is the IServiceProvider x </span>
+            <span class="kt">var</span> <span class="n">parameter</span> <span class="p">=</span> <span class="n">Expression</span><span class="p">.</span><span class="n">Parameter</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">IServiceProvider</span><span class="p">),</span> <span class="s">&quot;x&quot;</span><span class="p">);</span>
+
+            <span class="c1">// get constructor with highest number of parameters. Ideally, there should be only 1 </span>
+            <span class="c1">// constructor, but better be safe.</span>
+            <span class="kt">var</span> <span class="n">ctor</span> <span class="p">=</span> <span class="n">currentType</span>
+                <span class="p">.</span><span class="n">GetConstructors</span><span class="p">()</span>
+                <span class="p">.</span><span class="n">OrderByDescending</span><span class="p">(</span><span class="n">x</span> <span class="p">=&gt;</span> <span class="n">x</span><span class="p">.</span><span class="n">GetParameters</span><span class="p">().</span><span class="n">Count</span><span class="p">())</span>
+                <span class="p">.</span><span class="n">First</span><span class="p">();</span>
+
+            <span class="c1">// for each parameter in the constructor</span>
+            <span class="kt">var</span> <span class="n">ctorParameters</span> <span class="p">=</span> <span class="n">ctor</span><span class="p">.</span><span class="n">GetParameters</span><span class="p">().</span><span class="n">Select</span><span class="p">(</span><span class="n">p</span> <span class="p">=&gt;</span>
+            <span class="p">{</span>
+                <span class="c1">// check if it implements the interface. That&#39;s how we find which parameter to inject</span>
+                <span class="c1">// the next handler.</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">_interfaceType</span><span class="p">.</span><span class="n">IsAssignableFrom</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">ParameterType</span><span class="p">))</span>
+                <span class="p">{</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="n">nextType</span> <span class="k">is</span> <span class="k">null</span><span class="p">)</span>
+                    <span class="p">{</span>
+                        <span class="c1">// if there&#39;s no next type, current type is the last in the chain, so it just</span>
+                        <span class="c1">// receives null</span>
+                        <span class="k">return</span> <span class="n">Expression</span><span class="p">.</span><span class="n">Constant</span><span class="p">(</span><span class="k">null</span><span class="p">,</span> <span class="n">_interfaceType</span><span class="p">);</span>
+                    <span class="p">}</span>
+                    <span class="k">else</span>
+                    <span class="p">{</span>
+                        <span class="c1">// if there is, then we call IServiceProvider.GetRequiredService to resolve next</span>
+                        <span class="c1">// type for us</span>
+                        <span class="k">return</span> <span class="n">Expression</span><span class="p">.</span><span class="n">Call</span><span class="p">(</span>
+                            <span class="k">typeof</span><span class="p">(</span><span class="n">ServiceProviderServiceExtensions</span><span class="p">),</span> 
+                            <span class="s">&quot;GetRequiredService&quot;</span><span class="p">,</span> 
+                            <span class="k">new</span> <span class="n">Type</span><span class="p">[]</span> <span class="p">{</span> <span class="n">nextType</span> <span class="p">},</span> 
+                            <span class="n">parameter</span><span class="p">);</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+
+                <span class="c1">// this is a parameter we don&#39;t care about, so we just ask GetRequiredService to</span>
+                <span class="c1">// resolve it for us </span>
+                <span class="k">return</span> <span class="p">(</span><span class="n">Expression</span><span class="p">)</span><span class="n">Expression</span><span class="p">.</span><span class="n">Call</span><span class="p">(</span>
+                    <span class="k">typeof</span><span class="p">(</span><span class="n">ServiceProviderServiceExtensions</span><span class="p">),</span>
+                     <span class="s">&quot;GetRequiredService&quot;</span><span class="p">,</span> 
+                     <span class="k">new</span> <span class="n">Type</span><span class="p">[]</span> <span class="p">{</span> <span class="n">p</span><span class="p">.</span><span class="n">ParameterType</span> <span class="p">},</span> 
+                     <span class="n">parameter</span><span class="p">);</span>
+            <span class="p">});</span>
+
+            <span class="c1">// cool, we have all of our constructors parameters set, so we build a &quot;new&quot;</span>
+            <span class="c1">// expression to invoke it.</span>
+            <span class="kt">var</span> <span class="n">body</span> <span class="p">=</span> <span class="n">Expression</span><span class="p">.</span><span class="n">New</span><span class="p">(</span><span class="n">ctor</span><span class="p">,</span> <span class="n">ctorParameters</span><span class="p">.</span><span class="n">ToArray</span><span class="p">());</span>
+
+            <span class="c1">// if current type is the first in our list, then we register it by the interface, otherwise</span>
+            <span class="c1">// by the concrete type</span>
+            <span class="kt">var</span> <span class="n">first</span> <span class="p">=</span> <span class="n">_types</span><span class="p">[</span><span class="m">0</span><span class="p">]</span> <span class="p">==</span> <span class="n">currentType</span><span class="p">;</span>
+            <span class="kt">var</span> <span class="n">resolveType</span> <span class="p">=</span> <span class="n">first</span> <span class="p">?</span> <span class="n">_interfaceType</span> <span class="p">:</span> <span class="n">currentType</span><span class="p">;</span>
+            <span class="kt">var</span> <span class="n">expressionType</span> <span class="p">=</span> <span class="n">Expression</span><span class="p">.</span><span class="n">GetFuncType</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">IServiceProvider</span><span class="p">),</span> <span class="n">resolveType</span><span class="p">);</span>
+
+            <span class="c1">// finally, we can build our expression</span>
+            <span class="kt">var</span> <span class="n">expression</span> <span class="p">=</span> <span class="n">Expression</span><span class="p">.</span><span class="n">Lambda</span><span class="p">(</span><span class="n">expressionType</span><span class="p">,</span> <span class="n">body</span><span class="p">,</span> <span class="n">parameter</span><span class="p">);</span>
+
+            <span class="c1">// compile it</span>
+            <span class="kt">var</span> <span class="n">compiledExpression</span> <span class="p">=</span> <span class="p">(</span><span class="n">Func</span><span class="p">&lt;</span><span class="n">IServiceProvider</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;)</span><span class="n">expression</span><span class="p">.</span><span class="n">Compile</span><span class="p">();</span>
+
+            <span class="c1">// and register it in the services collection as transient</span>
+            <span class="n">_services</span><span class="p">.</span><span class="n">AddTransient</span><span class="p">(</span><span class="n">resolveType</span><span class="p">,</span> <span class="n">compiledExpression</span> <span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
                 
+                  
                 
               
               
@@ -1216,7 +1449,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../behavioral/strategy_pattern.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Strategy pattern" rel="prev">
+        <a href="index.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Behavioral" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1225,20 +1458,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Strategy pattern
+              Behavioral
             </div>
           </div>
         </a>
       
       
         
-        <a href="builder_pattern.html" class="md-footer__link md-footer__link--next" aria-label="Next: Builder pattern" rel="next">
+        <a href="strategy_pattern.html" class="md-footer__link md-footer__link--next" aria-label="Next: Strategy pattern" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Builder pattern
+              Strategy pattern
             </div>
           </div>
           <div class="md-footer__button md-icon">
